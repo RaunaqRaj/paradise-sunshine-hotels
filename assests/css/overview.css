@@ -1,0 +1,35 @@
+
+img.logo{
+    width: 100px;
+    height: 70px;
+}
+
+div.over{
+    background: url(https://www.tajhotels.com/content/dam/luxury/hotels/taj-palace-delhi/images/at_a_glance/16x7/Facade3.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg);
+    background-repeat: none;
+    background-size: cover;
+}
+
+div.mine{
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.img{
+    height: 300px;
+}
+
+div.hello{
+    margin: 40px;
+}
+
+p{
+    float: left;
+}
+
+img.bed{
+    height: 200px;
+    justify-content: right;
+    align-items: right;
+    float: right;
+}

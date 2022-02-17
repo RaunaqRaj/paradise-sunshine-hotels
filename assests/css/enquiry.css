@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+li.Raunaq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+}
+
+input:focus{
+    border: none;
+    outline-style: none;
+    outline-color: none;
+}
+
+div.row::before{
+    background-color: #000;
+    opacity: 0.7;
+}
+
+
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    outline: 0;
+    border-color: inherit;
+    box-shadow: none;
+}
+
+.form-container{
+    border-radius: 10px;
+}
+.font{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subheading{
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-facebook{
+    font-size: 8em;
+}
+
+img.logo{
+    width: 100px;
+    height: 100px;
+}
+div.mine{
+    background: url(https://www.princehotels.com/wp-content/uploads/2019/04/aboutslider3-1.jpg);
+    background-size: cover;
+}
+
+div.new{
+    background-color: white;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.carousel-item{
+    height: 90vh;
+    min-height: 400px;
+    background: no-repeat scroll center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.navbar{
+    height: 80px;
+    background-color: #fff;
+}
+
+.navbar::before{
+    background: #000;
+    opacity: 0.5;
+}
+
+.form-label{
+    font-family: 'Pacifico', serif;
+    font-weight: 400;
+}
+
+.btn2{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+
+}
+
+.btn2:hover{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    background-color: #ff9800;
+    transition: 1s;
+    color: #000;;
+}
+
+.heading{
+    color: #ff9800;
+    font-family: 'Pacifico', cursive;
+}
+
+.para{
+    margin-top: 30px;
+    color: #5a0748;
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+}
+
+.nav-link{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.navbar .nav-item .dropdown-menu{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    display: block;
+    opacity: 0;
+    /* visibility: hidden; */
+    transform: .3s;
+    margin-top: 0;
+}
+
+.navbar .nav-item:hover .nav-link{
+    
+}
+
+.navbar a{
+    position: relative;
+    text-decoration: none;
+    font-family: serif;
+    color: #a0a0a0;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+}
+
+.navbar a::after:hover{
+    content: "";
+    position: absolute;
+    background-color: #ff9800;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+}
+
+.navbar .dropdown-menu.fade-down{
+    top: 80%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+}
+
+.navbar .dropdown-menu.fade-up{
+    top:180%;
+}
+
+.navbar .nav-item .dropdown-menu:hover{
+    transition: 1s;
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    transform: rotateX(0deg);
+}
+.nav-link:hover{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.5;
+}
+
+.all{
+    color: rgb(254, 255, 251);
+}
+
+.hello{
+    background: #000;
+    opacity: 0.8;
+    border-radius: 20px;
+    font-family: 'Pacifico', cursive;
+    color: orange;
+}
+
+/* div.mine::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.5;
+}
+
+div.mine{
+    background: #000;
+} */
+.h1 .hello{
+    background: #000;
+    opacity: 0.8;
+    border-radius: 20px;
+}
+
+.testimonials{
+    margin: 50px auto;
+
+}
+
+.testimonials .row{
+    margin-top: 30px;
+}
+
+.testimonials .col-md-4{
+    margin: 40px auto;
+}
+
+.profile{
+    padding: 70px 10px 10px;
+    background-color: #efefef;
+}
+
+.profile img{
+    border: 10px solid white;
+}
+
+.profile img:hover{
+    border: 10px solid white;
+    transition: ease-in-out;
+}
+.user{
+    width: 110px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+
+.profile h5{
+    font-size: 20px;
+    margin-top: 15px;
+    color: #ff9800;
+    font-family: 'Pacifico', cursive;
+}
+
+.profile:hover{
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 1s;
+}
+
+span{
+    font-size: 12px;
+    color: #333;
+}
+.testimonials h1{
+    text-align: center;
+    font-weight: bold;
+    color: #ff9800;
+    font-family: 'Rowdies', cursive;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.testimonials h1::after{
+    content: "";
+    background: #ff9800;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+.hello h2{
+    border-radius: 20px;
+    font-family: 'Pacifico', cursive;
+    color: orange;
+}
+
+.hello:hover{
+    background: #000;
+    opacity: 0.8;
+    border-radius: 20px;
+    transition: ease-out 2s;
+    font-family: 'Pacifico', cursive;
+}
+
+.carousel-caption{
+    bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+.carousel-caption h5{
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Rowdies', cursive;
+    color: #fff7a9;
+}
+
+.carousel-caption p{
+    font-size: 28px;
+    top: 2rem;
+    font-weight: 600;
+    font-family: 'Pacifico', cursive;
+}
+
+
+.slider-btn{
+    margin-top: 30px;
+}
+
+.modal-transition{
+    transform :.3s ease-out;
+}
+
+
+.slider-btn .btn{
+    columns: white;
+    border-radius:0px;
+    padding: 1.5rem 2rem;
+    font-size: 1rem;
+    margin-right: 15px;
+    color: solid #fff;
+    border: 1px solid #fff;
+    font-family: 'Source Serif 4', sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+div.hello:hover{
+    background-size: 550px;
+    transition: 1s;
+}
+
+
+
+.slider-btn .btn:hover{
+    background-color: #fff ;
+    color: #000;
+    transition: 1s;
+    columns: white;
+    border-radius: 0px;
+    padding: 1.5rem 2rem;
+    font-size: 20px;
+    margin-right: 15px;
+    font-weight: 700;
+}
+
+
+img.h{
+    width: 300px;
+    height: 200px;
+    border: 2px #fff;
+    border-radius: 20px;
+}
+
+div.free{
+    border: 2px #fff;
+    border-radius: 20px;
+}

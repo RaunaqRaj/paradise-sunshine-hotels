@@ -1,0 +1,81 @@
+img{
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    width: 1500px;
+    height:500px;
+}
+
+li.Raunaq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+}
+
+.font{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 500px;
+    height: 300px;
+}
+
+.form{
+    background-color: #fff;
+    border-radius: 20px;
+}
+.subheading{
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control{
+    justify-content: center;
+    align-items: center;
+}
+.fa-facebook{
+    font-size: 8em;
+}
+
+img.logo{
+    width: 100px;
+    height: 20px;
+}
+div.mine{
+    background: url(https://www.princehotels.com/wp-content/uploads/2019/04/aboutslider3-1.jpg);
+    background-size: cover;
+}
+
+div.new{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+img.h{
+    width: 300px;
+    height: 200px;
+    border: 2px #fff;
+    border-radius: 20px;
+}
+
+div.free{
+    border: 2px #fff;
+    border-radius: 20px;
+}

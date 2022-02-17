@@ -1,0 +1,5 @@
+echo json_encode(array("success" => true, "message" => "Your details has been sent successfully!"));
+                die;
+response = JSON.parse(response);
+
+$_SERVER['SERVER_NAME']
