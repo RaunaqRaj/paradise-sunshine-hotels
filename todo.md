@@ -1,10 +1,9 @@
 ### [Project Work List]
-[] backend : create constant.php,connection.php,functions.php.
-[] backend : Import functions.php 
+[x] backend : create constant.php,connection.php
 [] backend : Request Validation
 [] backend learning : server validation.
-[] backend : input feild validation.
-[] backend learning : prevention from cross-site scripting.
-[] backend : SQL injection.
+[x] backend : input feild validation.
+[x] backend learning : prevention from cross-site scripting.
+[x] backend : SQL injection.
 
 
