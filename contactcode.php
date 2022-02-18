@@ -11,10 +11,15 @@
 
       //json_decode - it takes JSON string and converts it into a php object or array, if true then an associative array.
 
-      $name = $mydata['name'];
-      $email = $mydata['email'];
-      $subject = $mydata['subject'];
-      $message = $mydata['message'];
+      $name = mysqli_real_escape_string($conn,$mydata['name']);
+      $email = mysqli_real_escape_string($conn,$mydata['email']);
+      $subject = mysqli_real_escape_string($conn,$mydata['subject']);
+      $message = mysqli_real_escape_string($conn,$mydata['message']);
+
+      $name = htmlspecialchars($mydata['name']);
+      $email = htmlspecialchars($mydata['email']);
+      $subject = htmlspecialchars($mydata['subject']);
+      $message = htmlspecialchars($mydata['message']);
 
 
       if(!empty($name)&& !empty($email) && !empty($subject) && !empty($message)){

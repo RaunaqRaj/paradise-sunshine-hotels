@@ -223,9 +223,7 @@
       <div class="row" style="background: url(assests/images/3956344.jpg); padding: 50px; border-radius: 20px;">
         <div class="col-md-9 mb-md-0 mb-5" style="background-color: #fff; border-radius: 60px; padding: 40px; ">
           <form id="myform">
-            <div id="msg">
-                <strong></strong>
-            </div>
+            <p id="msg" style="color: green; font-weight: bold;"></p>
             <div class="row">
               <div class="col-md-10">
                 <div class="md-form">
@@ -240,7 +238,7 @@
                     <label for="email"style="color:#ff9800; font-size: 23px; font-weight: 700;" class="mt-3">email</label>
                     <input name="email" id="email" placeholder="enter your email" type="" class="form-control"autocomplete="off"
                       style="border-top: 0; border-left: 0; border-right: 0; outline-style: none;" >
-                    <span id="useremail" class="text-danger font-weight-bold"></span>
+                    <span id="useremail" class="text-danger font-weight-bold">  <p id="msg" style="color: red; font-weight: bold;"></p></span>
                   </div>
                 </div>
               </div>
@@ -252,10 +250,10 @@
                     <input type="text" id="subject" placeholder="Your consideration" name="subject"
                       class="form-control" autocomplete="off"
                       style="border-top: 0; border-left: 0; border-right: 0; align-items: center;">
-                    <span id="subjects" class="text-danger font-weight-bold"></span>
+                    <span id="subjects" class="text-danger font-weight-bold"><p id="msg" style="color: red; font-weight: bold;"></p></span>
                   </div>
                 </div>
-
+ 
                 <div class="row">
                   <div class="col-lg-10">
                     <div class="md-form">
@@ -263,14 +261,14 @@
                       <textarea name="message" id="message" placeholder="message" rows="3"
                         class="form-control md-textarea" autocomplete="off"
                         style="border-top: 0; border-left: 0; border-right: 0;"></textarea>
-                      <span id="usermessage" class="text-danger font-weight-bold"></span>
+                      <span id="usermessage" class="text-danger font-weight-bold"><p id="msg" style="color: red; font-weight: bold;"></p></span>
                     </div>
                   </div>
                 </div>
                 <div class=" text-md-left mt-2">
-                  <input type="submit" name="submit" class="btn btn-primary" style="background-color:#ff9800;" id="btn"/>
+                  <input type="submit" name="submit" class="btn btn-primary" style="background-color:#ff9800;" />
                 </div>
-
+              </div>
 
               </div>
           </form>

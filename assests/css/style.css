@@ -4,10 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-/* body{
-    width: 100%;
-    heigh
-} */
+
+
 li.Raunaq{
     display: flex;
     justify-content: center;
@@ -37,10 +35,7 @@ img.logo{
     width: 100px;
     height: 100px;
 }
-div.mine{
-    background: url(https://www.princehotels.com/wp-content/uploads/2019/04/aboutslider3-1.jpg);
-    background-size: cover;
-}
+
 
 div.new{
     background-color: white;
@@ -213,6 +208,7 @@ div.mine{
 .testimonials{
     margin: 50px auto;
 
+
 }
 
 .testimonials .row{
@@ -225,7 +221,6 @@ div.mine{
 
 .profile{
     padding: 70px 10px 10px;
-    background-color: #efefef;
 }
 
 .profile img{
