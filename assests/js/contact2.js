@@ -1,6 +1,6 @@
 //ajax request for data insertion
 
-$("#btn").click(function(e){
+$("#btn").submit(function(e){
 
     e.preventDefault();
     let name = $("#name").val();

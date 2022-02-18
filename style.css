@@ -1,0 +1,37 @@
+img{
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    width: 1500px;
+    height:500px;
+}
+
+div.mine{
+    background: url(https://www.princehotels.com/wp-content/uploads/2019/04/aboutslider3-1.jpg);
+    background-size: cover;
+}
+
+div.new{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+img.h{
+    width: 300px;
+    height: 200px;
+    border: 2px #fff;
+    border-radius: 20px;
+}
+
+div.free{
+    border: 2px #fff;
+    border-radius: 20px;
+}

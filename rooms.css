@@ -1,0 +1,16 @@
+img{
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    width: 1500px;
+    height:500px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
