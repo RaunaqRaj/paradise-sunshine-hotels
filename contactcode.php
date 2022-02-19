@@ -1,5 +1,7 @@
 <?php
-      include 'connection.php';
+      include 'function.php';
+
+      // include 'connection.php';
 
       $data = stripslashes(file_get_contents("php://input"));
 
@@ -11,28 +13,28 @@
 
       //json_decode - it takes JSON string and converts it into a php object or array, if true then an associative array.
 
-      $name = mysqli_real_escape_string($conn,$mydata['name']);
-      $email = mysqli_real_escape_string($conn,$mydata['email']);
-      $subject = mysqli_real_escape_string($conn,$mydata['subject']);
-      $message = mysqli_real_escape_string($conn,$mydata['message']);
+      $name = xss_prevent($mydata['name']);
+      $email = xss_prevent($mydata['email']);
+      $subject =xss_prevent($mydata['subject']);
+      $message =xss_prevent($mydata['message']);
 
-      $name = htmlspecialchars($mydata['name']);
-      $email = htmlspecialchars($mydata['email']);
-      $subject = htmlspecialchars($mydata['subject']);
-      $message = htmlspecialchars($mydata['message']);
+      $name = sql_prevent($conn,$mydata['name']);
+      $email = sql_prevent($conn,$mydata['email']);
+      $subject =sql_prevent($conn,$mydata['subject']);
+      $message =sql_prevent($conn,$mydata['message']);
 
 
       if(!empty($name)&& !empty($email) && !empty($subject) && !empty($message)){
 
             if(preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$name)){
 
-                  echo "please enter a valid name";
+                  echo "<strong style='color : red;'>please enter a valid name</strong>";
 
             }
             else{
             if(!preg_match("/^[a-zA-Z]*$/",$name)){
 
-                  echo "name must be a character";
+                  echo "<strong style='color : red;'>name must be A-Z & a-z</strong>";
             }
       
             else{
@@ -40,7 +42,7 @@
 
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                   
-                  echo "invalid email address";
+                  echo "<strong style='color : red;'>invalid email address</strong>";
 
             }
             else{
@@ -49,14 +51,14 @@
             if($conn->query($sql)==TRUE){
                   echo "message has been sent succesfully";
             }else{
-                  echo "unable to send message";
+                  echo "<strong style='color : red;'>unable to send message</strong>";
             }
       }
       }
       }
       }     
       else{
-            echo "please fill the above details";
+            
       }
-
+      
 ?>

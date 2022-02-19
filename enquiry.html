@@ -222,7 +222,7 @@
 
       <div class="row" style="background: url(assests/images/3956344.jpg); padding: 50px; border-radius: 20px;">
         <div class="col-md-9 mb-md-0 mb-5" style="background-color: #fff; border-radius: 60px; padding: 40px; ">
-          <form id="myform">
+          <form id="myform" action="<?php echo $_SERVER[PHP_SELF] ?>">
             <p id="msg" style="color: green; font-weight: bold;"></p>
             <div class="row">
               <div class="col-md-10">
@@ -266,7 +266,7 @@
                   </div>
                 </div>
                 <div class=" text-md-left mt-2">
-                  <input type="submit" name="submit" class="btn btn-primary" style="background-color:#ff9800;" />
+                  <input type="submit" name="submit" class="btn btn-primary" style="background-color:#ff9800;" id="btn" />
                 </div>
               </div>
 
@@ -330,12 +330,12 @@
           <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
           <p style="color: white;">
             <i class="fas fa-home mx-3"></i>New Delhi, delhi, India.
-          <p style="color: white;">
+            <p style="color: white;"><a style="text-decoration: none; color: white;" href="mailto:someone@example.com">
             <i class="fas fa-envelope mx-3"></i>Paradise@gmail.com
-          </p>
-          <p style="color: white;">
+          </a></p>
+          <p style="color: white;"><a style="text-decoration: none; color: white;" href="callto:someone@example.com">
             <i class="fas fa-phone mx-3"></i>+91-7827540501
-          </p>
+          </a></p>
           </p>
         </div>
       </div>
