@@ -69,9 +69,6 @@ $("#myform").on("submit",function(e){
         success : function(data){
             $('#msg').fadeIn();
             $('#msg').html(data);
-            setTimeout(function(){
-                $('#msg').fadeOut(slow);
-            },4000);
             $('#myform')[0].reset();
         } ,       
 

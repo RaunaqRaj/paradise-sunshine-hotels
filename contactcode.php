@@ -5,7 +5,7 @@
 
       if(SERVER=="localhost"){
 
-      
+       
 
       $success = array("response"=>"your message is recieved", "fail"=>"your request is denied");
 
@@ -31,10 +31,10 @@
       $subject =xss_prevent($_POST['subject']);
       $message =xss_prevent($_POST['message']);
       
-      // $name = sql_prevent($conn,$mydata['name']);
-      // $email = sql_prevent($conn,$mydata['email']);
-      // $subject =sql_prevent($conn,$mydata['subject']);
-      // $message =sql_prevent($conn,$mydata['message']);
+      $name = sql_prevent($conn,$_POST['name']);
+      $email = sql_prevent($conn,$_POST['email']);
+      $subject =sql_prevent($conn,$_POST['subject']);
+      $message =sql_prevent($conn,$_POST['message']);
 
 
       if(!empty($name)&& !empty($email) && !empty($subject) && !empty($message)){
