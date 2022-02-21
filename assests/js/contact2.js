@@ -18,16 +18,16 @@ $("#myform").on("submit",function(e){
 
     if(name.length==''){
         $('#username').show();
-        $('#username').html("please fill the name");
+        $('#username').text("please fill the name");
         $('#username').css("color","red");
     }else{
-       
+       $('#username').hide();
     }
 
     let email = $("#email").val();
     if(email.length==''){
         $('#useremail').show();
-        $('#useremail').html("please fill the email");
+        $('#useremail').text("please fill the email");
         $('#useremail').css("color","red");
     }else{
 
@@ -36,7 +36,7 @@ $("#myform").on("submit",function(e){
     let subject = $("#subject").val();
     if(subject.length==''){
         $('#subjects').show();
-        $('#subjects').html("please describe the subject");
+        $('#subjects').text("please describe the subject");
         $('#subjects').css("color","red");
     }else{
 
@@ -44,35 +44,43 @@ $("#myform").on("submit",function(e){
     let message = $("#message").val();
     if(message.length==''){
         $('#usermessage').show();
-        $('#usermessage').html("please provide a message");
+        $('#usermessage').text("please provide a message");
         $('#usermessage').css("color","red");
     }else{
 
     }
    
+    
+  
 
     // console.log(name);
     // console.log(email);
     // console.log(subject);
     // console.log(message);
 
-    mydata = {name:name, email:email, subject:subject, message:message};
+
 
     $.ajax({
 
         url : 'contactcode.php',
         method : "POST",
-        data : JSON.stringify(mydata),
+        data : $('#myform').serialize(),
+
         success : function(data){
-            // console.log(data);
+            $('#msg').fadeIn();
+            $('#msg').html(data);
+            setTimeout(function(){
+                $('#msg').fadeOut(slow);
+            },4000);
+            $('#myform')[0].reset();
+        } ,       
 
-            msg = "<p>"+data+"</p>";
-            $("#msg").html(msg);
-
-            $("#myform")[0].reset();
-        },
-
+        error : function(data){
+            $('#err').fadeIn();
+            $('#err').html(data);
+        }
     })
 
 })
+
 });
