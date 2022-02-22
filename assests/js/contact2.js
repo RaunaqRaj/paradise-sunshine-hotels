@@ -1,83 +1,74 @@
-//ajax request for data insertion
-$(document).ready(function(){
-
-    $('#username').hide();
-    $('#useremail').hide();
-    $('#subjects').hide();
-    $('#usermessage').hide();
-
-    var user_err = true;
-    var email_err = true;
-    var subject_err = true;
-    var message_err = true;
-
-$("#myform").on("submit",function(e){
-
+/** @format */
+$("#contact_submit_loader").hide();
+$("#myform").on("submit", function (e) {
     e.preventDefault();
-    let name = $("#name").val();
-
-    if(name.length==''){
-        $('#username').show();
-        $('#username').text("please fill the name");
-        $('#username').css("color","red");
-    }else{
-       $('#username').hide();
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var subject = $("#subject").val();
+    var message = $("#message").val();
+    var error = false;
+    if (isEmpty(name)) {
+        error = true;
+        $('#name_error').text("Name should not be blank!");
+    } else {
+        $('#name_error').text("");
+    }
+    if (isEmpty(email)) {
+        error = true;
+        $('#email_error').text("E-mail should not be blank!");
+    } else {
+        $('#email_error').text("");
+    }
+    if (isEmpty(subject)) {
+        error = true;
+        $('#subject_error').text("Subject should not be blank!");
+    } else {
+        $('#subject_error').text("");
     }
 
-    let email = $("#email").val();
-    if(email.length==''){
-        $('#useremail').show();
-        $('#useremail').text("please fill the email");
-        $('#useremail').css("color","red");
-    }else{
-
+    if (isEmpty(message)) {
+        error = true;
+        $('#message_error').text("message should not be blank!");
+    } else {
+        $('#message_error').text("");
     }
-    
-    let subject = $("#subject").val();
-    if(subject.length==''){
-        $('#subjects').show();
-        $('#subjects').text("please describe the subject");
-        $('#subjects').css("color","red");
-    }else{
 
+    if (error) {
+        return false;
     }
-    let message = $("#message").val();
-    if(message.length==''){
-        $('#usermessage').show();
-        $('#usermessage').text("please provide a message");
-        $('#usermessage').css("color","red");
-    }else{
 
-    }
-   
-    
-  
-
-    // console.log(name);
-    // console.log(email);
-    // console.log(subject);
-    // console.log(message);
-
-
-
+    $("#btn").hide();
+    $("#contact_submit_loader").show();
     $.ajax({
-
-        url : 'contactcode.php',
-        method : "POST",
-        data : $('#myform').serialize(),
-
-        success : function(data){
-            $('#msg').fadeIn();
-            $('#msg').html(data);
-            $('#myform')[0].reset();
-        } ,       
-
-        error : function(data){
-            $('#err').fadeIn();
-            $('#err').html(data);
-        }
-    })
-
-})
-
+        type: "POST",
+        url: "contact.php",
+        data: $(this).serialize() + "&contact_submit=true",
+        cache: false,
+        success: function (response) {
+            $("#btn").show();
+            $("#contact_submit_loader").hide();
+            response = JSON.parse(response);
+            if (response.success === true) {
+                swal({
+                    icon: "success",
+                    title: "success",
+                    text: response.message
+                });
+                $('#myform')[0].reset();
+            } else {
+                for (const error in response.data) {
+                    $('#' + error + '_error').text(response.data[error]);
+                }
+            }
+        },
+        error: function (error) {
+            swal({
+                icon: "error",
+                title: "something went wrong",
+                text: response.message
+            });
+            $("#btn").show();
+            $("#contact_submit_loader").hide();
+        },
+    });
 });
