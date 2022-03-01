@@ -41,7 +41,7 @@ $("#myform").on("submit", function (e) {
     $("#contact_submit_loader").show();
     $.ajax({
         type: "POST",
-        url: "contact.php",
+        url: "php/contact.php",
         data: $(this).serialize() + "&contact_submit=true",
         cache: false,
         success: function (response) {
