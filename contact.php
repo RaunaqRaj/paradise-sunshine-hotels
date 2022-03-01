@@ -35,9 +35,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $sql = "INSERT INTO informations(name, email, subject,message)VALUES('$name','$email','$subject','$message')";
 
             if($conn->query($sql)== TRUE){
-                echo json_encode(array("success" => true, "message" => "Message has been successfully recieved."));
+                echo json_encode(array("success" => true, "message" => "Hello $name your message is recieved our team will get back to you."));
             }else{
-                echo json_encode(array("success" => true, "message" => "Message was not submitted"));
+                echo json_encode(array("success" => true, "message" => "Sorry! some error occured"));
             }
 
         } else {
