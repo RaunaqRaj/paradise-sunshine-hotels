@@ -1,9 +1,7 @@
-### Project work list
+### Raunaq Project work list
 
 
 
-- [ ] Download Admin panel
-- [ ] Login system of admin panel with user id encryption 
-- [ ] User check function
-- [ ] Responsive Website
-- [ ] Database table for user with type column
+- [x] Login system of admin panel with user id encryption 
+- [x] datatable ui
+- [x] admin panel management
