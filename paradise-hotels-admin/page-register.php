@@ -1,10 +1,9 @@
 <?php
 session_start();
-include 'php/function.php';
 if(isset($_SESSION['username'])){
     header('location:home.php');
 }
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 

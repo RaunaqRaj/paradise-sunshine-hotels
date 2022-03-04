@@ -1,9 +1,6 @@
 <?php 
-session_start();
-include 'php/function.php';
-if(!isset($_SESSION['username'])){
-    header('location:index.php');
-}
+// include 'php/function.php';
+
 ?>
 <?php include 'components/head_start.php' ?>
 

@@ -50,7 +50,7 @@ if(!isset($_SESSION['username'])){
                                 </a>
                                 
                                 <?php
-                                    echo $_SESSION['username'];                              
+                                   echo $_SESSION['username'];                              
                                 ?>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="php/logout.php" class="dropdown-item">
