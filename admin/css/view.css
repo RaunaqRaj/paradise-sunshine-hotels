@@ -1,0 +1,7 @@
+.view{
+    color : #000;
+}
+
+.view:hover{
+    color : blueviolet;
+}

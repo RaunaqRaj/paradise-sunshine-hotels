@@ -1,4 +1,5 @@
     <script src="./js/jquery.js"></script>
+    <script src="./js/contact-list.js"></script> 
     <script src="./js/register.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/sweetalert.min.js"></script>
