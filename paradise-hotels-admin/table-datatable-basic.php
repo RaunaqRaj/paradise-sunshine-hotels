@@ -111,7 +111,12 @@
                                                 <td>Raunaq Raj</td>
                                                 <td>raunaq@gmail.com</td>
                                                 <td>Regarding to booking a room</td>
-                                                <td><a href="view.php"><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button></a><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can"></i></button></td>
+                                                <td><a href="view.php?contact=1"><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button></a><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
+                                                 src="https://cdn.lordicon.com/qsloqzpf.json"
+                                                motion-type =hover-empty
+                                                trigger="loop"
+                                                style="width:20px;height:20px">
+                                                </lord-icon></button></td>
                                             </tr>
                                             <tr>
                                                 <td>1</td>

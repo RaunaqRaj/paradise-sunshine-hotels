@@ -1,4 +1,4 @@
-<script src="./js/jquery.js"></script>
+    <script src="./js/jquery.js"></script>
     <script src="./js/register.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/sweetalert.min.js"></script>
@@ -13,10 +13,11 @@
     <script src="./js/quixnav-init.js"></script>
     <script src="./js/custom.min.js"></script>
 
-<script src="./vendor/global/global.min.js"></script>
+    <script src="./vendor/global/global.min.js"></script>
     <script src="./js/quixnav-init.js"></script>
     <script src="./js/custom.min.js"></script>
-    
+    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+
 
     <!-- Summernote -->
     <script src="./vendor/summernote/js/summernote.min.js"></script>
