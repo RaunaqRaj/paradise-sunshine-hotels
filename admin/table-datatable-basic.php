@@ -22,6 +22,24 @@
     <div id="main-wrapper">
 
         <?php include 'components/header.php' ?>
+        <div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="MessageModalLabel">Message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-dark">Message</p>
+        <p class="text-dark">A guaranteed reservation means you've paid for your reservation in advance, and the hotel must hold the room for you. A confirmed reservation means that you have not yet paid, but the hotel agrees to hold a room for you based on some condition. For example, in a typical confirmed reservation, the hotel may agree to "hold the room for you until 8 p.m." on a specific day. If you show up before 8 p.m., then the hotel must give you a room, but if you fail to meet a condition, then the hotel does not have to offer you a room.If you've prepaid for your room, it is guaranteed and the hotel must give you the room you paid for, even if you show up late. If the hotel does not have a room for you, then it has breached your contract and must provide you with a reasonable substitute. This means that they may end up having to send you to another hotel, even if it is more expensive, and pay for the transportation - even the phone call to let people know you've switched hotels.</p>
+        <br>
+      </div>
+      <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success mx-2" data-bs-toggle="modal" data-bs-target="#ReplyModal"><i class="fa fa-reply mx-2"></i>Reply</button>
+      </div>
+    </div>
+  </div>
+</div>
         <button type="button" class="btn btn-primary" >Open modal for @getbootstrap</button>
 
         <div class="content-body">
@@ -108,10 +126,10 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Raunaq Raj</td>
+                                                <td><p class="text-dark"><a href="contact-view.php?contact=1">Raunaq Raj</a></p></td>
                                                 <td>raunaq@gmail.com</td>
                                                 <td>Regarding to booking a room</td>
-                                                <td><a href="view.php?contact=1"><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button></a><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
+                                                <td><button class="btn btn-outline-success mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#MessageModal"><i class="fa-solid fa-envelope"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
                                                  src="https://cdn.lordicon.com/qsloqzpf.json"
                                                 motion-type =hover-empty
                                                 trigger="loop"
@@ -123,34 +141,59 @@
                                                 <td>Master aadmi</td>
                                                 <td>raunaq@gmail.com</td>
                                                 <td>Regarding to booking a room</td>
-                                                <td><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can"></i></button></td>                                            </tr>
+                                                <td><button class="btn btn-outline-success mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#MessageModal"><i class="fa-solid fa-envelope"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
+                                                 src="https://cdn.lordicon.com/qsloqzpf.json"
+                                                motion-type =hover-empty
+                                                trigger="loop"
+                                                style="width:20px;height:20px">
+                                                </lord-icon></button></td>                                            </tr>
                                             <tr>
                                                 <td>1</td>
                                                 <td>Fkk</td>
                                                 <td>raunaq@gmail.com</td>
                                                 <td>Regarding to booking a room</td>
-                                                <td><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can"></i></button></td>
+                                                <td><button class="btn btn-outline-success mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#MessageModal"><i class="fa-solid fa-envelope"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
+                                                 src="https://cdn.lordicon.com/qsloqzpf.json"
+                                                motion-type =hover-empty
+                                                trigger="loop"
+                                                style="width:20px;height:20px">
+                                                </lord-icon></button></td>
                                             </tr>
                                             <tr>
                                                 <td>1</td>
                                                 <td>Skk</td>
                                                 <td>raunaq@gmail.com</td>
                                                 <td>Regarding to booking a room</td>
-                                                <td><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can"></i></button></td>
+                                                <td><button class="btn btn-outline-success mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#MessageModal"><i class="fa-solid fa-envelope"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
+                                                 src="https://cdn.lordicon.com/qsloqzpf.json"
+                                                motion-type =hover-empty
+                                                trigger="loop"
+                                                style="width:20px;height:20px">
+                                                </lord-icon></button></td>
                                             </tr>
                                             <tr>
                                                 <td>1</td>
                                                 <td>kaushal</td>
                                                 <td>raunaq@gmail.com</td>
                                                 <td>Regarding to booking a room</td>
-                                                <td><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can"></i></button></td>
+                                                <td><button class="btn btn-outline-success mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#MessageModal"><i class="fa-solid fa-envelope"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
+                                                 src="https://cdn.lordicon.com/qsloqzpf.json"
+                                                motion-type =hover-empty
+                                                trigger="loop"
+                                                style="width:20px;height:20px">
+                                                </lord-icon></button></td>
                                             </tr>
                                             <tr>
                                                 <td>1</td>
                                                 <td>lokesh </td>
                                                 <td>raunaq@gmail.com</td>
                                                 <td>Regarding to booking a room</td>
-                                                <td><button class="btn btn-outline-primary mt-2" style="color: #000;"><i class="fa-solid fa-eye"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can"></i></button></td>
+                                                <td><button class="btn btn-outline-success mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#MessageModal"><i class="fa-solid fa-envelope"></i></button><button class="btn mt-3 mx-2 mb-2 btn-outline-success" style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply"></i></button><button class="btn btn-outline-danger mt-2 mx-2" style=" color: #000;" data-bs-toggle="modal" data-bs-target="#exampleModal"><lord-icon
+                                                 src="https://cdn.lordicon.com/qsloqzpf.json"
+                                                motion-type =hover-empty
+                                                trigger="loop"
+                                                style="width:20px;height:20px">
+                                                </lord-icon></button></td>
                                             </tr>
                                     </table>
                                 </div>
