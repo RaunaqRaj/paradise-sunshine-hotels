@@ -1,7 +1,8 @@
 <?php
-session_start();
-if(!isset($_SESSION['username'])){
-    header('location:index.php');
+
+include 'php/function.php';
+if(!user_check($conn)){
+    header('location : index.php');
 }
 ?>
 
@@ -50,7 +51,7 @@ if(!isset($_SESSION['username'])){
                                 </a>
                                 
                                 <?php
-                                   echo $_SESSION['username'];                              
+                                   echo $_SESSION['user']['user_name'];                           
                                 ?>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="php/logout.php" class="dropdown-item">
