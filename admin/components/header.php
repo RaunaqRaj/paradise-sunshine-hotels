@@ -95,7 +95,7 @@ if(!isset($_SESSION['username'])){
                     <!-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
                         <ul aria-expanded="false"> -->
-                            <li><a href="table-datatable-basic.php"><i class="fa-solid fa-address-card"></i>Contact Us </a></li>
+                            <li><a href="contact-table.php"><i class="fa-solid fa-address-card"></i>Contact Us </a></li>
                         </ul>
                     </li>
 
