@@ -1,9 +1,6 @@
 <?php
 
 include 'function.php';
-
-
-
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['submit'])) {

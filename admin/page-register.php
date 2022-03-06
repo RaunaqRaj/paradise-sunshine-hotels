@@ -1,6 +1,7 @@
 <?php
-session_start();
-if(isset($_SESSION['username'])){
+include 'php/function.php';
+
+if(user_check($conn)){
     header('location:home.php');
 }
 ?> 

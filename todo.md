@@ -7,4 +7,5 @@
 - [ ] contact list : No data message if there is a error.
 - [ ] contact list : If page is loading show a loader.
 - [ ] contact list : JSON & create html in success function with for loop format data fetch.
-- [ ] main website : Create reservation form and its backend through ajax and php. 
+
+- [x] main website : Create reservation form and its backend through ajax and php. 

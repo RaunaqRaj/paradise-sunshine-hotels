@@ -1,7 +1,3 @@
-<?php 
-// include 'php/function.php';
-
-?>
 <?php include 'components/head_start.php' ?>
 
 
