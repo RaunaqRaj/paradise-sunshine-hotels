@@ -1,23 +1,49 @@
 <?php
 
-include 'connection.php';
+include 'function.php';
 
+if (!user_check($conn)) {
+    echo json_encode(array("success" => false, "message" => "User not logged in"));
+    die;
+}
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$query = "select id,name,email,subject from informations";
-$query_execute = mysqli_query($conn, $query);
-if (mysqli_num_rows($query_execute) > 0) {
-    $data = array();
-    while ($result = mysqli_fetch_array($query_execute)) {
-        $data[] =$result;
+        if (!isset($_POST['submit'])) {
+            echo json_encode(array("success" => false, "message" => "Method not found"));
+            die;
+        }
+        $submit = $_POST['submit'];
+        $submit = sql_prevent($conn, xss_prevent($_POST['submit']));
 
-}
-echo json_encode($data);
-}
+        switch ($submit) {
+            case 'contact-list':
+                $query = "select id,name,email,subject from informations";
+                $query_execute = mysqli_query($conn, $query);
 
-} else {
-    echo json_encode(array("success" => false, "message" => "Method not found"));
-}
-}
+                if (mysqli_num_rows($query_execute) > 0) {
+                    $data = array();
+                    while ($result = mysqli_fetch_array($query_execute)) {
+                        $data[] = $result;
+                    }
+                    echo json_encode(array("success" => true, "data" => $data));
+                } else {
+                    echo json_encode(array("success" => false, "data" => "No information found!"));
+                }
 
-?>
+                break;
+            case 'contact-delete':
+                break;
+            case 'contact-message':
+                
+                break;
+
+            default:
+                echo json_encode(array("success" => false, "message" => "Method not found"));
+                die;
+                break;
+        }
+
+    } else {
+        echo json_encode(array("success" => false, "message" => "Method not found"));
+    }
+}

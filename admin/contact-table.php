@@ -1,5 +1,6 @@
-<?php include 'components/head_start.php' ?>
-<?php include 'components/head_end.php' ?>
+<?php include 'components/head_start.php'?>
+<link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+<?php include 'components/head_end.php'?>
 
     <!--*******************
         Preloader start
@@ -21,7 +22,7 @@
     ***********************************-->
     <div id="main-wrapper">
 
-        <?php include 'components/header.php' ?>
+        <?php include 'components/header.php'?>
         <div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
@@ -31,7 +32,7 @@
       </div>
       <div class="modal-body">
         <p class="text-dark">Message</p>
-        <p class="text-dark">A guaranteed reservation means you've paid for your reservation in advance, and the hotel must hold the room for you. A confirmed reservation means that you have not yet paid, but the hotel agrees to hold a room for you based on some condition. For example, in a typical confirmed reservation, the hotel may agree to "hold the room for you until 8 p.m." on a specific day. If you show up before 8 p.m., then the hotel must give you a room, but if you fail to meet a condition, then the hotel does not have to offer you a room.If you've prepaid for your room, it is guaranteed and the hotel must give you the room you paid for, even if you show up late. If the hotel does not have a room for you, then it has breached your contract and must provide you with a reasonable substitute. This means that they may end up having to send you to another hotel, even if it is more expensive, and pay for the transportation - even the phone call to let people know you've switched hotels.</p>
+        <p class="text-dark"  id="message"></p>
         <br>
       </div>
       <div class="modal-footer">
@@ -58,14 +59,14 @@
                     </div>
                 </div>
 
-               
+
                 <!-- row -->
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Contact us</h4>
-                                
+
                 <div class="modal fade" id="ReplyModal" tabindex="-1" aria-labelledby="ReplyModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -110,7 +111,7 @@
     </div>
   </div>
 </div>
-                            </div>
+</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table id="example" class="display text-center" style="min-width: 845px; color:black;">
@@ -123,16 +124,15 @@
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="data">
-                                          
-                                          
+                                        <tbody id="contact-data">
+
+
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-
         <!--**********************************
             Content body end
         ***********************************-->
@@ -141,7 +141,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <?php include 'components/footer.php' ?>
+        <?php include 'components/footer.php'?>
 
         <!--**********************************
             Footer end
@@ -155,7 +155,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -165,9 +165,11 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <?php include 'components/script_start.php' ?>
+    <?php include 'components/script_start.php'?>
 
+    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./js/plugins-init/datatables.init.js"></script>
 
-    <?php include 'components/script_end.php' ?>
+    <?php include 'components/script_end.php'?>
 
 
