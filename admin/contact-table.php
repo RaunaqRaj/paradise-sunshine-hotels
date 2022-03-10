@@ -24,15 +24,15 @@
 
         <?php include 'components/header.php'?>
         <div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="MessageModalLabel">Message</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body"  id="contact-message">
         <p class="text-dark">Message</p>
-        <p class="text-dark"  id="message"></p>
+        <p class="text-dark"></p>
         <br>
       </div>
       <div class="modal-footer">
@@ -166,7 +166,6 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./js/plugins-init/datatables.init.js"></script>
 

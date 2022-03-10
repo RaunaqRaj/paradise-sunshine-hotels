@@ -1,7 +1,7 @@
 <?php
 
 include 'php/function.php';
-if(!user_check($conn)){
+if (!user_check($conn)) {
     header('location : index.php');
 }
 ?>
@@ -44,15 +44,15 @@ if(!user_check($conn)){
                         </div>
 
                         <ul class="navbar-nav header-right" style="color : black;">
-                          
+
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                     <i class="mdi mdi-account"></i>
                                 </a>
-                                
+
                                 <?php
-                                   echo $_SESSION['user']['user_name'];                           
-                                ?>
+echo $_SESSION['user']['user_name'];
+?>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="php/logout.php" class="dropdown-item">
                                         <i class="icon-key"></i>
