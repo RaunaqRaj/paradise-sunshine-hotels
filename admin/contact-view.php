@@ -267,7 +267,7 @@ if (!isset($_GET['contact'])) {
                                                         <div class="table-responsive">
                                     <table id="example" class="display" style="min-width: 845px; color:black;">
                                         <thead>
-                                            <tr>
+                                             <tr>
                                                 <th>S no</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
