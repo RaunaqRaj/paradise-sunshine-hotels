@@ -17,11 +17,12 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
         switch ($submit) {
             case 'contact-list':
-                $query = "select id,name,email,subject from informations";
+                $query = "select id,name,email,subject,created_at from informations";
                 $query_execute = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();
+                    $result = mysqli_fetch_array($query_execute , MYSQLI_ASSOC);
                     while ($result = mysqli_fetch_array($query_execute)) {
                         $data[] = $result;
                     }
@@ -32,9 +33,30 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 break;
             case 'contact-delete':
+                $id = $_POST['id'];
+                $query = "DELETE FROM informations where id='$id'";
+                $query_execute = mysqli_query($conn, $query);
+                if ($query_execute) {
+                    echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
+                } else {
+                    echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                }
                 break;
             case 'contact-message':
-                
+                $id = $_POST['id'];
+                $query = "SELECT message FROM informations where id='$id' ORDER BY created_at DESC";
+                $query_execute = mysqli_query($conn, $query);
+                if (mysqli_num_rows($query_execute) > 0) {
+                    $message = array();
+                    while ($result = mysqli_fetch_array($query_execute,MYSQLI_ASSOC)) {
+                        $message[] = $result;
+                    }
+                    echo json_encode(array("success" => true, "data" => $message));
+                } else {
+                    $message[] = "No information found!";
+                    echo json_encode(array("success" => false, "message" => $message));
+                }
+            
                 break;
 
             case 'contact-previous':
@@ -43,7 +65,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 $query_execute = mysqli_query($conn, $query);
                 if (mysqli_num_rows($query_execute) > 0) {
                     $previous_data = array();
-                    while ($result = mysqli_fetch_array($query_execute)) {
+                    while ($result = mysqli_fetch_array($query_execute,MYSQLI_ASSOC)) {
                         $previous_data[] = $result;
                     }
                     echo json_encode(array("success" => true, "data" => $previous_data));

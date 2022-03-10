@@ -32,7 +32,7 @@
       </div>
       <div class="modal-body"  id="contact-message">
         <p class="text-dark">Message</p>
-        <p class="text-dark"></p>
+        <p class="text-dark" id="message"></p>
         <br>
       </div>
       <div class="modal-footer">
@@ -41,9 +41,8 @@
     </div>
   </div>
 </div>
-        <button type="button" class="btn btn-primary" >Open modal for @getbootstrap</button>
 
-        <div class="content-body">
+        <div class="content-body"  id="nodata">
             <div class="container-fluid">
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
@@ -101,9 +100,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <input type="hidden" id="contact_delete">
         <p class="text-dark">Are you sure you want to delete this Message?</p>
 <br>
-        <button type="button" class="btn btn-danger mx-2">yes</button>
+        <button type="button" id="delete" class="btn btn-danger mx-2">yes</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
       </div>
       <div class="modal-footer">
@@ -168,7 +168,7 @@
     <?php include 'components/script_start.php'?>
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./js/plugins-init/datatables.init.js"></script>
-
+    <script src="./js/font-awesome.js"></script>
     <?php include 'components/script_end.php'?>
 
 

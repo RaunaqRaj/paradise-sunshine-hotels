@@ -162,7 +162,7 @@ if (!isset($_GET['contact'])) {
             Content body start
         ***********************************-->
 
-        <div class="content-body">
+        <div class="content-body" id="nodata">
             <div class="container-fluid">
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">

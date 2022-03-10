@@ -3,6 +3,7 @@
     <script src="./js/register.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/font-awesome.js"></script>
     <script src="./vendor/global/global.min.js"></script>
     <script src="./js/quixnav-init.js"></script>
     <!--endRemoveIf(production)-->
@@ -105,7 +106,7 @@
 
 
     <script src="./js/dashboard/dashboard-1.js"></script>
-    <script src="https://kit.fontawesome.com/76d2de9cd5.js" crossorigin="anonymous"></script>
+
     <script src="./vendor/global/global.min.js"></script>
     <script src="./js/quixnav-init.js"></script>
     <script src="./js/custom.min.js"></script>
