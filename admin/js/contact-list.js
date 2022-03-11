@@ -18,7 +18,7 @@ $(document).ready(function () {
         data:{ submit: 'contact-delete', id: id},
            success: function(response){
                $('#exampleModal').modal('hide');
-               if(response.success){
+               if(response.success===true){
                 Toastify({
                     text: response.message,
                     className: "info",
@@ -28,11 +28,13 @@ $(document).ready(function () {
                   }).showToast();
                 getdata();
                }else{
-                swal({
-                    icon: "error",
-                    title: "error",
-                    text: response.message
-                });
+                Toastify({
+                    text: response.message,
+                    className: "info",
+                    style: {
+                    background: "#ff4e21",
+                    }
+                  }).showToast();
                }
                
            }
