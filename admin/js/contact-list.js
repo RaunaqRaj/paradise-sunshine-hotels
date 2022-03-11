@@ -1,4 +1,10 @@
+$("#loader").show();
+$("#example").hide();
+$("#previous_loader").show();
 $(document).ready(function () {
+    $("#loader").hide();
+    $("#example").show();
+    $("#previous_loader").hide();
     getdata();
     //delete modal//
     $('#delete').click(function(e){
@@ -13,11 +19,13 @@ $(document).ready(function () {
            success: function(response){
                $('#exampleModal').modal('hide');
                if(response.success){
-                swal({
-                    icon: "success",
-                    title: "success",
-                    text: response.message
-                });
+                Toastify({
+                    text: response.message,
+                    className: "info",
+                    style: {
+                    background: "#000",
+                    }
+                  }).showToast();
                 getdata();
                }else{
                 swal({
@@ -26,14 +34,15 @@ $(document).ready(function () {
                     text: response.message
                 });
                }
+               
            }
+           
         });
     });
      $(document).on( 'click', '.delete', function () {
         var id =$(this).attr('data-id');
         $('#contact_delete').val(id);
         $("#exampleModal").modal('show');
-       
 });
 
     //message modal//

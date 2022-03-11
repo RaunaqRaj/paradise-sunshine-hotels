@@ -42,7 +42,7 @@
   </div>
 </div>
 
-        <div class="content-body"  id="nodata">
+        <div class="content-body">
             <div class="container-fluid">
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
@@ -104,7 +104,7 @@
         <p class="text-dark">Are you sure you want to delete this Message?</p>
 <br>
         <button type="button" id="delete" class="btn btn-danger mx-2">yes</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal">No</button>
       </div>
       <div class="modal-footer">
       </div>
@@ -112,7 +112,10 @@
   </div>
 </div>
 </div>
-                            <div class="card-body">
+                            <div class="card-body" id="nodata"> 
+                            <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="loader" role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
                                 <div class="table-responsive">
                                     <table id="example" class="display text-center" style="min-width: 845px; color:black;">
                                         <thead>

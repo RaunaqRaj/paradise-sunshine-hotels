@@ -3,6 +3,7 @@
     <script src="./js/register.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/toastr.js"></script>
     <script src="./js/font-awesome.js"></script>
     <script src="./vendor/global/global.min.js"></script>
     <script src="./js/quixnav-init.js"></script>

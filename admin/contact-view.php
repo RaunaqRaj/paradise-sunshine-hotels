@@ -261,6 +261,9 @@ if (!isset($_GET['contact'])) {
                                                 </div>
 
                                             <div id="about-me" class="tab-pane fade">
+                                            <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="previous_loader" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                            </div>
                                                 <div class="profile-about-me">
                                                     <div class="pt-4 border-bottom-1 pb-4">
                                                         <h4 class="text-primary">All previous contacts</h4>

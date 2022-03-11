@@ -17,6 +17,7 @@
     <link href="./css/style.css" rel="stylesheet">
     <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="./vendor/summernote/summernote.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/toastr.css">
     <!-- Daterange picker -->
     <link href="./vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Clockpicker -->
