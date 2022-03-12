@@ -7,16 +7,19 @@ $(document).ready(function () {
     $("#previous_loader").hide();
     getdata();
     //delete modal//
-    $('#delete').click(function(e){
+    $('#update').click(function(e){
         e.preventDefault();
-        var id = $('#contact_delete').val();
+        output="";
+        var id = $('#status_update').val();
+        var status = $('#status').val();
+        // alert(reservation_status);
          $.ajax({
-        url: "php/contact-list.php",
+        url: "php/reservation.php",
         type: "POST",
         dataType: "json",
-        data:{ submit: 'contact-delete', id: id},
+        data:{ submit: 'reservation-update', id: id,status:status},
            success: function(response){
-               $('#exampleModal').modal('hide');
+               $('#UpdateModal').modal('hide');
                if(response.success===true){
                 Toastify({
                     text: response.message,
@@ -29,8 +32,13 @@ $(document).ready(function () {
                     duration : 3000,
                     oldestFirst : true
                   }).showToast();
-                getdata();
-                getpreviousdata();
+                  page = "reservation.php";
+                  if(page=="reservation.php"){
+                  getdata();
+                  $('#reservation-data').html();
+                  }else{
+                    getpreviousdata();
+                  }
                }else{
                 Toastify({
                     text: response.message,
@@ -40,34 +48,20 @@ $(document).ready(function () {
                     }
                   }).showToast();
                }
-               
+              
+              
            }
            
         });
     });
-     $(document).on( 'click', '.delete', function () {
+     $(document).on( 'click', '.update', function () {
         var id =$(this).attr('data-id');
-        $('#contact_delete').val(id);
-        $("#exampleModal").modal('show');
+        var status =$(this).attr('data-status');
+        $('#status_update').val(id);
+        $("#UpdateModal").modal('show');
+        var status = $('#status').val(status);
 });
 
-    //message modal//
-    $('#example tbody').on( 'click', '.select', function () {
-
-        var id =$(this).attr('data-id');
-
-        $.ajax({
-        url: "php/contact-list.php",
-        type: "POST",
-        dataType: "json",
-        data:{ submit: 'contact-message', id: id},
-           success: function(response){
-               if(response.success){
-                   $("#message").text(response.data[0].message);
-               }
-           }
-        });
-});
 
 
    //contact-list Table//
@@ -76,14 +70,14 @@ $(document).ready(function () {
     output_error = "";
     
    $.ajax({
-        url: "php/contact-list.php",
+        url: "php/reservation.php",
         type: "POST",
         dataType: "json",
-        data: { submit: 'contact-list' },
+        data: { submit: 'reservation-list' },
         success: function (response) {
             if (response.success) {
           var output= get_contact_list_html(response.data);
-                $("#contact-data").html(output);
+                $("#reservation-data").html(output);
             } else {
                 output_error +=`
                 <div class="authincation h-100">
@@ -117,44 +111,48 @@ $(document).ready(function () {
 
    function get_contact_list_html(contacts){
     previous = "";
-    contacts.forEach((contact, index) => {
+    contacts.forEach((reservation, index) => {
         previous += `
         <tr>
         <td class="user_id">${index+1}</td>
-        <td><a href='contact-view.php?contact=${contact.id}'><style>a{
+        <td><a href='reservation-view.php?reservation=${reservation.id}'><style>a{
             color : black;
         }
         a:hover{
             color : blue;
         }
         </style>
-        ${contact.name}</td>
-        <td>${contact.email}</td>
-        <td>${contact.subject}</td>
+        ${reservation.name}</td>
+        <td>${reservation.email}</td>
+        <td>${reservation.room}</td>
+        <td>${reservation.checkin}</td>
+        <td>${reservation.checkout}</td>
+        <td>${reservation.status}</td>
+        <td>${reservation.created_at}</td>
         <td>
-        <button id='message' data-id=${contact.id} class='btn btn-outline-primary select mt-2 mx-1' name = "messagebutton" style=' color: #000;' data-bs-toggle='modal' data-bs-target='#MessageModal'><i class='fa-solid fa-envelope'></i></button><button class='btn  mt-3 mx-1 mb-2 btn-outline-success' style='color: #000;'data-bs-toggle='modal' data-bs-target='#ReplyModal' data-bs-whatever='@getbootstrap'><i class='fa-solid fa-reply'></i></button><button data-id=${contact.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
+       <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-status=${reservation.status} data-id=${reservation.id} ><i class='fa-solid fa-pen'></i></button>
         </td>
     </tr>
 `;
     });
     return previous;
    }
-    //previous contact table//
+    // previous contact table//
     getpreviousdata();
     function getpreviousdata(){
-    $("#previous-contacts").on("click", function () {
+    $("#previous-reservations").on("click", function () {
        
         previous_error = "";
         $.ajax({
-            url: "php/contact-list.php",
+            url: "php/reservation.php",
             type: "POST",
             dataType: "json",
-            data: { submit: 'contact-previous', email: contact_email },
+            data: { submit: 'reservation-previous', email: reservation_email },
             success: function (response) {
                 if (response.success) {
-                 var contact_list =  get_contact_list_html(response.data);
+                 var reservation_list =  get_contact_list_html(response.data);
                 
-                    $("#previous_data").html(contact_list);
+                    $("#previous_data").html(reservation_list);
                 } else {
                     previous_error +=`
                     <div class="authincation h-100">
@@ -187,6 +185,8 @@ $('#example').DataTable({
     search: {
         return: true
     }
+});
+$('#previous_reservations').DataTable({
 });
 });
 

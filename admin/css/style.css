@@ -76,7 +76,7 @@
 
 .gradient-2 {
   background: #4dedf5;
-  background: -moz-linear-gradient(top, #4dedf5 0%, #480ceb 100%);
+  background: -moz-linear-gradient(top, #4dedf5 0%, #f0a907 100%);
   background: -webkit-linear-gradient(top, #4dedf5 0%, #480ceb 100%);
   background: linear-gradient(to bottom, #4dedf5 0%, #480ceb 100%) !important;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dedf5', endColorstr='#480ceb',GradientType=0 ); }
@@ -8060,7 +8060,7 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #343957;
+  background-color: #fabe69;
   transition: all .2s ease;
   z-index: 4; }
   .nav-header .logo-abbr {
@@ -10315,7 +10315,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   top: 5rem;
   padding-top: 0;
   z-index: 2;
-  background-color: #343957;
+  background-color: #c700c1;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all .2s ease; }
   .quixnav .quixnav-scroll {
@@ -10350,7 +10350,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       .quixnav .metismenu > li > a {
         color: #bdbdc7; }
       .quixnav .metismenu > li:hover > a, .quixnav .metismenu > li:focus > a, .quixnav .metismenu > li.mm-active > a {
-        background-color: #6b51df;
+        background-color: #c700c1;
         color: #fff; }
       .quixnav .metismenu > li.mm-active ul {
         background-color: rgba(88, 115, 254, 0.04); }
@@ -10359,7 +10359,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
     .quixnav .metismenu li {
       position: relative; }
     .quixnav .metismenu ul {
-      background-color: #1c0f54;
+      background-color: #fcb762;
       transition: all .2s ease-in-out; }
       .quixnav .metismenu ul a {
         padding-left: 54px;
@@ -16840,6 +16840,10 @@ table.dataTable.display tbody td {
   table.dataTable.display tbody td {
     border-color: #424D63; }
 
+
+  #example{
+    overflow: hidden;
+  }
 .fooicon {
   font-size: 1.25rem;
   color: #454545; }

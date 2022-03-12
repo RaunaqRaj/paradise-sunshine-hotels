@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.theme.default.min.css">
     <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
-    <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet"> -->
     <link href="./vendor/summernote/summernote.css" rel="stylesheet">
     <link rel="stylesheet" href="css/toastr.css">
     <!-- Daterange picker -->
