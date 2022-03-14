@@ -188,6 +188,10 @@ $('#example').DataTable({
         return: true
     }
 });
+
+$('#single-contact').DataTable({
+    
+});
 });
 
 

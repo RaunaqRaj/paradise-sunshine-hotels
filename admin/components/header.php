@@ -81,11 +81,27 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="./home.php" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i>Dashboard</a></li>
                             </li>
+                            <li class="nav-label first">Staff</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./staff_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Staff</a></li>
+                            </li>
+                            <li class="nav-label first">Customers</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./customer_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Customers</a></li>
+                            </li>
+
+                            <li class="nav-label first">Rooms-List</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./room_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-couch"></i>Room List</a></li>
+                            </li>
+
                             <li class="nav-label first">User Reservations</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
-                            <li><a href="./reservation.php" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-single-04"></i>Reservations</a></li>
+                            <li><a href="./reservation.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-bookmark"></i>Reservations</a></li>
                             </li>
                    
                      <li class="nav-label">User contact</li>

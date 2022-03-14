@@ -2,25 +2,11 @@
 $("#contact_submit_loader").hide();
 $("#myform").on("submit", function (e) {
     e.preventDefault();
-    var name = $("#name").val();
-    var email = $("#email").val();
     var room = $("#room").val();
     var checkin = $("#check-in").val();
     var checkout = $("#check-out").val();
 
     var error = false;
-    if (isEmpty(name)) {
-        error = true;
-        $('#name_error').text("Name should not be blank!");
-    } else {
-        $('#name_error').text("");
-    }
-    if (isEmpty(email)) {
-        error = true;
-        $('#email_error').text("E-mail should not be blank!");
-    } else {
-        $('#email_error').text("");
-    }
     if (isEmpty(room)) {
         error = true;
         $('#room_error').text("please Select a room!");

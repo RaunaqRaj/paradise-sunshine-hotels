@@ -52,7 +52,7 @@ if (!isset($_GET['contact'])) {
         Main wrapper start
     ***********************************-->
     <div id="main-wrapper">
-<div class="nav-header">
+    <div class="nav-header">
             <a href="home.php" class="brand-logo">
                 <img class="logo-abbr" src="./images/P-removebg-preview.png" style="width: 300px; height : 100px;" alt="">
                 <img class="logo-compact" src="./images/logo-text2.png" style="width:300px;" alt="">
@@ -92,13 +92,13 @@ if (!isset($_GET['contact'])) {
                         <ul class="navbar-nav header-right" style="color : black;">
 
                             <li class="nav-item dropdown header-profile">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                <a class="nav-link" id="user" href="#" role="button" data-toggle="dropdown">
                                     <i class="mdi mdi-account"></i>
                                 </a>
 
                                 <?php
-                                    echo $_SESSION['user']['user_name'];
-                                ?>
+echo $_SESSION['user']['user_name'];
+?>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="php/logout.php" class="dropdown-item">
                                         <i class="icon-key"></i>
@@ -127,17 +127,29 @@ if (!isset($_GET['contact'])) {
                             <li><a href="./home.php" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i>Dashboard</a></li>
                             </li>
-                    <!-- <li class="nav-label">Forms</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-form"></i><span class="nav-text">Forms</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./form-element.php">Form Elements</a></li>
-                            <li><a href="./form-wizard.php">Wizard</a></li>
-                            <li><a href="./form-editor-summernote.php">Summernote</a></li>
-                            <li><a href="form-pickers.php">Pickers</a></li>
-                            <li><a href="form-validation-jquery.php">Jquery Validate</a></li>
-                        </ul>
-                    </li> -->
+                            <li class="nav-label first">Staff</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./staff_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Staff</a></li>
+                            </li>
+                            <li class="nav-label first">Customers</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./customer_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Customers</a></li>
+                            </li>
+
+                            <li class="nav-label first">Rooms-List</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./room_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-couch"></i>Room List</a></li>
+                            </li>
+
+                            <li class="nav-label first">User Reservations</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./reservation.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-bookmark"></i>Reservations</a></li>
+                            </li>
+                   
                      <li class="nav-label">User contact</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
@@ -368,6 +380,7 @@ if (!isset($_GET['contact'])) {
     <?php include 'components/script_start.php'?>
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./js/plugins-init/datatables.init.js"></script>
+    <script src="./js/contact-list.js"></script>
     <script>
         var contact_email = "<?php echo $message['email'] ?>";
     </script>

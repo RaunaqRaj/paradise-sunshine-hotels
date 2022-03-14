@@ -77,18 +77,18 @@
                               <span class="visually-hidden">Loading...</span>
                             </div> -->
                                 <div class="table-responsive">
-                                    <table id="example" class="display text-center  table-striped" style="min-width: 845px; color:black;">
-                                        <thead>
+                                    <table id="example" class="display text-center table-striped " style="min-width: 845px; color:black;">
+                                        <thead class="table-primary">
                                             <tr>
-                                                <th>S no</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Room</th>
-                                                <th>check-in</th>
-                                                <th>check-out</th>
-                                                <th>Status</th>
-                                                <th>created_at</th>
-                                                <th>Actions</th>
+                                                <th class="text-dark">Sno</th>
+                                                <th class="text-dark">Name</th>
+                                                <th class="text-dark">Email</th>
+                                                <th class="text-dark">Room</th>
+                                                <th class="text-dark">check-in</th>
+                                                <th class="text-dark">check-out</th>
+                                                <th class="text-dark">Status</th>
+                                                <th class="text-dark">created_at</th>
+                                                <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody id="reservation-data">

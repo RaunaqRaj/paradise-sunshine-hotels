@@ -37,7 +37,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 $query = "UPDATE reservation SET status = '$status' WHERE id ='$id' ";
                 $query_execute = mysqli_query($conn, $query);
                 if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "Record Edited successfully"));
+                    echo json_encode(array("success" => true, "message" => "Status Updated successfully"));
                 } else {
                     echo json_encode(array("success" => false, "message" => "Some error Occured"));
                 }

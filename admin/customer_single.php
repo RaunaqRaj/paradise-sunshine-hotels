@@ -6,16 +6,16 @@ if (!user_check($conn)) {
     header('location : index.php');
 }
 
-if (!isset($_GET['reservation'])) {
-    header('location : reservation.php');
+if (!isset($_GET['contact'])) {
+    header('location : contact-table.php');
 } else {
-    $id = $_GET['reservation'];
-    $check_id = "select id from reservation where id = $id";
+    $id = $_GET['contact'];
+    $check_id = "select id from informations where id = $id";
     $query = mysqli_query($conn, $check_id);
     $result = mysqli_num_rows($query);
 
     if ($result > 0) {
-        $sql = "select * from reservation where id = $id";
+        $sql = "select * from informations where id = $id";
         $result = mysqli_query($conn, $sql);
         $message = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -23,7 +23,7 @@ if (!isset($_GET['reservation'])) {
         }
 
     } else {
-        header('location : reservation.php');
+        header('location : contact-table.php');
     }
 }
 ?>
@@ -165,7 +165,14 @@ echo $_SESSION['user']['user_name'];
             </div>
 
 
-        </div>        <!--**********************************
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->        <!--**********************************
             Sidebar end
         ***********************************-->
 
@@ -178,7 +185,7 @@ echo $_SESSION['user']['user_name'];
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Reservations Details</h4>
+                            <h4>Contact Details</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -224,30 +231,70 @@ echo $_SESSION['user']['user_name'];
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="UpdateModal" tabindex="-1" aria-labelledby="ReplyModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ReplyModalLabel">Update Status</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Delete This Message?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="contact_delete">
+        <p class="text-dark">Are you sure you want to delete this Message?</p>
+<br>
+        <button type="button" id="delete" class="btn btn-danger mx-2">yes</button>
+        <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="MessageModalLabel">Message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"  id="contact-message">
+        <p class="text-dark">Message</p>
+        <p class="text-dark" id="message"></p>
+        <br>
+      </div>
+      <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success mx-2" data-bs-toggle="modal" data-bs-target="#ReplyModal"><i class="fa fa-reply mx-2"></i>Reply</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="ReplyModal" tabindex="-1" aria-labelledby="ReplyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ReplyModalLabel">Reply</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form>
           <div class="mb-3">
-              <input type="hidden" id="status_update">
-            <label for="recipient-name" class="col-form-label text-dark">Status</label>
-            <input type="text" class="form-control" name="status" id="status" id="recipient-name">
+            <label for="recipient-name" class="col-form-label text-dark">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label text-dark">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="update" class="btn btn-outline-success">save</button>
+        <button type="button" class="btn btn-outline-success">Reply</button>
       </div>
     </div>
   </div>
 </div>
-
                     <div class="col-lg-12">
                         <div class="card" style="height: 900px">
                             <div class="card-body" id="nodata">
@@ -256,19 +303,15 @@ echo $_SESSION['user']['user_name'];
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item"><a href="#my-posts" data-toggle="tab" class="nav-link active show">Details</a>
                                             </li>
-                                            <li class="nav-item" id="previous-reservations"><a href="#about-me" data-toggle="tab" class="nav-link">Previous Reservations</a>
+                                            <li class="nav-item" id="previous-contacts"><a href="#about-me" data-toggle="tab" class="nav-link">All Previous Request</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content" style="height: 600px;" >
                                             <div id="my-posts" style="height: 600px;" class="tab-pane fade active show">
                                                 <div class="my-post-content pt-1" style="height: 600px">
                                                     <div class="post-input" style="height: 600px">
-                                                    <p class="mt-4 text-dark">
-                                                    <h4>Room Type :   <p> <?php echo $message['room'];?></p></h4>
-                                                    <h4>Status:  <p> <?php echo $message['status'] ;?></p></h4>
-                                                    <h4>Check-in:  <p> <?php  echo $message['checkin'];?></p></h4>
-                                                    <h4>Check-out:  <p> <?php echo $message['checkout'];?></p></h4>
-                                                    <h4>Created_at:  <p> <?php echo $message['created_at'];?></p></h4>
+                                                    <p class="mt-4 text-dark"><?php echo $message['message'] ?></p>
+                                                    <button class="btn mt-3 mx-2 mb-2 btn-outline-success " style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply mx-1"></i>Reply</button>
                                                 </div>
                                                 </div>
                                                 </div>
@@ -279,20 +322,16 @@ echo $_SESSION['user']['user_name'];
                                             </div>
                                                 <div class="profile-about-me">
                                                     <div class="pt-4 border-bottom-1 pb-4">
-                                                        <h4 class="text-primary">All previous Registrations</h4>
+                                                        <h4 class="text-primary">All previous contacts</h4>
                                                         <div class="table-responsive">
-                                    <table id="previous_reservations" class="display" style="min-width: 845px; color:black;">
+                                    <table id="example" class="display" style="min-width: 845px; color:black;">
                                         <thead>
                                              <tr>
-                                             <th>S no</th>
+                                                <th>S no</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Room</th>
-                                                <th>check-in</th>
-                                                <th>check-out</th>
-                                                <th>Status</th>
-                                                <th>created_at</th>
-                                                <th>Actions</th>
+                                                <th>Subject</th>
+                                                <th>Created_at</th>
                                             </tr>
                                         </thead>
                                         <tbody id="previous_data">
@@ -345,11 +384,10 @@ echo $_SESSION['user']['user_name'];
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-    <script src="./js/reservation.js"></script>
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./js/plugins-init/datatables.init.js"></script>
     <script>
-        var reservation_email = "<?php echo $message['email'] ?>";
+        var contact_email = "<?php echo $message['email'] ?>";
     </script>
 
     <?php include 'components/script_end.php'?>

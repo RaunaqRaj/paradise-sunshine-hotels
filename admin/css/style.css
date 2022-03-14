@@ -10315,7 +10315,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   top: 5rem;
   padding-top: 0;
   z-index: 2;
-  background-color: #c700c1;
+  background-color: #6426ff;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all .2s ease; }
   .quixnav .quixnav-scroll {
@@ -19373,7 +19373,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
     color: #fff; }
 
 [data-theme-version="dark"] .quixnav {
-  background-color: #2A2C32; }
+  background-color: #fff; }
   [data-theme-version="dark"] .quixnav .metismenu > li > a {
     color: #b3b3b3; }
   [data-theme-version="dark"] .quixnav .metismenu > li:hover > a, [data-theme-version="dark"] .quixnav .metismenu > li:focus > a, [data-theme-version="dark"] .quixnav .metismenu > li.mm-active > a {
