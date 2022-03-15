@@ -2,9 +2,9 @@
 
 
 
-- [ ] Customer-list.php
-- [ ] Customer_single.php
-- [ ] Add_Customer.php
+- [x] Customer-list.php
+- [x] Customer_single.php
+- [x] Add_Customer.php
 - [ ] Staff_type-list.php(add,delete,update).
 - [ ] Staff-list.php(add,delete,update).
 - [ ] Staff_single.php
