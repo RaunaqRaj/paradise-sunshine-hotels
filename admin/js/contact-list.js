@@ -183,15 +183,6 @@ $(document).ready(function () {
     
     });
 }
-$('#example').DataTable({
-    search: {
-        return: true
-    }
-});
-
-$('#single-contact').DataTable({
-    
-});
 });
 
 

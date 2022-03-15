@@ -82,18 +82,35 @@
                                             <tr>
                                                 <th class="text-dark">Sno</th>
                                                 <th class="text-dark">Name</th>
-                                                <th class="text-dark">Email</th>
-                                                <th class="text-dark">Room</th>
-                                                <th class="text-dark">check-in</th>
-                                                <th class="text-dark">check-out</th>
-                                                <th class="text-dark">Status</th>
                                                 <th class="text-dark">created_at</th>
-                                                <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="reservation-data">
-                                         
-
+                                        <tbody>
+                                        <tr>
+                                                <td>1</td>
+                                                <td><a href="room_single.php">presidential Suite</a></td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><a href="room_single.php">presidential Suite</a></td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><a href="room_single.php">presidential Suite</a></td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><a href="room_single.php">presidential Suite</a></td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><a href="room_single.php">presidential Suite</a></td>
+                                                <td>22-03-2022</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -136,9 +153,9 @@
     <script src="./js/reservation.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> -->
-    <!-- <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="./js/plugins-init/datatables.init.js"></script> -->
-    <script src="./js/datatable.js"></script>
+    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./js/plugins-init/datatables.init.js"></script>
+    <!-- <script src="./js/datatable.js"></script> -->
     <script src="./js/font-awesome.js"></script>
     <?php include 'components/script_end.php'?>
 

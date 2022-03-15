@@ -89,8 +89,13 @@ echo $_SESSION['user']['user_name'];
                             <li class="nav-label first">Customers</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
-                            <li><a href="./customer_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Customers</a></li>
-                            </li>
+                                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text">Customers</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="add_customer.php"><i class="fa-solid fa-user-plus"></i>Add_customer</a></li>
+                            <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>All customers</a></li>
+                        </ul>
+                    </li>
 
                             <li class="nav-label first">Rooms-List</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i

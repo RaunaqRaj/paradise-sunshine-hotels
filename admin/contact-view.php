@@ -325,7 +325,7 @@ echo $_SESSION['user']['user_name'];
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Subject</th>
-                                                <th>Created_at</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody id="previous_data">

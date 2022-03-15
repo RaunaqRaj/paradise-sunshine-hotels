@@ -2,17 +2,27 @@
 
 
 
+- [ ] Customer-list.php
+- [ ] Customer_single.php
+- [ ] Add_Customer.php
+- [ ] Staff_type-list.php(add,delete,update).
+- [ ] Staff-list.php(add,delete,update).
+- [ ] Staff_single.php
+- [ ] add_staff.php
+
+
+
 - [ ] datatable error fix
 
 - [x] user - (id, username, email, password , iv, usertype, created_at)
     usertype - (1=admin, 2=customer)
 
 - [x] Customer = Id, First_name , Last_name, Primary_Phone_Number, Secondary_Phone_Number created_at.
-- [x] Customer_list.php , customer_single.php
+- [x] Customer_list.php , customer_single. , customer_add.php.
 
 - [x] Staff = Id, First_name , Last_name, Phone_Number, Email, staff_type_id created_at.
 - [x] staff_Type = Id, Staff_ID , Designation, created_at.
-- [x] Staff_list.php, Staff_single.php.
+- [x] Staff_list.php, Staff_single.php , staff_Add.php.
 
 
 - [ ] Payment_Card = Id, customer_ID, Card_Number, Payment_Authority , Expiry_Date , Cvv, Created_at.

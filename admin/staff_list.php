@@ -29,13 +29,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4 style="color : #f48f1b;">Staff</h4>
+                            <h4 style="color : #f48f1b;">Staffs</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Staff</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Staffs</a></li>
                         </ol>
                     </div>
                 </div>
@@ -83,17 +83,46 @@
                                                 <th class="text-dark">Sno</th>
                                                 <th class="text-dark">Name</th>
                                                 <th class="text-dark">Email</th>
-                                                <th class="text-dark">Room</th>
-                                                <th class="text-dark">check-in</th>
-                                                <th class="text-dark">check-out</th>
-                                                <th class="text-dark">Status</th>
+                                                <th class="text-dark">phone_numbers</th>
                                                 <th class="text-dark">created_at</th>
-                                                <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="reservation-data">
-                                         
-
+                                        <tbody>
+                                        <tr>
+                                                <td>1</td>
+                                                <td><a href="staff_single.php">Raunaq</a></td>
+                                                <td>raunaq@gmail.com</td>
+                                                <td>7827540501</td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Raunaq</td>
+                                                <td>raunaq@gmail.com</td>
+                                                <td>7827540501</td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Raunaq</td>
+                                                <td>raunaq@gmail.com</td>
+                                                <td>7827540501</td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Raunaq</td>
+                                                <td>raunaq@gmail.com</td>
+                                                <td>7827540501</td>
+                                                <td>22-03-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Raunaq</td>
+                                                <td>raunaq@gmail.com</td>
+                                                <td>7827540501</td>
+                                                <td>22-03-2022</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -136,9 +165,9 @@
     <script src="./js/reservation.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> -->
-    <!-- <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="./js/plugins-init/datatables.init.js"></script> -->
-    <script src="./js/datatable.js"></script>
+    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./js/plugins-init/datatables.init.js"></script>
+    <!-- <script src="./js/datatable.js"></script> -->
     <script src="./js/font-awesome.js"></script>
     <?php include 'components/script_end.php'?>
 
