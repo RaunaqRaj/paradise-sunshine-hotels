@@ -39,13 +39,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Add Staff</h4>
+                            <h4>Add Designation</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Staff</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Designation</a></li>
                         </ol>
                     </div>
                 </div>
@@ -54,58 +54,24 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Form Validation</h4>
+                                <h4 class="card-title">Add New Designation</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="#" method="post">
+                                    <form class="form-valide" id="staff_type_form">
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-username">Username
-                                                        <span class="text-danger">*</span>
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Designation
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-username" name="val-username" placeholder="Enter a username..">
+                                                        <input type="text" class="form-control" id="designation" name="designation" placeholder="Add new designation">
+                                                        <span class="text-danger" id="designation_error">*</span>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">Email <span
-                                                            class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-email" name="val-email" placeholder="Your valid email..">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-password">Password
-                                                        <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="password" class="form-control" id="val-password" name="val-password" placeholder="Choose a safe one..">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-confirm-password">Confirm Password <span
-                                                            class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" placeholder="..and confirm it!">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-suggestions">Suggestions <span
-                                                            class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="5" placeholder="What would you like to see?"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
                                                 <div class="form-group row">
                                                     <div class="col-lg-8 ml-auto">
-                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                        <button type="submit" class="btn btn-primary" id="add_staff" name="add_staff">Submit</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,6 +121,9 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
+    <script src="./js/add_staff.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/toastr.js"></script>
     <script src="./vendor/global/global.min.js"></script>
     <script src="./js/quixnav-init.js"></script>
     <script src="./js/custom.min.js"></script>

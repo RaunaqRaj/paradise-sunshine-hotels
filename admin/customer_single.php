@@ -13,9 +13,8 @@ if (!isset($_GET['customer'])) {
     $check_id = "select id from customers where id = $id";
     $query = mysqli_query($conn, $check_id);
     $result = mysqli_num_rows($query);
-
     if ($result > 0) {
-        $sql = "select * from customers where id = $id";
+        $sql = "select * from customers where id =  $id";
         $result = mysqli_query($conn, $sql);
         $message = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -27,7 +26,7 @@ if (!isset($_GET['customer'])) {
     }
 }
 ?>
-<?php ?>
+
 
 
 <?php include 'components/head_start.php'?>
@@ -324,6 +323,9 @@ echo $_SESSION['user']['user_name'];
                                                     <br>
                                                     <h4>secondary_phone_number</h4>
                                                     <p class="mt-4 text-dark"><?php echo $message['secondary_phone_number']?></p>
+                                                    <br>
+                                                    <h4>E-Mail</h4>
+                                                    <p class="mt-4 text-dark"><?php echo $message['email']?></p>
                                                 </div>
                                                 </div>
                                                 </div>

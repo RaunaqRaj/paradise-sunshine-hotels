@@ -95,15 +95,15 @@ $(document).ready(function () {
         var error = false;
         if (isEmpty(first)) {
             error = true;
-            $('#first_name_error').text("First name should not be blank!");
+            $('#first_error').text("First name should not be blank!");
         } else {
-            $('#first_name_error').text("");
+            $('#first_error').text("");
         }
         if (isEmpty(primary)) {
             error = true;
-            $('#primary_phone_error').text("Phone number should not be blank!");
+            $('#primary_error').text("Phone number should not be blank!");
         } else {
-            $('#primary_phone_error').text("");
+            $('#primary_error').text("");
         }
         if (error) {
             return false;
@@ -121,7 +121,6 @@ $(document).ready(function () {
             dataType: "json",
             data: { submit: 'customer-update', id: id, first: first_name, last: last_name, primary: primary_phone_number, secondary: secondary_phone_number },
             success: function (response) {
-                $('#UpdateModal').modal('hide');
                 if (response.success === true) {
                     Toastify({
                         text: response.message,
@@ -141,19 +140,13 @@ $(document).ready(function () {
                     } else {
                         getpreviousdata();
                     }
+                    $('#UpdateModal').modal('hide');
                 } else {
-                    Toastify({
-                        text: response.message,
-                        className: "info",
-                        style: {
-                            background: "#ff4e21",
-                        }
-                    }).showToast();
+                    for (const error in response.data) {
+                        $('#' + error + '_error').text(response.data[error]);
+                    }
                 }
-
-
             }
-
         });
     });
 
@@ -188,6 +181,7 @@ $(document).ready(function () {
         </style>
         ${customer.first_name}</td>
         <td>${customer.last_name}</td>
+        <td>${customer.email}</td>
         <td>${customer.primary_phone_number}</td>
         <td>${customer.secondary_phone_number}</td>
         <td>

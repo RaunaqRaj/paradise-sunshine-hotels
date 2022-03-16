@@ -47,7 +47,7 @@
                         <div class="card">
                             <div class="card-header">
                                 
- <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content" style="border-radius: 30px;">
       <div class="modal-header">
@@ -68,6 +68,7 @@
 </div>
 </div>
 
+
  <div class="modal fade" id="UpdateModal" tabindex="-1" aria-labelledby="ReplyModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -79,24 +80,9 @@
         <form>
           <div class="mb-3">
               <input type="hidden" id="id">
-            <label for="recipient-name" class="col-form-label text-dark">first_name</label>
-            <input type="text" class="form-control" name="status" id="first" id="recipient-name">
-            <span class="text-danger" id="first_error">*</span>
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label text-dark">last_name</label>
-            <input type="text" class="form-control" name="status" id="last" id="recipient-name">
-            <span class="text-danger" id="last_error">*</span>
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label text-dark">primary_phone_number</label>
-            <input type="text" class="form-control" name="status" id="primary" id="recipient-name">
-            <span class="text-danger" id="primary_error">*</span>
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label text-dark">secondary_phone_number</label>
-            <input type="text" class="form-control" name="status" id="secondary" id="recipient-name">
-            <span class="text-danger" id="secondary_error">*</span>
+            <label for="recipient-name" class="col-form-label text-dark">designation</label>
+            <input type="text" class="form-control" name="designation" id="designation" id="recipient-name">
+            <span class="text-danger" id="designation_error">*</span>
           </div>
         </form>
       </div>
@@ -116,12 +102,9 @@
                                     <table id="example" class="display text-center table-striped " style="min-width: 845px; color:black;">
                                         <thead class="table-primary">
                                             <tr>
-                                                <th class="text-dark">Sno</th>
-                                                <th class="text-dark">first_name</th>
-                                                <th class="text-dark">last_name</th>
-                                                <th class="text-dark">Email</th>
-                                                <th class="text-dark">primary_phone</th>
-                                                <th class="text-dark">secondary_phone</th>
+                                                <th class="text-dark">ID</th>
+                                                <th class="text-dark">Designation</th>
+                                                <th class="text-dark">Created_at</th>
                                                 <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>
@@ -167,7 +150,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-    <script src="./js/customer-list.js"></script>
+    <script src="./js/staff_types.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> -->
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>

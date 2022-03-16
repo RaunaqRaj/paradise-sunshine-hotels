@@ -80,6 +80,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-email">E-Mail Address 
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+                                                        <span
+                                                            class="text-danger" id="email_error">*</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label text-dark" for="val-password">Primary Phone Number
                                                     </label>
                                                     <div class="col-lg-6">

@@ -1,30 +1,14 @@
 /** @format */
-$("#loader").hide();
-$("#add_customers").on("submit", function (e) {
+// $("#loader").hide();
+$("#staff_type_form").on("submit", function (e) {
     e.preventDefault();
-    var first_name = $("#first_name").val();
-    var last_name = $("#last_name").val();
-    var email = $("#email").val();
-    var primary_phone = $("#primary_phone").val();
-    var Secondary_phone = $("#Secondary_phone").val();
+    var designation = $("#designation").val();
     var error = false;
-    if (isEmpty(first_name)) {
+    if (isEmpty(designation)) {
         error = true;
-        $('#first_name_error').text("First name should not be blank!");
+        $('#designation_error').text("Designation should not be blank!");
     } else {
-        $('#first_name_error').text("");
-    }
-    if (isEmpty(email)) {
-        error = true;
-        $('#email_error').text("Email should not be blank!");
-    } else {
-        $('#email_error').text("");
-    }
-    if (isEmpty(primary_phone)) {
-        error = true;
-        $('#primary_phone_error').text("Phone number should not be blank!");
-    } else {
-        $('#primary_phone_error').text("");
+        $('#designation_error').text("");
     }
 
     if (error) {
@@ -35,8 +19,8 @@ $("#add_customers").on("submit", function (e) {
     // $("#loader").show();
     $.ajax({
         type: "POST",
-        url: "php/add_customer.php",
-        data: $(this).serialize() + "&add_customer=true",
+        url: "php/add_staff.php",
+        data: $(this).serialize() + "&add=true",
         cache: false,
         success: function (response) {
             // $("#btn").show();
@@ -54,7 +38,7 @@ $("#add_customers").on("submit", function (e) {
                     duration : 3000,
                     oldestFirst : true
                   }).showToast();
-                $('#add_customers')[0].reset();
+                $('#staff_type_form')[0].reset();
             } else {
                 for (const error in response.data) {
                     $('#' + error + '_error').text(response.data[error]);
@@ -73,8 +57,8 @@ $("#add_customers").on("submit", function (e) {
                 duration : 3000,
                 oldestFirst : true
               }).showToast();
-            $("#add_customer").show();
-            $("#loader").hide();
+            // $("#add_customer").show();
+            // $("#loader").hide();
         },
     });
 });
