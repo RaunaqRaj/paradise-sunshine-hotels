@@ -47,12 +47,12 @@ $(document).ready(function () {
     $('#update').click(function (e) {
         var designation = $('#designation').val();
         var error = false;
-        if (isEmpty(designation)) {
-            error = true;
-            $('#designation_error').text("First name should not be blank!");
-        } else {
-            $('#designation_error').text("");
-        }
+        // if (isEmpty(designation)) {
+        //     error = true;
+        //     $('#designation_error').text("First name should not be blank!");
+        // } else {
+        //     $('#designation_error').text("");
+        // }
         if (error) {
             return false;
         }
@@ -153,7 +153,7 @@ $(document).ready(function () {
         <td>${staff_types.designation}</td>
         <td>${staff_types.created_at}</td>
         <td>
-        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-designation=${staff_types.designation}  data-id=${staff_types.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${staff_types.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
+       <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-designation=${staff_types.designation}  data-id=${staff_types.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${staff_types.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
         </td>
     </tr>
 `;

@@ -55,6 +55,23 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     
                 break;
 
+                case 'staff_type-decription':
+                    $id = sql_prevent($conn, xss_prevent($_POST['id']));
+                    $query = "SELECT description FROM staff_types where id='$id' ORDER BY created_at DESC";
+                    $query_execute = mysqli_query($conn, $query);
+                    if (mysqli_num_rows($query_execute) > 0) {
+                        $message = array();
+                        while ($result = mysqli_fetch_array($query_execute,MYSQLI_ASSOC)) {
+                            $message[] = $result;
+                        }
+                        echo json_encode(array("success" => true, "data" => $message));
+                    } else {
+                        $message[] = "No information found!";
+                        echo json_encode(array("success" => false, "message" => $message));
+                    }
+                
+                    break;
+
                 case 'staff_type-update':
                     $id = sql_prevent($conn, xss_prevent($_POST['id']));
                     $hash_id = password_hash($id,PASSWORD_DEFAULT);

@@ -29,13 +29,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4 style="color : #f48f1b;">Customers</h4>
+                            <h4 style="color : #f48f1b;">Staff Types</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Customers</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Staff Types</a></li>
                         </ol>
                     </div>
                 </div>
@@ -51,12 +51,12 @@
   <div class="modal-dialog">
     <div class="modal-content" style="border-radius: 30px;">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">Delete This Customer?</h5>
+        <h5 class="modal-title" id="deleteModalLabel">Delete This Staff type?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <input type="hidden" id="customer_delete">
-        <p class="text-dark">Are you sure you want to delete this Customer?</p>
+        <p class="text-dark">Are you sure you want to delete this Staff type?</p>
 <br>
         <button type="button" id="delete" class="btn btn-danger mx-2"  style="border-radius: 30px;">yes</button>
         <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal"  style="border-radius: 30px;">No</button>
@@ -93,7 +93,6 @@
     </div>
   </div>
 </div>
-
                             <div class="card-body" id="nodata"> 
                             <!-- <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="loader" role="status">
                               <span class="visually-hidden">Loading...</span>
