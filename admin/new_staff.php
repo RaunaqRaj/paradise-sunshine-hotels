@@ -39,13 +39,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Add Staff Type</h4>
+                            <h4>Add Staff</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Staff Type</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add New staff</a></li>
                         </ol>
                     </div>
                 </div>
@@ -54,29 +54,45 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Add New Staff Type</h4>
+                                <h4 class="card-title">Add New Staff</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" id="staff_type_form">
+                                    <form class="form-valide" id="staff_form">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Staff Type
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="designation" name="designation" placeholder="Add new designation">
-                                                        <span class="text-danger" id="designation_error">*</span>
-                                                    </div>
-                                                </div>
                                                 <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Description
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">User id
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="description" name="description" placeholder="Add new description">
-                                                        <span class="text-danger" id="description_error">*</span>
+                                                    <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Write Your User id">
+                                                        <span class="text-danger" id="user_error">*</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Name
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+                                                        <span class="text-danger" id="name_error">*</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Email
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter your E-mail">
+                                                        <span class="text-danger" id="email_error">*</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Phone Number
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="phno" name="phno" placeholder="n">
+                                                        <span class="text-danger" id="phone_error">*</span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -131,7 +147,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-    <script src="./js/add_staff.js"></script>
+    <script src="./js/add_staffs.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/toastr.js"></script>
     <script src="./vendor/global/global.min.js"></script>

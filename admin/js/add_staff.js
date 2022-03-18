@@ -3,6 +3,7 @@
 $("#staff_type_form").on("submit", function (e) {
     e.preventDefault();
     var designation = $("#designation").val();
+    var description = $("#description").val();
     var error = false;
     if (isEmpty(designation)) {
         error = true;
@@ -10,6 +11,13 @@ $("#staff_type_form").on("submit", function (e) {
     } else {
         $('#designation_error').text("");
     }
+    if (isEmpty(description)) {
+        error = true;
+        $('#description_error').text("Description should not be blank!");
+    } else {
+        $('#description_error').text("");
+    }
+
 
     if (error) {
         return false;

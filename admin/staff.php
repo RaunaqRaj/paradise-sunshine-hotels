@@ -23,19 +23,36 @@
     ***********************************-->
     <div id="main-wrapper">
         <?php include 'components/header.php'?>
-     
+        <div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="MessageModalLabel">Message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"  id="contact-message">
+        <p class="text-dark" id="message"></p>
+        <br>
+      </div>
+      <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success mx-2" data-bs-toggle="modal" data-bs-target="#ReplyModal"><i class="fa fa-reply mx-2"></i>Reply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         <div class="content-body">
             <div class="container-fluid">
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4 style="color : #f48f1b;">Staff Types</h4>
+                            <h4 style="color : #f48f1b;">Staffs</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Staff Types</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Staffs</a></li>
                         </ol>
                     </div>
                 </div>
@@ -51,12 +68,12 @@
   <div class="modal-dialog">
     <div class="modal-content" style="border-radius: 30px;">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">Delete This Staff type?</h5>
+        <h5 class="modal-title" id="deleteModalLabel">Delete This Staff?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="hidden" id="customer_delete">
-        <p class="text-dark">Are you sure you want to delete this Staff type?</p>
+        <input type="hidden" id="staff_delete">
+        <p class="text-dark">Are you sure you want to delete this Staff?</p>
 <br>
         <button type="button" id="delete" class="btn btn-danger mx-2"  style="border-radius: 30px;">yes</button>
         <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal"  style="border-radius: 30px;">No</button>
@@ -80,14 +97,9 @@
         <form>
           <div class="mb-3">
               <input type="hidden" id="id">
-            <label for="recipient-name" class="col-form-label text-dark">designation</label>
-            <input type="text" style="background : #d2d4d6;" class="form-control" name="designation" id="designation" id="recipient-name" disabled>
-            <span class="text-danger" id="designation_error">*</span>
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label text-dark">Description</label>
-            <input type="text" class="form-control" name="description" id="description" id="recipient-name">
-            <span class="text-danger" id="description_error">*</span>
+            <label for="recipient-name" class="col-form-label text-dark">phone number</label>
+            <input type="text" class="form-control" name="phone_number" id="phone_number" id="recipient-name">
+            <span class="text-danger" id="phone_error">*</span>
           </div>
         </form>
       </div>
@@ -107,13 +119,14 @@
                                         <thead class="table-primary">
                                             <tr>
                                                 <th class="text-dark">ID</th>
-                                                <th class="text-dark">Designation</th>
-                                                <th class="text-dark">Description</th>
-                                                <th class="text-dark">Created_at</th>
+                                                <th class="text-dark">User Name</th>
+                                                <th class="text-dark">Name</th>
+                                                <th class="text-dark">Email</th>
+                                                <th class="text-dark">Phone Number</th>
                                                 <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="staff_type_list">
+                                        <tbody id="staff_list">
                                        
                                                
                                         </tbody>
@@ -155,7 +168,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-    <script src="./js/staff_types.js"></script>
+    <script src="./js/staff.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> -->
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>

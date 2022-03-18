@@ -45,7 +45,7 @@
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Staff Type</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add New staff</a></li>
                         </ol>
                     </div>
                 </div>
@@ -54,15 +54,39 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Add New Staff Type</h4>
+                                <h4 class="card-title">Add New Staff</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" id="staff_type_form">
+                                <form id="register_form">
+                                        <div class="form-group">
+                                            <label><strong>Username</strong></label>
+                                            <input type="text" id="username" class="form-control" placeholder="username" name="username">
+                                            <span id="user_error" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Email</strong></label>
+                                            <input type="email" id="email" class="form-control" placeholder="" name="email">
+                                            <span id="email_error" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Password</strong></label>
+                                            <input type="password" id="password" class="form-control" name="password" value="" placeholder="Enter your desired password">
+                                            <span id="password_error" class="text-danger"></span>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button type="submit" id="register_submit" name="submit" class="btn btn-primary btn-block">Sign me up</button>
+                                        </div>
+                                    </form>
+                                    <div class="new-account mt-3">
+                                        <p><a class="text-white btn btn-primary" href="./new_staff.php">Next</a></p>
+                                    </div>
+
+                                    <!-- <form class="form-valide" id="staff_type_form">
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Staff Type
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Name
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="designation" name="designation" placeholder="Add new designation">
@@ -72,7 +96,7 @@
                                                 <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Description
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">User_id
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="description" name="description" placeholder="Add new description">
@@ -86,7 +110,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </form> -->
                                 </div>
                             </div>
                         </div>
@@ -131,7 +155,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-    <script src="./js/add_staff.js"></script>
+    <script src="./js/add_new_staff.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/toastr.js"></script>
     <script src="./vendor/global/global.min.js"></script>

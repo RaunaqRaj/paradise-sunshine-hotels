@@ -46,13 +46,20 @@ $(document).ready(function () {
 
     $('#update').click(function (e) {
         var designation = $('#designation').val();
+        var description = $('#description').val();
         var error = false;
-        // if (isEmpty(designation)) {
-        //     error = true;
-        //     $('#designation_error').text("First name should not be blank!");
-        // } else {
-        //     $('#designation_error').text("");
-        // }
+        if (isEmpty(designation)) {
+            error = true;
+            $('#designation_error').text("Designation should not be blank!");
+        } else {
+            $('#designation_error').text("");
+        }
+        if (isEmpty(description)) {
+            error = true;
+            $('#description_error').text("Description should not be blank!");
+        } else {
+            $('#description_error').text("");
+        }
         if (error) {
             return false;
         }
@@ -60,11 +67,12 @@ $(document).ready(function () {
         output = "";
         var id = $('#id').val();
         var designation = $('#designation').val();
+        var description = $('#description').val();
         $.ajax({
             url: "php/staff_types.php",
             type: "POST",
             dataType: "json",
-            data: { submit: 'staff_type-update', id: id, designation: designation},
+            data: { submit: 'staff_type-update', id: id, designation: designation, description : description},
             success: function (response) {
                 if (response.success === true) {
                     Toastify({
@@ -91,12 +99,14 @@ $(document).ready(function () {
     $(document).on('click', '.update', function () {
         var id = $(this).attr('data-id');
         var designation = $(this).attr('data-designation');
-
+        var description = $(this).attr('data-description');
         $('#id').val(id);
         $("#UpdateModal").modal('show');
         var id = $('#id').val(id);
         var designation = $('#designation').val(designation);
+        var description = $('#description').val(description);
     });
+   
 
 
     getdata();
@@ -112,7 +122,7 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.success) {
                     var output = get_staff_types_list_html(response.data);
-                    $("#customer_list").html(output);
+                    $("#staff_type_list").html(output);
                 } else {
                     output_error += `
             <div class="authincation h-100">
@@ -142,7 +152,6 @@ $(document).ready(function () {
 
         });
     }
-
  
     function get_staff_types_list_html(staff_types) {
         previous = "";
@@ -151,9 +160,10 @@ $(document).ready(function () {
         <tr>
         <td class="user_id">${index + 1}</td>
         <td>${staff_types.designation}</td>
+        <td>${staff_types.info}</td>
         <td>${staff_types.created_at}</td>
         <td>
-       <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-designation=${staff_types.designation}  data-id=${staff_types.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${staff_types.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
+        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-designation=${staff_types.designation} data-designation=${staff_types.decription}  data-id=${staff_types.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${staff_types.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
         </td>
     </tr>
 `;

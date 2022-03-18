@@ -2,18 +2,12 @@
 
 
 - [ ] Customer-id encryption in get request
-- [x] check-id in update and delete
-- [x] Get delete and update request with encrypted customer id
-- [x] validations in update query.
-
-- [x] Customer-list.php
-- [x] Customer_single.php
-- [x] Add_Customer.php
-- [x] Staff_type-list.php(add,delete,update,view).
-- [x] staff_type_update.php
-- [x] staff_type_add.php
-
-
+- [x] staff_add.php
+- [x] staff_list.php(update,delete).
+- [x] staff_single.php
+- [x] customer-single with customer card details.php
+- [x] customer-add with customer card details input.php
+- [ ] In staff type table on update only update designation if there isnt any staff in staff table if it exists then only allow to update description.
 
 
 - [ ] datatable error fix
@@ -27,6 +21,7 @@
 - [x] Staffs = Id, user_id, First_name , Last_name, Phone_Number, email, created_at.
 - [x] staff_Types = Id, Designation, description, created_at.
 - [ ] Staff_designation = Id, staff_id, staff_type_id , created_at.
+
 
 
 <!-- manager : manages customer services , Room facilities , and staff details.

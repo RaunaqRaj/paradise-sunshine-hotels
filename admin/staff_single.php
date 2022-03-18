@@ -6,26 +6,26 @@ if (!user_check($conn)) {
     header('location : index.php');
 }
 
-// if (!isset($_GET['contact'])) {
-//     header('location : contact-table.php');
-// } else {
-//     $id = $_GET['contact'];
-//     $check_id = "select id from informations where id = $id";
-//     $query = mysqli_query($conn, $check_id);
-//     $result = mysqli_num_rows($query);
+if (!isset($_GET['staff'])) {
+    header('location : staff.php');
+} else {
+    $id = $_GET['staff'];
+    $check_id = "select id from staffs where id = $id";
+    $query = mysqli_query($conn, $check_id);
+    $result = mysqli_num_rows($query);
 
-//     if ($result > 0) {
-//         $sql = "select * from informations where id = $id";
-//         $result = mysqli_query($conn, $sql);
-//         $message = array();
-//         while ($row = mysqli_fetch_assoc($result)) {
-//             $message = $row;
-//         }
+    if ($result > 0) {
+        $sql = "select * from staffs where id = $id";
+        $result = mysqli_query($conn, $sql);
+        $message = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $message = $row;
+        }
 
-//     } else {
-//         header('location : contact-table.php');
-//     }
-// }
+    } else {
+        header('location : staff.php');
+    }
+}
 ?>
 <?php ?>
 
@@ -127,16 +127,31 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="./home.php" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i>Dashboard</a></li>
                             </li>
-                            <li class="nav-label first">Staff</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
-                            <li><a href="./staff_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Staff</a></li>
-                            </li>
+                                <li class="nav-label first">Staffs</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text"></span>Staffs</a>
+                        <ul aria-expanded="false">
+                        <li><a href="add_staff_type.php"><i class="fa-solid fa-user-plus"></i>Add staff type</a></li>
+                            <li><a href="staff_type.php"><i class="fa-solid fa-users"></i>All staff type</a></li>
+                            <li><a href="add_staff.php"><i class="fa-solid fa-user-plus"></i>Add staff</a></li>
+                            <li><a href="staff.php"><i class="fa-solid fa-users"></i>All staff</a></li>
+
+                        </ul>
+                    </li>
                             <li class="nav-label first">Customers</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
-                            <li><a href="./customer_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Customers</a></li>
-                            </li>
+                                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text">Customers</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="add_customer.php"><i class="fa-solid fa-user-plus"></i>Add_customer</a></li>
+                            <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>All customers</a></li>
+                        </ul>
+                    </li>
 
                             <li class="nav-label first">Rooms-List</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
@@ -172,12 +187,6 @@ echo $_SESSION['user']['user_name'];
 
         <!--**********************************
             Content body start
-        ***********************************-->        <!--**********************************
-            Sidebar end
-        ***********************************-->
-
-        <!--**********************************
-            Content body start
         ***********************************-->
 
         <div class="content-body">
@@ -185,7 +194,7 @@ echo $_SESSION['user']['user_name'];
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Customer Details</h4>
+                            <h4>Contact Details</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -208,19 +217,19 @@ echo $_SESSION['user']['user_name'];
                                             <div class="row">
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-name">
-                                                        <h4 class="text-primary"><i class="fa fa-user mx-2"></i>Raunaq</h4>
+                                                        <h4 class="text-primary"><i class="fa fa-user mx-2"></i><?php echo $message['name'] ?></h4>
 
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-email">
-                                                        <h4 class="text-muted"><a style="text-decoration: none; color: #000;" href="mailto:someone@example.com">Raunaq@gmail.com</a></h4>
+                                                        <h4 class="text-muted"><a style="text-decoration: none; color: #000;" href="mailto:someone@example.com"><?php echo $message['email'] ?></a></h4>
                                                         <p>Email</p>
                                                     </div>
                                                 </div>
                                                 </div>
                                                     <div class="profile-call" style="margin-left : 275px">
-                                                        <h4 class="text-muted">22-03-2022</h4>
+                                                        <h4 class="text-muted"><?php echo $message['created_at'] ?></h4>
                                                         <p>Date and Time</p>
                                                 </div>
                                              </div>
@@ -303,26 +312,26 @@ echo $_SESSION['user']['user_name'];
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item"><a href="#my-posts" data-toggle="tab" class="nav-link active show">Details</a>
                                             </li>
-                                            <li class="nav-item" id="previous-contacts"><a href="#about-me" data-toggle="tab" class="nav-link">All Previous Request</a>
-                                            </li>
+                                            <!-- <li class="nav-item" id="previous-contacts"><a href="#about-me" data-toggle="tab" class="nav-link">Previous Contacts</a>
+                                            </li> -->
                                         </ul>
                                         <div class="tab-content" style="height: 600px;" >
                                             <div id="my-posts" style="height: 600px;" class="tab-pane fade active show">
                                                 <div class="my-post-content pt-1" style="height: 600px">
                                                     <div class="post-input" style="height: 600px">
-                                                    <p class="mt-4 text-dark">Hello</p>
-                                                    <button class="btn mt-3 mx-2 mb-2 btn-outline-success " style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply mx-1"></i>Reply</button>
+                                                    <h4 class="mt-4">phone number</h4>
+                                                    <p class="mt-4 text-dark"><?php echo $message['phone_number']?></p>
                                                 </div>
                                                 </div>
                                                 </div>
 
                                             <div id="about-me" class="tab-pane fade">
-                                            <!-- <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="previous_loader" role="status">
+                                            <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="previous_loader" role="status">
                                             <span class="visually-hidden">Loading...</span>
-                                            </div> -->
+                                            </div>
                                                 <div class="profile-about-me">
                                                     <div class="pt-4 border-bottom-1 pb-4">
-                                                        <h4 class="text-primary">All previous Request</h4>
+                                                        <h4 class="text-primary">All previous contacts</h4>
                                                         <div class="table-responsive">
                                     <table id="example" class="display" style="min-width: 845px; color:black;">
                                         <thead>
@@ -330,18 +339,12 @@ echo $_SESSION['user']['user_name'];
                                                 <th>S no</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>phone_number</th>
-                                                <th>Created_at</th>
+                                                <th>Subject</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Raunaq</td>
-                                                <td>raunaq@gmail.com</td>
-                                                <td>7827540501</td>
-                                                <td>22-03-2022</td>
-                                            </tr>
+                                        <tbody id="previous_data">
+
                                     </table>
                                 </div>
                             </div>
@@ -392,11 +395,9 @@ echo $_SESSION['user']['user_name'];
     <?php include 'components/script_start.php'?>
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./js/plugins-init/datatables.init.js"></script>
+    <script src="./js/staff.js"></script>
     <script>
-        // var contact_email = "";
-        <?php
-        //  echo $message['email'] 
-         ?>
+        var contact_email = "<?php echo $message['email'] ?>";
     </script>
 
     <?php include 'components/script_end.php'?>

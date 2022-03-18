@@ -1,41 +1,17 @@
 /** @format */
 $("#loader").hide();
-$("#add_customers").on("submit", function (e) {
+$("#staff_form").on("submit", function (e) {
     e.preventDefault();
-    var first_name = $("#first_name").val();
-    var last_name = $("#last_name").val();
+    var name = $("#name").val();
     var email = $("#email").val();
-    var primary_phone = $("#primary_phone").val();
-    var Secondary_phone = $("#Secondary_phone").val();
-    var pay_card = $("#pay_card").val();
-    var pay_auth = $("#pay_auth").val();
-    var date = $("#date").val();
-    var cvv = $("#cvv").val();
+    var phone = $("#phno").val();
 
     var error = false;
-    if (isEmpty(first_name)) {
+    if (isEmpty(name)) {
         error = true;
-        $('#first_name_error').text("First name should not be blank!");
+        $('#name_error').text("Name should not be blank!");
     } else {
-        $('#first_name_error').text("");
-    }
-    if (isEmpty(pay_auth)) {
-        error = true;
-        $('#pay_auth_error').text("Payment Authority should not be blank!");
-    } else {
-        $('#pay_auth_error').text("");
-    }
-    if (isEmpty(cvv)) {
-        error = true;
-        $('#cvv_error').text("CVV should not be blank!");
-    } else {
-        $('#cvv_error').text("");
-    }
-    if (isEmpty(pay_card)) {
-        error = true;
-        $('#pay_card_error').text("Card Number should not be blank!");
-    } else {
-        $('#pay_card_error').text("");
+        $('#name_error').text("");
     }
     if (isEmpty(email)) {
         error = true;
@@ -43,11 +19,11 @@ $("#add_customers").on("submit", function (e) {
     } else {
         $('#email_error').text("");
     }
-    if (isEmpty(primary_phone)) {
+    if (isEmpty(phone)) {
         error = true;
-        $('#primary_phone_error').text("Phone number should not be blank!");
+        $('#phone_error').text("Phone number should not be blank!");
     } else {
-        $('#primary_phone_error').text("");
+        $('#phone_error').text("");
     }
 
     if (error) {
@@ -58,8 +34,8 @@ $("#add_customers").on("submit", function (e) {
     // $("#loader").show();
     $.ajax({
         type: "POST",
-        url: "php/add_customer.php",
-        data: $(this).serialize() + "&add_customer=true",
+        url: "php/add_staffs.php",
+        data: $(this).serialize() + "&add_staff=true",
         cache: false,
         success: function (response) {
             // $("#btn").show();
@@ -77,7 +53,7 @@ $("#add_customers").on("submit", function (e) {
                     duration : 3000,
                     oldestFirst : true
                   }).showToast();
-                $('#add_customers')[0].reset();
+                $('#staff_form')[0].reset();
             } else {
                 for (const error in response.data) {
                     $('#' + error + '_error').text(response.data[error]);
@@ -96,7 +72,7 @@ $("#add_customers").on("submit", function (e) {
                 duration : 3000,
                 oldestFirst : true
               }).showToast();
-            $("#add_customer").show();
+            $("#add_staff").show();
             $("#loader").hide();
         },
     });

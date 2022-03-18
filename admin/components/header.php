@@ -81,6 +81,13 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="./home.php" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i>Dashboard</a></li>
                             </li>
+
+                            <li class="nav-label">Admin details</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
+                        <ul aria-expanded="false"> -->
+                            <li><a href="admin.php"><i class="fa-solid fa-users"></i>Admin/Staffs</a></li>
+                    </li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
                                 <li class="nav-label first">Staffs</li>
@@ -89,8 +96,11 @@ echo $_SESSION['user']['user_name'];
                                 <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-layout-25"></i><span class="nav-text"></span>Staffs</a>
                         <ul aria-expanded="false">
-                        <li><a href="add_staff_type.php"><i class="fa-solid fa-users"></i>Add staff-type</a></li>
-                            <li><a href="staff_type.php"><i class="fa-solid fa-users"></i>All staff-type</a></li>
+                        <li><a href="add_staff_type.php"><i class="fa-solid fa-user-plus"></i>Add staff type</a></li>
+                            <li><a href="staff_type.php"><i class="fa-solid fa-users"></i>All staff type</a></li>
+                            <li><a href="add_staff.php"><i class="fa-solid fa-user-plus"></i>Add staff</a></li>
+                            <li><a href="staff.php"><i class="fa-solid fa-users"></i>All staff</a></li>
+
                         </ul>
                     </li>
                             <li class="nav-label first">Customers</li>

@@ -11,8 +11,11 @@ if (!isset($_GET['customer'])) {
 } else {
     $id = $_GET['customer'];
     $check_id = "select id from customers where id = $id";
+    $check_card = "select id from payment_card where customer_id = $id";
     $query = mysqli_query($conn, $check_id);
+    $query2 = mysqli_query($conn,$check_card);
     $result = mysqli_num_rows($query);
+    $res = mysqli_num_rows($query2);
     if ($result > 0) {
         $sql = "select * from customers where id =  $id";
         $result = mysqli_query($conn, $sql);
@@ -21,9 +24,18 @@ if (!isset($_GET['customer'])) {
             $message = $row;
         }
 
-    } else {
+    }else {
         header('location : customer-list.php');
     }
+    if($res >0){
+        $sql2 = "select * from payment_card where customer_id = $id";
+        $res = mysqli_query($conn, $sql2);
+        $card = array();
+        while ($new = mysqli_fetch_assoc($res)) {
+            $card = $new;
+        }
+    } 
+
 }
 ?>
 
@@ -126,11 +138,21 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="./home.php" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i>Dashboard</a></li>
                             </li>
-                            <li class="nav-label first">Staff</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
-                            <li><a href="./staff_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-users"></i>Staff</a></li>
-                            </li>
+                                <li class="nav-label first">Staffs</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text"></span>Staffs</a>
+                        <ul aria-expanded="false">
+                        <li><a href="add_staff_type.php"><i class="fa-solid fa-user-plus"></i>Add staff type</a></li>
+                            <li><a href="staff_type.php"><i class="fa-solid fa-users"></i>All staff type</a></li>
+                            <li><a href="add_staff.php"><i class="fa-solid fa-user-plus"></i>Add staff</a></li>
+                            <li><a href="staff.php"><i class="fa-solid fa-users"></i>All staff</a></li>
+
+                        </ul>
+                    </li>
                             <li class="nav-label first">Customers</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
@@ -170,6 +192,13 @@ echo $_SESSION['user']['user_name'];
 
 
         </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -326,6 +355,8 @@ echo $_SESSION['user']['user_name'];
                                                     <br>
                                                     <h4>E-Mail</h4>
                                                     <p class="mt-4 text-dark"><?php echo $message['email']?></p>
+                                                    <h4>Card Number</h4>
+                                                    <p class="mt-4 text-dark"><?php echo $card['card_number']?></p>
                                                 </div>
                                                 </div>
                                                 </div>

@@ -105,7 +105,42 @@
                                                             class="text-danger" id="secondary_phone_error">*</span>
                                                     </div>
                                                 </div>
-                                                
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Payment Card Number
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="pay_card" name="pay_card" placeholder="">
+                                                        <span
+                                                            class="text-danger" id="pay_card_error">*</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Payment Authority
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="pay_auth" name="pay_auth" placeholder="">
+                                                        <span
+                                                            class="text-danger" id="pay_auth_error">*</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Expiry Date
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="date" class="form-control" id="date" name="date" placeholder="">
+                                                        <span
+                                                            class="text-danger" id="date_error">*</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Card CVV
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="cvv" name="cvv" placeholder="">
+                                                        <span
+                                                            class="text-danger" id="cvv_error">*</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                             
                                                 <div class="form-group row">

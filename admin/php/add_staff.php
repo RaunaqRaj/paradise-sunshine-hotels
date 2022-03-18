@@ -5,12 +5,18 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["add"])) {
             $designation = $_POST["designation"];
+            $description = $_POST["description"];
             $error = array();
             // validate data
             if (empty($designation)) {
                 $error['designation'] = "Designation should not be empty";
             } else if (preg_match("/^[0-9]+$/", $designation)) {
                 $error['designation'] = "Designation should be valid";
+            }
+            if (empty($description)) {
+                $error['description'] = "Description should not be empty";
+            } else if (preg_match("/^[0-9]+$/", $description)) {
+                $error['description'] = "Description should be valid";
             }
 
             if (sizeof($error) > 0) {
@@ -20,9 +26,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
             // prevent sql and xss
             $designation = sql_prevent($conn, xss_prevent($_POST['designation']));
-
+            $description = sql_prevent($conn, xss_prevent($_POST['description']));
             // run sql
-            $sql = "INSERT INTO staff_types(designation)VALUES('$designation')";
+            $sql = "INSERT INTO staff_types(designation,description)VALUES('$designation','$description')";
 
             if ($conn->query($sql) == true) {
                 echo json_encode(array("success" => true, "message" => "Designation successfully added!"));
