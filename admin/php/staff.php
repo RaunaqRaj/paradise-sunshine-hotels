@@ -19,10 +19,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'staff-list':
                 $query = "select staffs.id,users.username,staffs.name,staffs.email,staffs.phone_number from staffs join users on staffs.user_id = users.id";
                 $query_execute = mysqli_query($conn, $query);
-                if (mysqli_num_rows($query_execute) > 0) {
+                if ($query_execute->num_rows > 0) {
                     $data = array();
-                    $result = mysqli_fetch_array($query_execute , MYSQLI_ASSOC);
-                    while ($result = mysqli_fetch_array($query_execute)) {
+                    while ($result=mysqli_fetch_assoc($query_execute)) {
                         $data[] = $result;
                     }
                     echo json_encode(array("success" => true, "data" => $data));
@@ -40,6 +39,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 if($check_id){
                 $query = "DELETE FROM staffs where id='$id'";
                 $query_execute = mysqli_query($conn, $query);
+                
                 if ($query_execute) {
                     echo json_encode(array("success" => true, "message" => "Staff Deleted successfully"));
                     die;

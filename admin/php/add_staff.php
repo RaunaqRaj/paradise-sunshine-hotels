@@ -28,10 +28,11 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $designation = sql_prevent($conn, xss_prevent($_POST['designation']));
             $description = sql_prevent($conn, xss_prevent($_POST['description']));
             // run sql
-            $sql = "INSERT INTO staff_types(designation,description)VALUES('$designation','$description')";
-
+            $sql = "INSERT INTO staff_types(designation,info)VALUES('$designation','$description')";
+            // print_r($conn);
+            // die;
             if ($conn->query($sql) == true) {
-                echo json_encode(array("success" => true, "message" => "Designation successfully added!"));
+                echo json_encode(array("success" => true, "message" => "Staff Type successfully added!"));
             } else {
                 echo json_encode(array("success" => true, "message" => "Sorry! an error occured"));
             }

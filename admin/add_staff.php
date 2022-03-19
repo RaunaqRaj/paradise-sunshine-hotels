@@ -59,28 +59,28 @@
                             <div class="card-body">
                                 <div class="form-validation">
                                 <form id="register_form">
-                                        <div class="form-group">
+                                        <div class="form-group col-md-6">
                                             <label><strong>Username</strong></label>
                                             <input type="text" id="username" class="form-control" placeholder="username" name="username">
                                             <span id="user_error" class="text-danger"></span>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group col-md-6">
                                             <label><strong>Email</strong></label>
                                             <input type="email" id="email" class="form-control" placeholder="" name="email">
                                             <span id="email_error" class="text-danger"></span>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group col-md-6">
                                             <label><strong>Password</strong></label>
                                             <input type="password" id="password" class="form-control" name="password" value="" placeholder="Enter your desired password">
                                             <span id="password_error" class="text-danger"></span>
                                         </div>
-                                        <div class="text-center mt-4">
-                                            <button type="submit" id="register_submit" name="submit" class="btn btn-primary btn-block">Sign me up</button>
+                                        <div class="text-center mt-4 col-md-4">
+                                            <button type="submit" id="register_submit" name="submit" class="btn btn-primary btn-block">Add Staff Account</button>
                                         </div>
                                     </form>
-                                    <div class="new-account mt-3">
+                                    <!-- <div class="new-account mt-3">
                                         <p><a class="text-white btn btn-primary" href="./new_staff.php">Next</a></p>
-                                    </div>
+                                    </div> -->
 
                                     <!-- <form class="form-valide" id="staff_type_form">
                                         <div class="row">

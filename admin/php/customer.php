@@ -22,8 +22,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();
-                    $result = mysqli_fetch_array($query_execute , MYSQLI_ASSOC);
-                    while ($result = mysqli_fetch_array($query_execute)) {
+                    while ($result = mysqli_fetch_assoc($query_execute)) {
                         $data[] = $result;
                     }
                     echo json_encode(array("success" => true, "data" => $data));

@@ -2,14 +2,8 @@
 
 
 - [ ] Customer-id encryption in get request
-- [x] staff_add.php
-- [x] staff_list.php(update,delete).
-- [x] staff_single.php
-- [x] customer-single with customer card details.php
-- [x] customer-add with customer card details input.php
+- [ ] staff_add.php with user id in select option
 - [ ] In staff type table on update only update designation if there isnt any staff in staff table if it exists then only allow to update description.
-
-
 - [ ] datatable error fix
 
 - [x] user - (id, username, email, password , iv, usertype, created_at)
@@ -20,7 +14,7 @@
 
 - [x] Staffs = Id, user_id, First_name , Last_name, Phone_Number, email, created_at.
 - [x] staff_Types = Id, Designation, description, created_at.
-- [ ] Staff_designation = Id, staff_id, staff_type_id , created_at.
+- [x] Staff_designation = Id, staff_id, staff_type_id , created_at.
 
 
 
@@ -51,7 +45,7 @@
 - [x] Staff_list.php, Staff_single.php , staff_Add.php.
 
 
-- [ ] Payment_Card = Id, customer_ID, Card_Number, Payment_Authority , Expiry_Date , Cvv, Created_at.
+- [x] Payment_Card = Id, customer_ID, Card_Number, Payment_Authority , Expiry_Date , Cvv, Created_at.
 
 - [x] Reservations = Id, Customer_ID , Check_In, Check_out, Room_ID, Payment_ID , Status and created_at.
 - [x] reservation_list.php, reservation_single.php.
