@@ -21,36 +21,34 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 $query_execute = mysqli_query($conn, $query);
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();
-                    $result = mysqli_fetch_array($query_execute , MYSQLI_ASSOC);
-                    while ($result = mysqli_fetch_array($query_execute)) {
+                    while ($result = mysqli_fetch_assoc($query_execute)) {
                         $data[] = $result;
                     }
                     echo json_encode(array("success" => true, "data" => $data));
-                } 
-            else {
+                } else {
                     echo json_encode(array("success" => false, "data" => "No information found!"));
                 }
 
                 break;
             case 'user-delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
-                $hash_id = password_hash($id,PASSWORD_DEFAULT);
-                $id_decrypt = password_verify($hash_id,$id);
+                $hash_id = password_hash($id, PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($hash_id, $id);
                 $check_id = "select id from users where id = $id";
-                if($check_id){
-                $query = "DELETE FROM users where id='$id'";
-                $query_execute = mysqli_query($conn, $query);
-                if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "Staff Deleted successfully"));
-                    die;
+                if ($check_id) {
+                    $query = "DELETE FROM users where id='$id'";
+                    $query_execute = mysqli_query($conn, $query);
+                    if ($query_execute) {
+                        echo json_encode(array("success" => true, "message" => "Staff Deleted successfully"));
+                        die;
+                    } else {
+                        echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                        die;
+                    }
                 } else {
-                    echo json_encode(array("success" => false, "message" => "Some error Occured"));
-                          die;
+                    echo json_encode(array("success" => false, "message" => "Id doesn't exist"));
+                    die;
                 }
-            }else{
-                echo json_encode(array("success" => false, "message" => "Id doesn't exist"));
-                die;
-            }
                 break;
             default:
                 echo json_encode(array("success" => false, "message" => "Method not found"));

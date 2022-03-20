@@ -58,7 +58,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                <form id="register_form">
+                                <form id="add_user_form">
                                         <div class="form-group col-md-6">
                                             <label><strong>Username</strong></label>
                                             <input type="text" id="username" class="form-control" placeholder="username" name="username">
@@ -76,6 +76,9 @@
                                         </div>
                                         <div class="text-center mt-4 col-md-4">
                                             <button type="submit" id="register_submit" name="submit" class="btn btn-primary btn-block">Add Staff Account</button>
+                                        </div>
+                                        <div class="text-center mt-4 col-md-4">
+                                            
                                         </div>
                                     </form>
                                     <!-- <div class="new-account mt-3">

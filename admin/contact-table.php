@@ -25,7 +25,7 @@
 
         <?php include 'components/header.php'?>
         <div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="MessageModalLabel">Message</h5>

@@ -4,12 +4,11 @@ require 'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["add_staff"])) {
-            $user_id = $_POST['user_id'];
+            $user_id = $_POST['user'];
             $name = $_POST["name"];
             $email = $_POST['email'];
             $phone = $_POST["phno"];
             $error = array();
-
 
             // validate data
             if (empty($name)) {
@@ -33,15 +32,15 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 echo json_encode(array("success" => false, "data" => $error));
                 die;
             }
-
+            
             // prevent sql and xss
-            $user_id = sql_prevent($conn, xss_prevent($_POST['user_id']));
+            $user_id = sql_prevent($conn, xss_prevent($_POST['user']));
             $name = sql_prevent($conn, xss_prevent($_POST['name']));
             $email = sql_prevent($conn, xss_prevent($_POST['email']));
             $phone = sql_prevent($conn, xss_prevent($_POST['phno']));
            
             // run sql
-            $sql = "INSERT INTO staffs(user_id,name,email,phone_number)VALUES('$user_id','$name','$email','$phone')";
+            $sql = "INSERT INTO staffs(user_id,name,email,phone_number)VALUES($user_id,'$name','$email',$phone);";
             if ($conn->query($sql)==true) {
                 echo json_encode(array("success" => true, "message" => "Staff successfully added!"));
             } else {

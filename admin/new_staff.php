@@ -1,7 +1,6 @@
 <?php include 'components/head_start.php'?>
+<link rel="stylesheet" href="./css/select2.css">
 <?php include 'components/head_end.php'?>
-
-
     <!--*******************
         Preloader start
     ********************-->
@@ -50,7 +49,7 @@
                     </div>
                 </div>
                 <!-- row -->
-                <div class="row"> 
+                <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
@@ -64,35 +63,55 @@
                                                 <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">User id
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">User id <span class="text-danger" id="user_error">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Write Your User id">
-                                                        <span class="text-danger" id="user_error">*</span>
+                                                   <select name="user" id="select" class="form-control text-dark">
+                                                       <optgroup label="select user" class="text-dark">
+                                                        <?php
+                                                        include 'php/connection.php'; 
+                                                        $query = "select * from users";
+                                                        $query_execute = mysqli_query($conn,$query);
+
+                                                        if(mysqli_num_rows($query_execute)>0){
+                                                            while($result = mysqli_fetch_assoc($query_execute))
+                                                            {
+
+                                                    
+                                                        ?>
+                                                       <option value="" selected class="text-dark"></option>
+                                                       <option value="<?php echo $result['id']?>"> <?php echo $result['id']?> - <?php  echo $result['username']?></option>
+                                                   <?php
+                                                            }
+                                                        }
+                                                   ?>
+                                                   </optgroup>
+                                                   </select>
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Name
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Name                                                        <span class="text-danger" id="name_error">*</span>
+
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
-                                                        <span class="text-danger" id="name_error">*</span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Email
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Email                                                        <span class="text-danger" id="email_error">*</span>
+
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="email" name="email" placeholder="Enter your E-mail">
-                                                        <span class="text-danger" id="email_error">*</span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Phone Number
+                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Phone Number                                                        <span class="text-danger" id="phone_error">*</span>
+
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="phno" name="phno" placeholder="n">
-                                                        <span class="text-danger" id="phone_error">*</span>
+                                                        <input type="text" class="form-control" id="phno" name="phno" placeholder="(+91)-1234567890">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -136,7 +155,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -147,21 +166,26 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/select2.js"></script>
+    <script>
+    $('#select').select2({
+        placeholder : "select a userid and username",
+        selectOnClose: true,
+    });
+    </script>
     <script src="./js/add_staffs.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/toastr.js"></script>
     <script src="./vendor/global/global.min.js"></script>
     <script src="./js/quixnav-init.js"></script>
     <script src="./js/custom.min.js"></script>
-    
-
-
-
     <!-- Jquery Validation -->
     <script src="./vendor/jquery-validation/jquery.validate.min.js"></script>
     <!-- Form validate init -->
     <script src="./js/plugins-init/jquery.validate-init.js"></script>
     <?php include 'components/script_end.php'?>
+   
 </body>
 
 </html>

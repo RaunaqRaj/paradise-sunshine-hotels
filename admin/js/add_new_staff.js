@@ -1,6 +1,6 @@
 /** @format */
 // $("#contact_submit_loader").hide();
-$("#register_form").on("submit", function (e) {
+$("#add_user_form").on("submit", function (e) {
     e.preventDefault();
     var url = 'new_staff.php';
     var username = $("#username").val();
@@ -41,8 +41,8 @@ $("#register_form").on("submit", function (e) {
             // $("#contact_submit_loader").hide();
             response = JSON.parse(response);
             if (response.success === true) {
+                $('#add_user_form')[0].reset();
                 $(location).prop('href', url);
-                $('#register_form')[0].reset();
             } else {
                 for (const error in response.data) {
                     $('#' + error + '_error').text(response.data[error]);

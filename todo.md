@@ -1,28 +1,32 @@
 ### Raunaq Project work list
 
+* [ ] Customer-id encryption in get request
 
-- [ ] Customer-id encryption in get request
-- [ ] staff_add.php with user id in select option
-- [ ] In staff type table on update only update designation if there isnt any staff in staff table if it exists then only allow to update description.
-- [ ] datatable error fix
+* [ ] staff_add.php with user id in select option
 
-- [x] user - (id, username, email, password , iv, usertype, created_at)
-    usertype - (1=admin, 2=customer, 3=staff)
+* [ ] In staff type table on update only update designation if there isnt any staff in staff table if it exists then only allow to update description.
 
-- [x] Customer = Id,  First_name , Last_name, email, Primary_Phone_Number, Secondary_Phone_Number created_at.
-- [x] Customer_list.php , customer_single. , customer_add.php.
+* [ ] datatable error fix
 
-- [x] Staffs = Id, user_id, First_name , Last_name, Phone_Number, email, created_at.
-- [x] staff_Types = Id, Designation, description, created_at.
-- [x] Staff_designation = Id, staff_id, staff_type_id , created_at.
+* [x] user - (id, username, email, password , iv, usertype, created_at)
+  usertype - (1=admin, 2=customer, 3=staff)
 
+* [x] Customer = Id,  First_name , Last_name, email, Primary_Phone_Number, Secondary_Phone_Number created_at.
 
+* [x] Customer_list.php , customer_single. , customer_add.php.
+
+* [x] Staffs = Id, user_id, First_name , Last_name, Phone_Number, email, created_at.
+
+* [x] staff_Types = Id, Designation, description, created_at.
+
+* [x] Staff_designation = Id, staff_id, staff_type_id , created_at.
 
 <!-- manager : manages customer services , Room facilities , and staff details.
  || supervisor : adds staff details.
  || Receptionist : adds new customers, updates the customer details and extension in stay -->
 
 <!-- ajax data format add staff in single form-->
+
  <!-- {
     user_details:{
         username:"",
@@ -42,28 +46,27 @@
 }
 -->
 
-- [x] Staff_list.php, Staff_single.php , staff_Add.php.
+* [x] Staff_list.php, Staff_single.php , staff_Add.php.
 
+* [x] Payment_Card = Id, customer_ID, Card_Number, Payment_Authority , Expiry_Date , Cvv, Created_at.
 
-- [x] Payment_Card = Id, customer_ID, Card_Number, Payment_Authority , Expiry_Date , Cvv, Created_at.
+* [x] Reservations = Id, Customer_ID , Check_In, Check_out, Room_ID, Payment_ID , Status and created_at.
 
-- [x] Reservations = Id, Customer_ID , Check_In, Check_out, Room_ID, Payment_ID , Status and created_at.
-- [x] reservation_list.php, reservation_single.php.
+* [x] reservation_list.php, reservation_single.php.
 
-- [x] Room_Category = ID , Name, Created_at.
+* [x] Room_Category = ID , Name, Created_at.
 
-- [x] Room_Facility_list = ID , Name(Comfortable Bed, Balcony_View, Food_Services), Price, Created_at.
+* [x] Room_Facility_list = ID , Name(Comfortable Bed, Balcony_View, Food_Services), Price, Created_at.
 
-- [x] Room_Facility = ID, Room_ID, Room_Facility_List_ID, Created_at
+* [x] Room_Facility = ID, Room_ID, Room_Facility_List_ID, Created_at
 
-- [x] Room = ID, Room_category_ID, Image_id, Heading, Description, area_code, Location(google Maps Link), Price, Created_at.
+* [x] Room = ID, Room_category_ID, Image_id, Heading, Description, area_code, Location(google Maps Link), Price, Created_at.
 
-- [x] Room_Image = ID, Room_ID, Image, Created_at
+* [x] Room_Image = ID, Room_ID, Image, Created_at
 
-- [x] Room_list.php, Room_single.php.
+* [x] Room_list.php, Room_single.php.
 
-
-- [ ] Payments = Id, Payment_ID, Mode_of_payments , Payments_Details ,Respected_Provider, Created_at.
+* [ ] Payments = Id, Payment_ID, Mode_of_payments , Payments_Details ,Respected_Provider, Created_at.
 
 <!-- {
     custtomer_detail:{ 
@@ -86,6 +89,7 @@
         }
     ]
 } -->
+
 <!-- fiu-vgzz-nsd -->
 
 <!-- https://nukepin.in/demo/project/hotels/ -->

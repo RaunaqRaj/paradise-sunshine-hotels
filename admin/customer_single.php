@@ -337,9 +337,9 @@ echo $_SESSION['user']['user_name'];
                                 <div class="profile-tab">
                                     <div class="custom-tab-1">
                                         <ul class="nav nav-tabs">
-                                            <li class="nav-item"><a href="#my-posts" data-toggle="tab" class="nav-link active show">Details</a>
+                                            <li class="nav-item"><a href="#my-posts" data-toggle="tab" class="nav-link active show">Contact Details</a>
                                             </li>
-                                            <li class="nav-item" id="previous-contacts"><a href="#about-me" data-toggle="tab" class="nav-link">All Previous Request</a>
+                                            <li class="nav-item" id="previous-contacts"><a href="#about-me" data-toggle="tab" class="nav-link"> Card Details</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content" style="height: 600px;" >
@@ -355,8 +355,7 @@ echo $_SESSION['user']['user_name'];
                                                     <br>
                                                     <h4>E-Mail</h4>
                                                     <p class="mt-4 text-dark"><?php echo $message['email']?></p>
-                                                    <h4>Card Number</h4>
-                                                    <p class="mt-4 text-dark"><?php echo $card['card_number']?></p>
+                                                    
                                                 </div>
                                                 </div>
                                                 </div>
@@ -367,27 +366,11 @@ echo $_SESSION['user']['user_name'];
                                             </div> -->
                                                 <div class="profile-about-me">
                                                     <div class="pt-4 border-bottom-1 pb-4">
-                                                        <h4 class="text-primary">All previous Request</h4>
-                                                        <div class="table-responsive">
-                                    <table id="example" class="display" style="min-width: 845px; color:black;">
-                                        <thead>
-                                             <tr>
-                                                <th>S no</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>phone_number</th>
-                                                <th>Created_at</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Raunaq</td>
-                                                <td>raunaq@gmail.com</td>
-                                                <td>7827540501</td>
-                                                <td>22-03-2022</td>
-                                            </tr>
-                                    </table>
+                                                        <h4 class="text-primary">Card Details</h4>
+                                                        <h4 class="text-dark mt-4">Card Number : <?php echo $card['card_number']?></h4>
+                                                        <h4 class="text-dark mt-4">Card cvv : <?php echo $card['cvv']?></h4>
+                                                        <h4 class="text-dark mt-4">Card Expiry : <?php echo $card['expiry_date']?></h4>
+                                                    
                                 </div>
                             </div>
                                                     </div>

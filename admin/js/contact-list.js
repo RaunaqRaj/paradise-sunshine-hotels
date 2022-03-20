@@ -10,6 +10,7 @@ $(document).ready(function () {
     $('#delete').click(function(e){
         e.preventDefault();
         var id = $('#contact_delete').val();
+        var page = "contact-table.php";
          $.ajax({
         url: "php/contact-list.php",
         type: "POST",
@@ -29,8 +30,11 @@ $(document).ready(function () {
                     duration : 3000,
                     oldestFirst : true
                   }).showToast();
-                getdata();
+                  if(page=="contact-table.php"){
+                    getdata();
+                  }else{
                 getpreviousdata();
+                  }
                }else{
                 Toastify({
                     text: response.message,
@@ -74,8 +78,8 @@ $(document).ready(function () {
    function getdata(){
     output = "";
     output_error = "";
-    
-   $.ajax({
+
+   $.ajax({ 
         url: "php/contact-list.php",
         type: "POST",
         dataType: "json",
@@ -139,7 +143,7 @@ $(document).ready(function () {
     });
     return previous;
    }
-    //previous contact table//
+
     getpreviousdata();
     function getpreviousdata(){
     $("#previous-contacts").on("click", function () {

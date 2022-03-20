@@ -5,7 +5,6 @@ $("#staff_form").on("submit", function (e) {
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phno").val();
-
     var error = false;
     if (isEmpty(name)) {
         error = true;
@@ -47,12 +46,12 @@ $("#staff_form").on("submit", function (e) {
                     className: "success",
                     style: {
                         background: "#78f76d",
-                        },
-                    close : true,
-                    gravity : top,
-                    duration : 3000,
-                    oldestFirst : true
-                  }).showToast();
+                    },
+                    close: true,
+                    gravity: top,
+                    duration: 3000,
+                    oldestFirst: true
+                }).showToast();
                 $('#staff_form')[0].reset();
             } else {
                 for (const error in response.data) {
@@ -66,12 +65,12 @@ $("#staff_form").on("submit", function (e) {
                 className: "success",
                 style: {
                     background: "#78f76d",
-                    },
-                close : true,
-                gravity : top,
-                duration : 3000,
-                oldestFirst : true
-              }).showToast();
+                },
+                close: true,
+                gravity: top,
+                duration: 3000,
+                oldestFirst: true
+            }).showToast();
             $("#add_staff").show();
             $("#loader").hide();
         },
