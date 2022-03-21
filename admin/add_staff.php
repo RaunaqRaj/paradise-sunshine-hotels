@@ -1,4 +1,5 @@
 <?php include 'components/head_start.php'?>
+<link rel="stylesheet" href="./css/form.css">
 <?php include 'components/head_end.php'?>
 
 
@@ -58,62 +59,65 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                <form id="add_user_form">
-                                        <div class="form-group col-md-6">
-                                            <label><strong>Username</strong></label>
-                                            <input type="text" id="username" class="form-control" placeholder="username" name="username">
-                                            <span id="user_error" class="text-danger"></span>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label><strong>Email</strong></label>
-                                            <input type="email" id="email" class="form-control" placeholder="" name="email">
-                                            <span id="email_error" class="text-danger"></span>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label><strong>Password</strong></label>
-                                            <input type="password" id="password" class="form-control" name="password" value="" placeholder="Enter your desired password">
-                                            <span id="password_error" class="text-danger"></span>
-                                        </div>
-                                        <div class="text-center mt-4 col-md-4">
-                                            <button type="submit" id="register_submit" name="submit" class="btn btn-primary btn-block">Add Staff Account</button>
-                                        </div>
-                                        <div class="text-center mt-4 col-md-4">
-                                            
-                                        </div>
-                                    </form>
-                                    <!-- <div class="new-account mt-3">
-                                        <p><a class="text-white btn btn-primary" href="./new_staff.php">Next</a></p>
-                                    </div> -->
-
-                                    <!-- <form class="form-valide" id="staff_type_form">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">Name
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="designation" name="designation" placeholder="Add new designation">
-                                                        <span class="text-danger" id="designation_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">User_id
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="description" name="description" placeholder="Add new description">
-                                                        <span class="text-danger" id="description_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-lg-8 ml-auto">
-                                                        <button type="submit" class="btn btn-primary" id="add_staff" name="add_staff">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form> -->
+                                <section class="wizard-section">
+		
+			<div class="col-lg-12 col-md-12">
+				<div class="form-wizard">
+					<form action="" method="post" role="form" id="staff_form">
+						<div class="form-wizard-header">
+							<ul class="list-unstyled form-wizard-steps clearfix">
+								<li class="active"><span>1</span></li>
+								<li><span>2</span></li>
+							</ul>
+						</div>
+						<fieldset class="wizard-fieldset show">
+							<h5>Account Information</h5>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name = "username" id="username">
+								<label for="fname" class="wizard-form-text-label">user Name*</label>
+								<div class="wizard-form-error" id="user_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="email" id="email">
+								<label for="lname" class="wizard-form-text-label">Email*</label>
+								<div class="wizard-form-error" id="email_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control wizard-required" name="password" id="password">
+								<label for="zcode" class="wizard-form-text-label">Password*</label>
+								<div class="wizard-form-error" id="password_error"></div>
+							</div>
+							<div class="form-group clearfix">
+								<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+							</div>
+						</fieldset>	
+						<fieldset class="wizard-fieldset">
+							<h5>Staff Information</h5>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="name" id="name">
+								<label for="email" class="wizard-form-text-label">Name</label>
+								<div class="wizard-form-error" id="name_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="e-mail" id="e-mail">
+								<label for="username" class="wizard-form-text-label">Email</label>
+								<div class="wizard-form-error" id="address_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="phone" id="phone">
+								<label for="pwd" class="wizard-form-text-label">Phone Number</label>
+								<div class="wizard-form-error" id="phone_error"></div>
+							</div>
+							<div class="form-group clearfix">
+								<a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+								<button type="submit" style="margin-left: 420px; border: none; background: #fc1c03;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
+							</div>
+						</fieldset>	
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
                                 </div>
                             </div>
                         </div>
@@ -159,6 +163,7 @@
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
     <script src="./js/add_new_staff.js"></script>
+    <script src="./js/form.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/toastr.js"></script>
     <script src="./vendor/global/global.min.js"></script>

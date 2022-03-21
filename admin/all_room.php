@@ -22,15 +22,17 @@
         Main wrapper start
     ***********************************-->
     <div id="main-wrapper">
+
         <?php include 'components/header.php'?>
         <div class="modal fade" id="MessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="MessageModalLabel">Message</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body"  id="contact-message">
+        <p class="text-dark"></p>
         <p class="text-dark" id="message"></p>
         <br>
       </div>
@@ -46,13 +48,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4 style="color : #f48f1b;">Admin/Users</h4>
+                            <h4 style="color : #f48f1b;">All Room Category</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Users</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">All Room Category</a></li>
                         </ol>
                     </div>
                 </div>
@@ -63,20 +65,69 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                
-                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <h4 class="card-title">All Room Category</h4>
+                                <div class="modal fade" id="UpdateModal" tabindex="-1" aria-labelledby="ReplyModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content" style="border-radius: 30px;">
+    <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">Delete This User?</h5>
+        <h5 class="modal-title" id="ReplyModalLabel">Update Category</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="hidden" id="user_delete">
-        <p class="text-dark">Are you sure you want to delete this User?</p>
+        <form>
+          <div class="mb-3">
+              <input type="hidden" id="id">
+            <label for="recipient-name" class="col-form-label text-dark">Category</label>
+            <input type="text" class="form-control" name="status" id="category" id="recipient-name">
+            <span class="text-danger" id="first_error">*</span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" name="update" id="update" class="btn btn-outline-success">update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="ReplyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ReplyModalLabel">Add Room Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="add_category">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label text-dark">Room Category</label>
+            <input type="text" class="form-control" name="Room_category" id="Room_category">
+            <span id="category_error" class="text-danger">*</span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-outline-success" id="submit" name="add_category">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete This Category?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="category_delete">
+        <p class="text-dark">Are you sure you want to delete this Category?</p>
 <br>
-        <button type="button" id="delete" class="btn btn-danger mx-2"  style="border-radius: 30px;">yes</button>
-        <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal"  style="border-radius: 30px;">No</button>
+        <button type="button" id="delete" class="btn btn-danger mx-2">yes</button>
+        <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal">No</button>
       </div>
       <div class="modal-footer">
       </div>
@@ -84,26 +135,24 @@
   </div>
 </div>
 </div>
-
-
                             <div class="card-body" id="nodata"> 
-                            <!-- <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="loader" role="status">
+                                <button class="btn btn-primary mb-4" id="add_modal" data-bs-toggle='modal' ><i class="fa-solid fa-plus mx-2"></i>Add Category</button>
+                            <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="loader" role="status">
                               <span class="visually-hidden">Loading...</span>
-                            </div> -->
+                            </div>
                                 <div class="table-responsive">
-                                    <table id="example" class="display text-center table-striped " style="min-width: 845px; color:black;">
+                                    <table id="example" class="display text-center" style="min-width: 845px; color:black;">
                                         <thead class="table-primary">
                                             <tr>
-                                                <th class="text-dark">S No.</th>
-                                                <th class="text-dark">User ID</th>
-                                                <th class="text-dark">User Name</th>
-                                                <th class="text-dark">E-Mail</th>   
+                                                <th class="text-dark">S no</th>
+                                                <th class="text-dark">Name</th>
+                                                <th class="text-dark">Created at</th>
                                                 <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="users_list">
-                                       
-                                               
+                                        <tbody id="contact-data">
+                                         
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -143,7 +192,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-    <script src="./js/users.js"></script>
+    <script src="./js/all_room_category.js"></script> 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> -->
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>

@@ -1,4 +1,5 @@
 <?php include 'components/head_start.php'?>
+<link rel="stylesheet" href="./css/form.css">
 <?php include 'components/head_end.php'?>
 
 
@@ -58,102 +59,78 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" id="add_customers">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-username">First Name
-                                                        
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter Your First Name">
-                                                        <span class="text-danger" id="first_name_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-email">Last Name 
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Your Last Name">
-                                                        <span
-                                                            class="text-danger" id="last_name_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-email">E-Mail Address 
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email">
-                                                        <span
-                                                            class="text-danger" id="email_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-password">Primary Phone Number
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="primary_phone" name="primary_phone" placeholder="+91">
-                                                        <span class="text-danger" id="primary_phone_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Secondary Phone Number
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="Secondary_phone" name="secondary_phone" placeholder="+91">
-                                                        <span
-                                                            class="text-danger" id="secondary_phone_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Payment Card Number
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="pay_card" name="pay_card" placeholder="">
-                                                        <span
-                                                            class="text-danger" id="pay_card_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Payment Authority
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="pay_auth" name="pay_auth" placeholder="">
-                                                        <span
-                                                            class="text-danger" id="pay_auth_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Expiry Date
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="date" class="form-control" id="date" name="date" placeholder="">
-                                                        <span
-                                                            class="text-danger" id="date_error">*</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label text-dark" for="val-confirm-password">Card CVV
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="cvv" name="cvv" placeholder="">
-                                                        <span
-                                                            class="text-danger" id="cvv_error">*</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                                <div class="form-group row">
-                                                    <div class="col-lg-8 ml-auto">
-                                                        <button type="submit" class="btn btn-primary" id="add_customer" name="add_customer">Submit</button>
-                                                    </div>
-                                                    <div class="spinner-border" id="loader" role="status">
-                                                        <span class="visually-hidden">Loading...</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                <div class="col-lg-12 col-md-12">
+				<div class="form-wizard">
+					<form action="" method="post" role="form" id="customer_form">
+						<div class="form-wizard-header">
+							<ul class="list-unstyled form-wizard-steps clearfix">
+								<li class="active"><span>1</span></li>
+								<li><span>2</span></li>
+							</ul>
+						</div>
+						<fieldset class="wizard-fieldset show">
+							<h5>Customer Information</h5>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name = "first_name" id="first_name">
+								<label for="fname" class="wizard-form-text-label">First Name</label>
+								<div class="wizard-form-error" id="first_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="last_name" id="last_name">
+								<label for="lname" class="wizard-form-text-label">Last Name</label>
+								<div class="wizard-form-error" id="last_error"></div>
+							</div>
+                            <div class="form-group">
+								<input type="text" class="form-control wizard-required" name="email" id="email">
+								<label for="lname" class="wizard-form-text-label">Email</label>
+								<div class="wizard-form-error" id="email_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="primary_phone" id="primary_phone">
+								<label for="zcode" class="wizard-form-text-label">primary phone number</label>
+								<div class="wizard-form-error" id="primary_error"></div>
+							</div>
+                            <div class="form-group">
+								<input type="text" class="form-control wizard-required" name="secondary_phone" id="secondary_phone">
+								<label for="zcode" class="wizard-form-text-label">Secondary phone number</label>
+								<div class="wizard-form-error" id="secondary_error"></div>
+							</div>
+							<div class="form-group clearfix">
+								<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+							</div>
+						</fieldset>	
+						<fieldset class="wizard-fieldset">
+							<h5>Card Information</h5>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="card" id="card">
+								<label for="email" class="wizard-form-text-label">Card Number</label>
+								<div class="wizard-form-error" id="name_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="payment_auth" id="payment_auth">
+								<label for="username" class="wizard-form-text-label">Payment Authority</label>
+								<div class="wizard-form-error" id="address_error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" name="cvv" id="cvv">
+								<label for="pwd" class="wizard-form-text-label">CVV</label>
+								<div class="wizard-form-error" id="phone_error"></div>
+							</div>
+                            <div class="form-group">
+								<input type="date" class="form-control wizard-required" name="expiry_date" id="phone">
+								<label for="" class="wizard-form-text-label">Expiry Date</label>
+								<div class="wizard-form-error" id="phone_error"></div>
+							</div>
+							<div class="form-group clearfix">
+								<a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+								<button type="submit" style="margin-left: 420px; border: none; background: #fc1c03;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
+							</div>
+						</fieldset>	
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
                                 </div>
                             </div>
                         </div>
@@ -198,6 +175,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
+    <script src="./js/form.js"></script>
     <script src="./js/add_customer.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/toastr.js"></script>

@@ -2,9 +2,17 @@
 
 * [ ] Customer-id encryption in get request
 
-* [ ] staff_add.php with user id in select option
+* [x] fix add problem
 
-* [ ] In staff type table on update only update designation if there isnt any staff in staff table if it exists then only allow to update description.
+* [x] create room category list page
+
+* [x] create room facility list page
+
+* [x] create add room category 
+
+* [x] create add room facility
+
+* [x] In staff type table on delete if there isnt any staff in staff table if it exists then dont delete the data.
 
 * [ ] datatable error fix
 
@@ -54,17 +62,17 @@
 
 * [x] reservation_list.php, reservation_single.php.
 
-* [x] Room_Category = ID , Name, Created_at.
+* [ ] Room_Category = ID , Name, Created_at.
 
-* [x] Room_Facility_list = ID , Name(Comfortable Bed, Balcony_View, Food_Services), Price, Created_at.
+* [ ] Room_Facility_list = ID , Name(Comfortable Bed, Balcony_View, Food_Services), Price, Created_at.
 
-* [x] Room_Facility = ID, Room_ID, Room_Facility_List_ID, Created_at
+* [ ] Room_Facility = ID, Room_ID, Room_Facility_List_ID, Created_at
 
-* [x] Room = ID, Room_category_ID, Image_id, Heading, Description, area_code, Location(google Maps Link), Price, Created_at.
+* [ ] Room = ID, Room_category_ID, Image_id, Heading, Description, area_code, Location(google Maps Link), Price, Created_at.
 
-* [x] Room_Image = ID, Room_ID, Image, Created_at
+* [ ] Room_Image = ID, Room_ID, Image, Created_at
 
-* [x] Room_list.php, Room_single.php.
+* [ ] Room_list.php, Room_single.php.
 
 * [ ] Payments = Id, Payment_ID, Mode_of_payments , Payments_Details ,Respected_Provider, Created_at.
 

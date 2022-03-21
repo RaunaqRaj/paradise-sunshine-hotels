@@ -1,65 +1,64 @@
 /** @format */
 $("#loader").hide();
-$("#add_customers").on("submit", function (e) {
+$("#customer_form").on("submit", function (e) {
     e.preventDefault();
-    var first_name = $("#first_name").val();
-    var last_name = $("#last_name").val();
-    var email = $("#email").val();
-    var primary_phone = $("#primary_phone").val();
-    var Secondary_phone = $("#Secondary_phone").val();
-    var pay_card = $("#pay_card").val();
-    var pay_auth = $("#pay_auth").val();
-    var date = $("#date").val();
-    var cvv = $("#cvv").val();
+    // var first_name = $("#first_name").val();
+    // var last_name = $("#last_name").val();
+    // var email = $("#email").val();
+    // var primary_phone = $("#primary_phone").val();
+    // var Secondary_phone = $("#Secondary_phone").val();
+    // var pay_card = $("#card").val();
+    // var pay_auth = $("#pay_auth").val();
+    // var cvv = $("#cvv").val();
 
-    var error = false;
-    if (isEmpty(first_name)) {
-        error = true;
-        $('#first_name_error').text("First name should not be blank!");
-    } else {
-        $('#first_name_error').text("");
-    }
-    if (isEmpty(pay_auth)) {
-        error = true;
-        $('#pay_auth_error').text("Payment Authority should not be blank!");
-    } else {
-        $('#pay_auth_error').text("");
-    }
-    if (isEmpty(cvv)) {
-        error = true;
-        $('#cvv_error').text("CVV should not be blank!");
-    } else {
-        $('#cvv_error').text("");
-    }
-    if (isEmpty(pay_card)) {
-        error = true;
-        $('#pay_card_error').text("Card Number should not be blank!");
-    } else {
-        $('#pay_card_error').text("");
-    }
-    if (isEmpty(email)) {
-        error = true;
-        $('#email_error').text("Email should not be blank!");
-    } else {
-        $('#email_error').text("");
-    }
-    if (isEmpty(primary_phone)) {
-        error = true;
-        $('#primary_phone_error').text("Phone number should not be blank!");
-    } else {
-        $('#primary_phone_error').text("");
-    }
+    // var error = false;
+    // if (isEmpty(first_name)) {
+    //     error = true;
+    //     $('#first_name_error').text("First name should not be blank!");
+    // } else {
+    //     $('#first_name_error').text("");
+    // }
+    // if (isEmpty(pay_auth)) {
+    //     error = true;
+    //     $('#pay_auth_error').text("Payment Authority should not be blank!");
+    // } else {
+    //     $('#pay_auth_error').text("");
+    // }
+    // if (isEmpty(cvv)) {
+    //     error = true;
+    //     $('#cvv_error').text("CVV should not be blank!");
+    // } else {
+    //     $('#cvv_error').text("");
+    // }
+    // if (isEmpty(pay_card)) {
+    //     error = true;
+    //     $('#pay_card_error').text("Card Number should not be blank!");
+    // } else {
+    //     $('#pay_card_error').text("");
+    // }
+    // if (isEmpty(email)) {
+    //     error = true;
+    //     $('#email_error').text("Email should not be blank!");
+    // } else {
+    //     $('#email_error').text("");
+    // }
+    // if (isEmpty(primary_phone)) {
+    //     error = true;
+    //     $('#primary_phone_error').text("Phone number should not be blank!");
+    // } else {
+    //     $('#primary_phone_error').text("");
+    // }
 
-    if (error) {
-        return false;
-    }
+    // if (error) {
+    //     return false;
+    // }
 
     // $("#add_customer").hide();
     // $("#loader").show();
     $.ajax({
         type: "POST",
         url: "php/add_customer.php",
-        data: $(this).serialize() + "&add_customer=true",
+        data: $(this).serialize() + "&save=true",
         cache: false,
         success: function (response) {
             // $("#btn").show();
@@ -77,7 +76,7 @@ $("#add_customers").on("submit", function (e) {
                     duration : 3000,
                     oldestFirst : true
                   }).showToast();
-                $('#add_customers')[0].reset();
+                // $('#customer_form')[0].reset();
             } else {
                 for (const error in response.data) {
                     $('#' + error + '_error').text(response.data[error]);
