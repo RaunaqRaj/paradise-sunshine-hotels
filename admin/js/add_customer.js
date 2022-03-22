@@ -2,56 +2,55 @@
 $("#loader").hide();
 $("#customer_form").on("submit", function (e) {
     e.preventDefault();
-    // var first_name = $("#first_name").val();
-    // var last_name = $("#last_name").val();
-    // var email = $("#email").val();
-    // var primary_phone = $("#primary_phone").val();
-    // var Secondary_phone = $("#Secondary_phone").val();
-    // var pay_card = $("#card").val();
-    // var pay_auth = $("#pay_auth").val();
-    // var cvv = $("#cvv").val();
+    var first_name = $("#first_name").val();
+    var last_name = $("#last_name").val();
+    var email = $("#email").val();
+    var primary_phone = $("#primary_phone").val();
+    var Secondary_phone = $("#Secondary_phone").val();
+    var pay_card = $("#card").val();
+    var pay_auth = $("#payment_auth").val();
+    var cvv = $("#cvv").val();
+    var error = false;
+    if (isEmpty(first_name)) {
+        error = true;
+        $('#first_error').text("First name should not be blank!");
+    } else {
+        $('#first_error').text("");
+    }
+    if (isEmpty(pay_auth)) {
+        error = true;
+        $('#payauth_error').text("Payment Authority should not be blank!");
+    } else {
+        $('#payauth_error').text("");
+    }
+    if (isEmpty(cvv)) {
+        error = true;
+        $('#cvv_error').text("CVV should not be blank!");
+    } else {
+        $('#cvv_error').text("");
+    }
+    if (isEmpty(pay_card)) {
+        error = true;
+        $('#card_error').text("Card Number should not be blank!");
+    } else {
+        $('#card_error').text("");
+    }
+    if (isEmpty(email)) {
+        error = true;
+        $('#email_error').text("Email should not be blank!");
+    } else {
+        $('#email_error').text("");
+    }
+    if (isEmpty(primary_phone)) {
+        error = true;
+        $('#primary_error').text("Phone number should not be blank!");
+    } else {
+        $('#primary_error').text("");
+    }
 
-    // var error = false;
-    // if (isEmpty(first_name)) {
-    //     error = true;
-    //     $('#first_name_error').text("First name should not be blank!");
-    // } else {
-    //     $('#first_name_error').text("");
-    // }
-    // if (isEmpty(pay_auth)) {
-    //     error = true;
-    //     $('#pay_auth_error').text("Payment Authority should not be blank!");
-    // } else {
-    //     $('#pay_auth_error').text("");
-    // }
-    // if (isEmpty(cvv)) {
-    //     error = true;
-    //     $('#cvv_error').text("CVV should not be blank!");
-    // } else {
-    //     $('#cvv_error').text("");
-    // }
-    // if (isEmpty(pay_card)) {
-    //     error = true;
-    //     $('#pay_card_error').text("Card Number should not be blank!");
-    // } else {
-    //     $('#pay_card_error').text("");
-    // }
-    // if (isEmpty(email)) {
-    //     error = true;
-    //     $('#email_error').text("Email should not be blank!");
-    // } else {
-    //     $('#email_error').text("");
-    // }
-    // if (isEmpty(primary_phone)) {
-    //     error = true;
-    //     $('#primary_phone_error').text("Phone number should not be blank!");
-    // } else {
-    //     $('#primary_phone_error').text("");
-    // }
-
-    // if (error) {
-    //     return false;
-    // }
+    if (error) {
+        return false;
+    }
 
     // $("#add_customer").hide();
     // $("#loader").show();
@@ -76,7 +75,7 @@ $("#customer_form").on("submit", function (e) {
                     duration : 3000,
                     oldestFirst : true
                   }).showToast();
-                // $('#customer_form')[0].reset();
+                $('#customer_form')[0].reset();
             } else {
                 for (const error in response.data) {
                     $('#' + error + '_error').text(response.data[error]);

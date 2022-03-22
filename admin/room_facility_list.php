@@ -48,7 +48,7 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4 style="color : #f48f1b;">All Room Category</h4>
+                            <h4 style="color : #f48f1b;">All Room Facility</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -113,7 +113,7 @@
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label text-dark">Price</label>
-            <input type="text" class="form-control" name="Room_category" id="room_price">
+            <input type="text" class="form-control" name="Room_price" id="room_price">
             <span id="price_error" class="text-danger">*</span>
           </div>
         </form>

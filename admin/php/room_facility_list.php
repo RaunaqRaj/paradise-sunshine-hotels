@@ -17,7 +17,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
         switch ($submit) {
             case 'facility-list':
-                $query = "select id,name,price,created_at from room_facility_lists";
+                $query = "select id,facility,price,created_at from room_facility_lists";
                 $query_execute = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_execute) > 0) {
@@ -35,7 +35,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 case 'facility-add':
                     $facility = sql_prevent($conn, xss_prevent($_POST['facility']));
                     $price = sql_prevent($conn, xss_prevent($_POST['price']));
-                   $query = "INSERT INTO room_facility_lists(name,price)VALUES('$facility','$price')";
+                   $query = "INSERT INTO room_facility_lists(facility,price)VALUES('$facility','$price')";
                    if($conn->query($query)== TRUE){
                     echo json_encode(array("success" => true, "message" => "Room Facility successfully added!"));
                 }else{
@@ -48,7 +48,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 $query = "DELETE FROM room_facility_lists where id='$id'";
                 $query_execute = mysqli_query($conn, $query);
                 if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "Category Deleted successfully"));
+                    echo json_encode(array("success" => true, "message" => "Facility Deleted successfully"));
                 } else {
                     echo json_encode(array("success" => false, "message" => "Some error Occured"));
                 }
@@ -78,7 +78,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                         die;
                     }
                     if($check_id){
-                    $query = "UPDATE room_facility_lists SET name = '$facility',price = '$price' WHERE id ='$id' ";
+                    $query = "UPDATE room_facility_lists SET facility = '$facility',price = '$price' WHERE id ='$id' ";
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
                         echo json_encode(array("success" => true, "message" => "facility  Updated successfully"));

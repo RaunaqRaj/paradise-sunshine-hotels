@@ -58,9 +58,9 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-              <input type="hidden" id="status_update">
-            <label for="recipient-name" class="col-form-label text-dark">Status</label>
-            <input type="text" class="form-control" name="status" id="status" id="recipient-name">
+              <input type="hidden" id="quantity_update">
+            <label for="recipient-name" class="col-form-label text-dark">quantity</label>
+            <input type="text" class="form-control" name="quantity" id="quantity">
           </div>
         </form>
       </div>
@@ -81,13 +81,11 @@
                                         <thead class="table-primary">
                                             <tr>
                                                 <th class="text-dark">Sno</th>
-                                                <th class="text-dark">Name</th>
-                                                <th class="text-dark">Email</th>
+                                                <th class="text-dark">Customer Name</th>
                                                 <th class="text-dark">Room</th>
+                                                <th class="text-dark">Quantity</th>
                                                 <th class="text-dark">check-in</th>
                                                 <th class="text-dark">check-out</th>
-                                                <th class="text-dark">Status</th>
-                                                <th class="text-dark">created_at</th>
                                                 <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>

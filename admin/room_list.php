@@ -58,18 +58,39 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-              <input type="hidden" id="status_update">
-            <label for="recipient-name" class="col-form-label text-dark">Status</label>
-            <input type="text" class="form-control" name="status" id="status" id="recipient-name">
+              <input type="hidden" id="room_update">
+            <label for="recipient-name" class="col-form-label text-dark">Description</label>
+            <input type="text" class="form-control" name="description" id="description" id="recipient-name">
+            <span id="description_error" class="text-danger"></span>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="update" class="btn btn-outline-success">save</button>
+        <button type="submit" id="update" class="btn btn-outline-success">save</button>
       </div>
     </div>
   </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="border-radius: 30px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete This Room?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="room_delete">
+        <p class="text-dark">Are you sure you want to delete this Room?</p>
+<br>
+        <button type="button" id="delete" class="btn btn-danger mx-2"  style="border-radius: 30px;">yes</button>
+        <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal"  style="border-radius: 30px;">No</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
                             <div class="card-body" id="nodata"> 
@@ -81,36 +102,15 @@
                                         <thead class="table-primary">
                                             <tr>
                                                 <th class="text-dark">Sno</th>
-                                                <th class="text-dark">Name</th>
-                                                <th class="text-dark">created_at</th>
+                                                <th class="text-dark">Room Category</th>
+                                                <th class="text-dark">Room Facility</th>
+                                                <th class="text-dark">Room Heading</th>
+                                                <th class="text-dark">Room Description</th>
+                                                <th class="text-dark">Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                                <td>1</td>
-                                                <td><a href="room_single.php">presidential Suite</a></td>
-                                                <td>22-03-2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td><a href="room_single.php">presidential Suite</a></td>
-                                                <td>22-03-2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td><a href="room_single.php">presidential Suite</a></td>
-                                                <td>22-03-2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td><a href="room_single.php">presidential Suite</a></td>
-                                                <td>22-03-2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td><a href="room_single.php">presidential Suite</a></td>
-                                                <td>22-03-2022</td>
-                                            </tr>
+                                        <tbody id="room_list">
+                                       
                                         </tbody>
                                     </table>
                                 </div>
@@ -150,7 +150,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'components/script_start.php'?>
-    <script src="./js/reservation.js"></script>
+    <script src="./js/room_list.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> -->
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>

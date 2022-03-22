@@ -17,12 +17,11 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
         switch ($submit) {
             case 'reservation-list':
-                $query = "select id,name,email,room,checkin,checkout,status,created_at from reservation";
+                $query = "select reservation.id,customers.first_name,rooms.heading,reservation.checkin,reservation.checkout,reservation.quantity from reservation join customers on reservation.customer_id=customers.id join rooms on reservation.room=rooms.id";
                 $query_execute = mysqli_query($conn, $query);
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();
-                    $result = mysqli_fetch_array($query_execute , MYSQLI_ASSOC);
-                    while ($result = mysqli_fetch_array($query_execute)) {
+                    while ($result = mysqli_fetch_assoc($query_execute)) {
                         $data[] = $result;
                     }
                     echo json_encode(array("success" => true, "data" => $data));
@@ -32,32 +31,17 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 break;
             case 'reservation-update':
-                $status = $_POST['status'];
+                $quantity = $_POST['quantity'];
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
-                $query = "UPDATE reservation SET status = '$status' WHERE id ='$id' ";
+                $query = "UPDATE reservation SET quantity = '$quantity' WHERE id ='$id' ";
                 $query_execute = mysqli_query($conn, $query);
                 if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "Status Updated successfully"));
+                    echo json_encode(array("success" => true, "message" => "Quantity Updated successfully"));
                 } else {
                     echo json_encode(array("success" => false, "message" => "Some error Occured"));
                 }
                 break;
 
-            case 'reservation-previous':
-                $email = sql_prevent($conn, xss_prevent($_POST['email']));
-                $query = "SELECT * FROM reservation  WHERE email = '$email' ORDER BY created_at DESC";
-                $query_execute = mysqli_query($conn, $query);
-                if (mysqli_num_rows($query_execute) > 0) {
-                    $previous_data = array();
-                    while ($result = mysqli_fetch_array($query_execute,MYSQLI_ASSOC)) {
-                        $previous_data[] = $result;
-                    }
-                    echo json_encode(array("success" => true, "data" => $previous_data));
-                } else {
-                    $previous_data[] = "No information found!";
-                    echo json_encode(array("success" => false, "data" => $previous_data));
-                }
-                break;
             default:
                 echo json_encode(array("success" => false, "message" => "Method not found"));
                 die;

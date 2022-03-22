@@ -73,7 +73,7 @@
 							<div class="form-group">
 								<input type="text" class="form-control wizard-required" name = "first_name" id="first_name">
 								<label for="fname" class="wizard-form-text-label">First Name</label>
-								<div class="wizard-form-error" id="first_error"></div>
+								<span class="wizard-form-error text-danger" id="first_error"></span>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control wizard-required" name="last_name" id="last_name">
@@ -83,12 +83,12 @@
                             <div class="form-group">
 								<input type="text" class="form-control wizard-required" name="email" id="email">
 								<label for="lname" class="wizard-form-text-label">Email</label>
-								<div class="wizard-form-error" id="email_error"></div>
+								<span class="wizard-form-error text-danger" id="email_error"></span>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control wizard-required" name="primary_phone" id="primary_phone">
 								<label for="zcode" class="wizard-form-text-label">primary phone number</label>
-								<div class="wizard-form-error" id="primary_error"></div>
+								<span class="wizard-form-error text-danger" id="primary_error"></span>
 							</div>
                             <div class="form-group">
 								<input type="text" class="form-control wizard-required" name="secondary_phone" id="secondary_phone">
@@ -104,26 +104,25 @@
 							<div class="form-group">
 								<input type="text" class="form-control wizard-required" name="card" id="card">
 								<label for="email" class="wizard-form-text-label">Card Number</label>
-								<div class="wizard-form-error" id="name_error"></div>
+								<div class="wizard-form-error" id="card_error"></div>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control wizard-required" name="payment_auth" id="payment_auth">
 								<label for="username" class="wizard-form-text-label">Payment Authority</label>
-								<div class="wizard-form-error" id="address_error"></div>
+								<span class="wizard-form-error text-danger" id="payauth_error"></span>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control wizard-required" name="cvv" id="cvv">
 								<label for="pwd" class="wizard-form-text-label">CVV</label>
-								<div class="wizard-form-error" id="phone_error"></div>
+								<span class="wizard-form-error text-danger" id="cvv_error"></span>
 							</div>
                             <div class="form-group">
 								<input type="date" class="form-control wizard-required" name="expiry_date" id="phone">
-								<label for="" class="wizard-form-text-label">Expiry Date</label>
-								<div class="wizard-form-error" id="phone_error"></div>
+								<label for="" class="wizard-form-text-label"></label>
 							</div>
 							<div class="form-group clearfix">
 								<a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-								<button type="submit" style="margin-left: 420px; border: none; background: #fc1c03;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
+								<button type="submit" style="margin-left: 620px; border: none; background: #fc1c03; color: #fff;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
 							</div>
 						</fieldset>	
 					</form>

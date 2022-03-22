@@ -70,6 +70,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 if($result->num_rows>0){
                     $row = mysqli_fetch_array($result);
                     $user_id = $row['id'];
+                    
                     $sql = "INSERT INTO staffs(user_id,name, email,phone_number)VALUES('$user_id','$name','$e_mail','$phone')";
                 
                 if ($conn->query($sql) == true) {
@@ -80,16 +81,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 }
             }
             
-
-            
-
-            //add approve section value : boolean
-
-            // if ($conn->query($sql) == true) {
-            //     echo json_encode(array("success" => true, "message" => "Hello $username you are successfully registered and you can login now."));
-            // } else {
-            //     echo json_encode(array("success" => true, "message" => "Sorry! an error occured"));
-            // }
 
         } else {
             echo json_encode(array("success" => false, "message" => "Method not found"));

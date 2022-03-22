@@ -110,7 +110,7 @@
 							</div>
 							<div class="form-group clearfix">
 								<a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-								<button type="submit" style="margin-left: 420px; border: none; background: #fc1c03;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
+								<button type="submit"style="margin-left: 620px; border: none; background: #fc1c03; color: #fff;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
 							</div>
 						</fieldset>	
 					</form>

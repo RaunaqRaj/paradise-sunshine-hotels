@@ -6,26 +6,34 @@ if (!user_check($conn)) {
     header('location : index.php');
 }
 
-// if (!isset($_GET['contact'])) {
-//     header('location : contact-table.php');
-// } else {
-//     $id = $_GET['contact'];
-//     $check_id = "select id from informations where id = $id";
-//     $query = mysqli_query($conn, $check_id);
-//     $result = mysqli_num_rows($query);
+if (!isset($_GET['room'])) {
+    header('location : room_list.php');
+} else {
+    $id = $_GET['room'];
+    $check_id = "select id from rooms where id = $id";
+    $query = mysqli_query($conn, $check_id);
+    $result = mysqli_num_rows($query);
 
-//     if ($result > 0) {
-//         $sql = "select * from informations where id = $id";
-//         $result = mysqli_query($conn, $sql);
-//         $message = array();
-//         while ($row = mysqli_fetch_assoc($result)) {
-//             $message = $row;
-//         }
+    if ($result > 0) {
+        $sql = "select * from rooms where id = $id";
+        $result = mysqli_query($conn, $sql);
+        $message = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $message = $row;
+        }
 
-//     } else {
-//         header('location : contact-table.php');
-//     }
-// }
+    } else {
+        header('location : room_list.php');
+    }
+
+    $sql2 = "select * from room_image";
+    $res = mysqli_query($conn,$sql2);
+    if(mysqli_num_rows($res)>0){
+    while($image = mysqli_fetch_array($res)){
+       $row = $image;
+    }
+}
+}
 ?>
 <?php ?>
 
@@ -127,6 +135,14 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="./home.php" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i>Dashboard</a></li>
                             </li>
+
+                            <li class="nav-label first">Payment Card</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./payment_card.php" href="javascript:void()" aria-expanded="false"><i class="fa-brands fa-cc-visa"></i>Payment Card List</a></li>
+                            </li>
+
+
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
                                 <li class="nav-label first">Staffs</li>
@@ -152,12 +168,16 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>All customers</a></li>
                         </ul>
                     </li>
-
-                            <li class="nav-label first">Rooms-List</li>
-                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
-                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
-                            <li><a href="./room_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-couch"></i>Room List</a></li>
-                            </li>
+                    <li class="nav-label first">Rooms</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-person-booth"></i><span class="nav-text"></span>Rooms</a>
+                        <ul aria-expanded="false">
+                            <li><a href="all_room.php"><i class="fa-solid fa-person-booth"></i>All Room Category</a></li>
+                            <li><a href="room_facility_list.php"><i class="fa-solid fa-person-booth"></i>All Room facilities</a></li>
+                            <li><a href="add_room.php"><i class="fa-solid fa-person-booth"></i>Add Rooms</a></li>
+                            <li><a href="add_room_image.php"><i class="fa-solid fa-person-booth"></i>Add Rooms Image</a></li>
+                            <li><a href="room_list.php"><i class="fa-solid fa-person-booth"></i>All Rooms</a></li>
+                        </ul>
+                    </li>
 
                             <li class="nav-label first">User Reservations</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
@@ -185,6 +205,9 @@ echo $_SESSION['user']['user_name'];
             Sidebar end
         ***********************************-->
 
+        <!--**********************************
+            Content body start
+        ***********************************-->
         <!--**********************************
             Content body start
         ***********************************-->
@@ -226,13 +249,14 @@ echo $_SESSION['user']['user_name'];
                                             <div class="row">
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-name">
-                                                        <h4 class="text-primary"><i class="fa fa-user mx-2"></i>Raunaq</h4>
+                                                        <h4 class="text-primary"><i class="fa fa-house mx-1"></i><?php echo $message['heading']?></h4>
 
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-email">
-                                                        <h4 class="text-muted"><a style="text-decoration: none; color: #000;" href="mailto:someone@example.com">Raunaq@gmail.com</a></h4>
+                                                    <img src="<?php echo "image/".$row['image'] ?>" alt="">
                                                         <p>Email</p>
                                                     </div>
                                                 </div>
@@ -328,8 +352,13 @@ echo $_SESSION['user']['user_name'];
                                             <div id="my-posts" style="height: 600px;" class="tab-pane fade active show">
                                                 <div class="my-post-content pt-1" style="height: 600px">
                                                     <div class="post-input" style="height: 600px">
-                                                    <p class="mt-4 text-dark">Hello</p>
-                                                    <button class="btn mt-3 mx-2 mb-2 btn-outline-success " style="color: #000;"data-bs-toggle="modal" data-bs-target="#ReplyModal" data-bs-whatever="@getbootstrap"><i class="fa-solid fa-reply mx-1"></i>Reply</button>
+                                                    <br>
+                                                    <h4>Location : </h4>
+                                                    <p class="mt-4 text-dark"><?php echo $message['location']?></p>
+                                                    <br>
+                                                    <h4>Area Code : </h4>
+                                                    <p class="mt-4 text-dark"><?php echo $message['area_code']?></p>
+                                                    
                                                 </div>
                                                 </div>
                                                 </div>

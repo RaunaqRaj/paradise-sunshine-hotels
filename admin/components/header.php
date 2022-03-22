@@ -117,8 +117,11 @@ echo $_SESSION['user']['user_name'];
                     <li class="nav-label first">Rooms</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-person-booth"></i><span class="nav-text"></span>Rooms</a>
                         <ul aria-expanded="false">
-                            <li><a href="all_room.php"><i class="fa-solid fa-users"></i>All Room Category</a></li>
-                            <li><a href="room_facility_list.php"><i class="fa-solid fa-users"></i>All Room facilities</a></li>
+                            <li><a href="all_room.php"><i class="fa-solid fa-person-booth"></i>All Room Category</a></li>
+                            <li><a href="room_facility_list.php"><i class="fa-solid fa-person-booth"></i>All Room facilities</a></li>
+                            <li><a href="add_room.php"><i class="fa-solid fa-person-booth"></i>Add Rooms</a></li>
+                            <li><a href="add_room_image.php"><i class="fa-solid fa-person-booth"></i>Add Rooms Image</a></li>
+                            <li><a href="room_list.php"><i class="fa-solid fa-person-booth"></i>All Rooms</a></li>
                         </ul>
                     </li>
 

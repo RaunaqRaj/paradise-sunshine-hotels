@@ -2,17 +2,11 @@
 
 * [ ] Customer-id encryption in get request
 
-* [x] fix add problem
+* [x] Room Table List
 
-* [x] create room category list page
+* [x] create room Add with images and facility id and room id
 
-* [x] create room facility list page
-
-* [x] create add room category 
-
-* [x] create add room facility
-
-* [x] In staff type table on delete if there isnt any staff in staff table if it exists then dont delete the data.
+* [x] create reservation table
 
 * [ ] datatable error fix
 
@@ -58,9 +52,9 @@
 
 * [x] Payment_Card = Id, customer_ID, Card_Number, Payment_Authority , Expiry_Date , Cvv, Created_at.
 
-* [x] Reservations = Id, Customer_ID , Check_In, Check_out, Room_ID, Payment_ID , Status and created_at.
+* [x] Reservations = Id, Customer_ID , Check_In, Check_out, Quantity Room_ID, Payment_ID , Status and created_at.
 
-* [x] reservation_list.php, reservation_single.php.
+* [x] reservation_list.php
 
 * [ ] Room_Category = ID , Name, Created_at.
 

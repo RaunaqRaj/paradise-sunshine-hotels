@@ -101,7 +101,7 @@ $(document).ready(function () {
 $("#submit").click( function (e) {
     e.preventDefault();
     var facility = $("#room_facility").val();
-    var price = $("#room_facility").val();
+    var price = $("#room_price").val();
     var error = false;
     if (isEmpty(facility)) {
         error = true;
@@ -240,11 +240,11 @@ $(document).on('click', '.update', function () {
         previous += `
         <tr>
         <td class="user_id">${index+1}</td>
-        <td>${facility.name}</td>
+        <td>${facility.facility}</td>
         <td>${facility.price}</td>
         <td>${facility.created_at}</td>
         <td>
-        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${facility.name} data-price=${facility.price}  data-id=${facility.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${facility.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
+        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${facility.facility} data-price=${facility.price}  data-id=${facility.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${facility.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
         </td>
     </tr>
 `;
