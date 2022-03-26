@@ -138,6 +138,14 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="./home.php" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i>Dashboard</a></li>
                             </li>
+
+                            <li class="nav-label first">Payment Card</li>
+                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
+                            <li><a href="./payment_card.php" href="javascript:void()" aria-expanded="false"><i class="fa-brands fa-cc-visa"></i>Payment Card List</a></li>
+                            </li>
+
+
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
                                 <li class="nav-label first">Staffs</li>
@@ -163,12 +171,16 @@ echo $_SESSION['user']['user_name'];
                             <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>All customers</a></li>
                         </ul>
                     </li>
-
-                            <li class="nav-label first">Rooms-List</li>
-                    <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
-                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a> -->
-                            <li><a href="./room_list.php" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-couch"></i>Room List</a></li>
-                            </li>
+                    <li class="nav-label first">Rooms</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fa-solid fa-person-booth"></i><span class="nav-text"></span>Rooms</a>
+                        <ul aria-expanded="false">
+                            <li><a href="all_room.php"><i class="fa-solid fa-person-booth"></i>All Room Category</a></li>
+                            <li><a href="room_facility_list.php"><i class="fa-solid fa-person-booth"></i>All Room facilities</a></li>
+                            <li><a href="add_room.php"><i class="fa-solid fa-person-booth"></i>Add Rooms</a></li>
+                            <li><a href="add_room_image.php"><i class="fa-solid fa-person-booth"></i>Add Rooms Image</a></li>
+                            <li><a href="room_list.php"><i class="fa-solid fa-person-booth"></i>All Rooms</a></li>
+                        </ul>
+                    </li>
 
                             <li class="nav-label first">User Reservations</li>
                     <!-- <li><a class="has-arrow" href="javascript:void()" href="./index.html" aria-expanded="false"><i
@@ -192,6 +204,9 @@ echo $_SESSION['user']['user_name'];
 
 
         </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
         <!--**********************************
             Sidebar end
         ***********************************-->

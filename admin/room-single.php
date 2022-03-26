@@ -226,7 +226,7 @@ echo $_SESSION['user']['user_name'];
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Customer Details</h4>
+                            <h4>Room Details</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -250,20 +250,16 @@ echo $_SESSION['user']['user_name'];
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-name">
                                                         <h4 class="text-primary"><i class="fa fa-house mx-1"></i><?php echo $message['heading']?></h4>
-
                                                     </div>
                                                 </div>
-                                                
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-email">
-                                                    <img src="<?php echo "image/".$row['image'] ?>" alt="">
-                                                        <p>Email</p>
-                                                    </div>
+                                                    <img src='<?php echo "image/".$row['image'] ?>' alt="image" style ="width : 100px; align: center; height: 100px;">
+                                                    <h4>Room Image</h4>
                                                 </div>
                                                 </div>
+                                                <br>
                                                     <div class="profile-call" style="margin-left : 275px">
-                                                        <h4 class="text-muted">22-03-2022</h4>
-                                                        <p>Date and Time</p>
                                                 </div>
                                              </div>
                                          </div>
@@ -345,8 +341,8 @@ echo $_SESSION['user']['user_name'];
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item"><a href="#my-posts" data-toggle="tab" class="nav-link active show">Details</a>
                                             </li>
-                                            <li class="nav-item" id="previous-contacts"><a href="#about-me" data-toggle="tab" class="nav-link">All Previous Request</a>
-                                            </li>
+                                            <!-- <li class="nav-item" id="previous-contacts"><a href="#about-me" data-toggle="tab" class="nav-link">All Previous Request</a>
+                                            </li> -->
                                         </ul>
                                         <div class="tab-content" style="height: 600px;" >
                                             <div id="my-posts" style="height: 600px;" class="tab-pane fade active show">
@@ -354,7 +350,8 @@ echo $_SESSION['user']['user_name'];
                                                     <div class="post-input" style="height: 600px">
                                                     <br>
                                                     <h4>Location : </h4>
-                                                    <p class="mt-4 text-dark"><?php echo $message['location']?></p>
+                                                    <i class="fa-solid fa-location-dot mx-2"><a href="<?php echo $message['location'] ?>" target="blank" style="font-size: 14px; color : black;"></i>Location</a>
+                                                    <br>
                                                     <br>
                                                     <h4>Area Code : </h4>
                                                     <p class="mt-4 text-dark"><?php echo $message['area_code']?></p>

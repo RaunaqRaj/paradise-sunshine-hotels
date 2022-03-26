@@ -14,7 +14,7 @@ if($_FILES['image']['name'] != ''){
     if(in_array($extension,$valid_extensions)){
         $new_name = rand().".".$extension;
         $path = 'C:/xampp1/htdocs/Nukepin-projects/paradise-hotels/admin/image/' . $new_name;
-        $sql = "INSERT INTO room_image(room_id,image)VALUES('$room','$path')";
+        $sql = "INSERT INTO room_image(room_id,image)VALUES('$room','$new_name')";
         if ($conn->query($sql) == true) {
         if(move_uploaded_file($_FILES['image']['tmp_name'],$path)){
             echo json_encode(array("success" => true, "message" => "File successfully uploaded"));       

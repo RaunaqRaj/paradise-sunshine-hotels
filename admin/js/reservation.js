@@ -7,6 +7,49 @@ $(document).ready(function () {
     $("#previous_loader").hide();
     getdata();
     //delete modal//
+    $('#delete').click(function (e) {
+        e.preventDefault();
+        var id = $('#customer_delete').val();
+        $.ajax({
+            url: "php/reservation.php",
+            type: "POST",
+            dataType: "json",
+            data: { submit: 'reservation-delete', id: id },
+            success: function (response) {
+                $('#deleteModal').modal('hide');
+                if (response.success === true) {
+                    Toastify({
+                        text: response.message,
+                        className: "success",
+                        style: {
+                            background: "#78f76d",
+                        },
+                        close: true,
+                        gravity: top,
+                        duration: 3000,
+                        oldestFirst: true
+                    }).showToast();
+                    getdata();
+                    getpreviousdata();
+                } else {
+                    Toastify({
+                        text: response.message,
+                        className: "info",
+                        style: {
+                            background: "#ff4e21",
+                        }
+                    }).showToast();
+                }
+
+            }
+
+        });
+    });
+    $(document).on('click', '.delete', function () {
+        var id = $(this).attr('data-id');
+        $('#customer_delete').val(id);
+        $("#deleteModal").modal('show');
+    });
 
    function getdata(){
     output = "";
@@ -51,61 +94,6 @@ $(document).ready(function () {
     });
 
    }
-   $('#update').click(function (e) {
-    var id = $('#quantity_update').val();
-    var quantity = $("#quantity").val();
-    var error = false;
-    // if (isEmpty(quantity)) {
-    //     error = true;
-    //     $('#description_error').text("Description should not be blank!");
-    // } else {
-    //     $('#description_error').text("");
-    // }
-    // if (error) {
-    //     return false;
-    // }
-    e.preventDefault();
-    output = "";
-    var id = $('#quantity_update').val();
-    var quantity = $('#quantity').val();
-    $.ajax({
-        url: "php/reservation.php",
-        type: "POST",
-        dataType: "json",
-        data: { submit: 'reservation-update', id: id, quantity: quantity},
-        success: function (response) {
-            if (response.success === true) {
-                Toastify({
-                    text: response.message,
-                    className: "success",
-                    style: {
-                        background: "#78f76d",
-                    },
-                    close: true,
-                    gravity: top,
-                    duration: 3000,
-                    oldestFirst: true
-                }).showToast();
-                $('#UpdateModal').modal('hide');
-                    getdata();
-            } else {
-                for (const error in response.data) {
-                    $('#' + error + '_error').text(response.data[error]);
-                }
-            }
-        }
-    });
-});
-
-$(document).on('click', '.update', function () {
-    var id = $(this).attr('data-id');
-    var quantity = $(this).attr('data-quantity');
-
-    $('#quantity_update').val(id);
-    $("#UpdateModal").modal('show');
-    var id = $('#id').val(id);
-    var quantity = $('#quantity').val(quantity);
-});
 
    function get_contact_list_html(contacts){
     previous = "";
@@ -119,7 +107,7 @@ $(document).on('click', '.update', function () {
         <td>${reservation.checkin}</td>
         <td>${reservation.checkout}</td>
         <td>
-        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-quantity=${reservation.quantity} data-id=${reservation.id} ><i class='fa-solid fa-pen'></i></button>
+        <button data-id=${reservation.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
         </td>
     </tr>
 `;

@@ -122,7 +122,7 @@ $(document).ready(function () {
    function get_contact_list_html(contacts){
     previous = "";
     contacts.forEach((contact, index) => {
-        previous += `
+        previous +=`
         <tr>
         <td class="user_id">${index+1}</td>
         <td><a href='contact-view.php?contact=${contact.id}'><style>a{

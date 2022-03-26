@@ -1,14 +1,11 @@
 ### Raunaq Project work list
 
 * [ ] Customer-id encryption in get request
-
-* [x] Room Table List
-
-* [x] create room Add with images and facility id and room id
-
-* [x] create reservation table
-
+* [ ] Reservation Form
+* [ ] Dynamic website
+* [ ] Dynamic data filter
 * [ ] datatable error fix
+
 
 * [x] user - (id, username, email, password , iv, usertype, created_at)
   usertype - (1=admin, 2=customer, 3=staff)

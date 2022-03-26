@@ -30,16 +30,25 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 }
 
                 break;
-            case 'reservation-update':
-                $quantity = $_POST['quantity'];
+            case 'reservation-delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));
-                $query = "UPDATE reservation SET quantity = '$quantity' WHERE id ='$id' ";
+                $hash_id = password_hash($id,PASSWORD_DEFAULT);
+                $id_decrypt = password_verify($hash_id,$id);
+                $check_id = "select id from reservation where id = $id";
+                if($check_id){
+                $query = "DELETE FROM reservation where id='$id'";
                 $query_execute = mysqli_query($conn, $query);
                 if ($query_execute) {
-                    echo json_encode(array("success" => true, "message" => "Quantity Updated successfully"));
+                    echo json_encode(array("success" => true, "message" => "Record Deleted successfully"));
+                    die;
                 } else {
                     echo json_encode(array("success" => false, "message" => "Some error Occured"));
+                          die;
                 }
+            }else{
+                echo json_encode(array("success" => false, "message" => "Id doesn't exist"));
+                die;
+            }
                 break;
 
             default:

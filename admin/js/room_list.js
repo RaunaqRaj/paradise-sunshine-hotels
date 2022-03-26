@@ -174,7 +174,7 @@ $(document).on('click', '.update', function () {
         </style>${room.heading}</td>
         <td>${room.description}</td>
         <td>
-        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${room.description}  data-id=${room.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${room.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
+        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${room.description}  data-id=${room.id} ><i class='fa-solid fa-edit'></i></button><button data-id=${room.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
         </td>
     </tr>
 `;

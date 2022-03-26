@@ -47,6 +47,26 @@
                         <div class="card">
                             <div class="card-header">
                                 
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="border-radius: 30px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete This Customer?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="customer_delete">
+        <p class="text-dark">Are you sure you want to delete this Customer?</p>
+<br>
+        <button type="button" id="delete" class="btn btn-danger mx-2"  style="border-radius: 30px;">yes</button>
+        <button type="button" id="No" class="btn btn-primary" data-bs-dismiss="modal"  style="border-radius: 30px;">No</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
  <div class="modal fade" id="UpdateModal" tabindex="-1" aria-labelledby="ReplyModalLabel" aria-hidden="true">
   <div class="modal-dialog">
