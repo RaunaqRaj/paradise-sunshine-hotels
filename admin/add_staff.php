@@ -1,3 +1,10 @@
+<?php
+
+include 'php/function.php';
+if (!user_check($conn)) {
+    header('location : index.php');
+}
+?>
 <?php include 'components/head_start.php'?>
 <link rel="stylesheet" href="./css/form.css">
 <?php include 'components/head_end.php'?>

@@ -1,11 +1,12 @@
 ### Raunaq Project work list
 
 * [ ] Customer-id encryption in get request
-* [ ] Reservation Form
-* [ ] Dynamic website
-* [ ] Dynamic data filter
-* [ ] datatable error fix
 
+* [x] Reservation Form
+
+* [x] Dynamic website
+
+* [ ] datatable error fix
 
 * [x] user - (id, username, email, password , iv, usertype, created_at)
   usertype - (1=admin, 2=customer, 3=staff)
@@ -53,19 +54,19 @@
 
 * [x] reservation_list.php
 
-* [ ] Room_Category = ID , Name, Created_at.
+* [x] Room_Category = ID , Name, Created_at.
 
-* [ ] Room_Facility_list = ID , Name(Comfortable Bed, Balcony_View, Food_Services), Price, Created_at.
+* [x] Room_Facility_list = ID , Name(Comfortable Bed, Balcony_View, Food_Services), Price, Created_at.
 
-* [ ] Room_Facility = ID, Room_ID, Room_Facility_List_ID, Created_at
+* [x] Room_Facility = ID, Room_ID, Room_Facility_List_ID, Created_at
 
-* [ ] Room = ID, Room_category_ID, Image_id, Heading, Description, area_code, Location(google Maps Link), Price, Created_at.
+* [x] Room = ID, Room_category_ID, Image_id, Heading, Description, area_code, Location(google Maps Link), Price, Created_at.
 
-* [ ] Room_Image = ID, Room_ID, Image, Created_at
+* [x] Room_Image = ID, Room_ID, Image, Created_at
 
-* [ ] Room_list.php, Room_single.php.
+* [x] Room_list.php, Room_single.php.
 
-* [ ] Payments = Id, Payment_ID, Mode_of_payments , Payments_Details ,Respected_Provider, Created_at.
+* [x] Payments = Id, Payment_ID, Mode_of_payments , Payments_Details ,Respected_Provider, Created_at.
 
 <!-- {
     custtomer_detail:{ 

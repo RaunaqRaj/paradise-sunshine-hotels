@@ -1,43 +1,43 @@
 /** @format */
 $("#contact_submit_loader").hide();
-$("#myform").on("submit", function (e) {
+$("#reservation_form").on("submit", function (e) {
     e.preventDefault();
-    var room = $("#room").val();
-    var checkin = $("#check-in").val();
-    var checkout = $("#check-out").val();
+    // var room = $("#room").val();
+    // var checkin = $("#check-in").val();
+    // var checkout = $("#check-out").val();
 
-    var error = false;
-    if (isEmpty(room)) {
-        error = true;
-        $('#room_error').text("please Select a room!");
-    } else {
-        $('#room_error').text("");
-    }
+    // var error = false;
+    // if (isEmpty(room)) {
+    //     error = true;
+    //     $('#room_error').text("please Select a room!");
+    // } else {
+    //     $('#room_error').text("");
+    // }
 
-    if (isEmpty(checkin)) {
-        error = true;
-        $('#checkin_error').text("message should not be blank!");
-    } else {
-        $('#checkin_error').text("");
-    }
+    // if (isEmpty(checkin)) {
+    //     error = true;
+    //     $('#checkin_error').text("message should not be blank!");
+    // } else {
+    //     $('#checkin_error').text("");
+    // }
 
-    if (isEmpty(checkout)) {
-        error = true;
-        $('#checkout_error').text("message should not be blank!");
-    } else {
-        $('#checkout_error').text("");
-    }
+    // if (isEmpty(checkout)) {
+    //     error = true;
+    //     $('#checkout_error').text("message should not be blank!");
+    // } else {
+    //     $('#checkout_error').text("");
+    // }
 
-    if (error) {
-        return false;
-    }
+    // if (error) {
+    //     return false;
+    // }
 
     $("#btn").hide();
     $("#contact_submit_loader").show();
     $.ajax({
         type: "POST",
         url: "php/reservation.php",
-        data: $(this).serialize() + "&contact_submit=true",
+        data: $(this).serialize() + "&save=true",
         cache: false,
         success: function (response) {
             $("#btn").show();
@@ -49,7 +49,7 @@ $("#myform").on("submit", function (e) {
                     title: "success",
                     text: response.message
                 });
-                $('#myform')[0].reset();
+                $('#reservation_form')[0].reset();
             } else {
                 for (const error in response.data) {
                     $('#' + error + '_error').text(response.data[error]);

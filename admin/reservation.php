@@ -1,3 +1,10 @@
+<?php
+
+include 'php/function.php';
+if (!user_check($conn)) {
+    header('location : index.php');
+}
+?>
 <?php include 'components/head_start.php'?>
  <link href="./css/datatable.css" rel="stylesheet">
 <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> --> -->

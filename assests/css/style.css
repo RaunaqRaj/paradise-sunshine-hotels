@@ -5,6 +5,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+#preloader{
+    position: fixed;
+    width : 100%;
+    height: 100vh;
+    z-index: 99999;
+}
+
+#loader{
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width : 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 99999;
+}
+
+#spinner{
+    margin-top: 300px;
+}
 
 li.Raunaq{
     display: flex;
@@ -120,9 +140,17 @@ a:hover{
     text-decoration: none;
     font-family: serif;
     color: #fcf7f7;
-    font-size: 18px;
+    font-size: 1.0rem;
+    box-sizing: border-box;
     letter-spacing: 0.5px;
-    padding: 0 10px;
+}
+
+.navbar-toggler{
+    box-sizing: border-box;
+}
+
+.header{
+    box-sizing: border-box;
 }
 
 .navbar a::after:hover{
@@ -135,23 +163,6 @@ a:hover{
     bottom: -10px;
 }
 
-.navbar .dropdown-menu.fade-down{
-    top: 80%;
-    transform: rotateX(-75deg);
-    transform-origin: 0% 0%;
-}
-
-.navbar .dropdown-menu.fade-up{
-    top:180%;
-}
-
-.navbar .nav-item .dropdown-menu:hover{
-    transition: 1s;
-    opacity: 1;
-    visibility: visible;
-    top: 100%;
-    transform: rotateX(0deg);
-}
 .nav-link:hover{
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -314,7 +325,10 @@ span{
 .modal-transition{
     transform :.3s ease-out;
 }
-
+.user{
+    height: 100px;
+    width: 200px;
+}
 
 .slider-btn .btn{
     columns: white;
@@ -359,4 +373,53 @@ img.h{
 div.free{
     border: 2px #fff;
     border-radius: 20px;
+}
+.container{
+    margin: none;
+    width: 100%;
+}
+.sk-three-bounce{
+    color: #ff9800;
+}
+
+@media screen and (max-width : 768px){
+    body{
+        width: 100%;
+        margin-right: 0;
+        box-sizing: border-box; 
+    }
+    .carousel-item{
+        height : 100%;
+        margin-right: 0;
+        text-align: center;   
+    } 
+
+    .carousel{
+        box-sizing: border-box; 
+        margin-right: 0;
+        height: 100%; 
+    } 
+    .navbar{
+        height : 10%;
+        padding: auto;
+        margin: auto;
+    }  
+    .header{
+        padding: auto;
+        width: 100%;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+
+
+    .header-item{
+        width: 100%;
+        box-sizing: border-box;
+        margin: none;
+    }
+
+    .profile img{
+        margin: auto;
+        width: 50%;
+    }
 }

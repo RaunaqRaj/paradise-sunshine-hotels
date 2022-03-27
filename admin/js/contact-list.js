@@ -10,7 +10,6 @@ $(document).ready(function () {
     $('#delete').click(function(e){
         e.preventDefault();
         var id = $('#contact_delete').val();
-        var page = "contact-table.php";
          $.ajax({
         url: "php/contact-list.php",
         type: "POST",
@@ -30,10 +29,12 @@ $(document).ready(function () {
                     duration : 3000,
                     oldestFirst : true
                   }).showToast();
+                  var url = window.location.href;
+                  var page = url.split('/').pop();
                   if(page=="contact-table.php"){
                     getdata();
                   }else{
-                getpreviousdata();
+                    $("#previous-contacts").click();
                   }
                }else{
                 Toastify({

@@ -1,3 +1,8 @@
+$('#preloader').show();
+$('#loader').show();
+$(document).ready(function(){
+    $('#preloader').hide();
+    $('#loader').hide();
 document.addEventListener('DOMContentLoaded', () => {
     anime({
         targets: '.logo',
@@ -40,4 +45,4 @@ ScrollReveal().reveal('.fine', { delay: 500, origin: 'left', interval: 200 });
 ScrollReveal().reveal('.fine2', { delay: 500, origin: 'top' });
 ScrollReveal().reveal('.fine3', { delay: 500, origin: 'right' });
 
-
+});

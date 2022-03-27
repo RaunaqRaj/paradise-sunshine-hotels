@@ -1,10 +1,3 @@
-<?php
-
-include 'php/function.php';
-if (!user_check($conn)) {
-    header('location : index.php');
-}
-?>
 <?php include 'head_start.php'?>
 <div class="nav-header">
             <a href="home.php" class="brand-logo">
