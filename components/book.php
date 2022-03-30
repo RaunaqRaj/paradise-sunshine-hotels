@@ -1,1 +1,1 @@
-<button class="btn btn-1"><a href="reservation.php" style="color:white;">Book A Room</a></button> 
+<button class="btn btn-1" style=" background: white;"><a href="reservation.php" style="color: black;">Book A Room</a></button> 

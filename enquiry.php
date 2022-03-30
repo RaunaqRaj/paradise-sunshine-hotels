@@ -1,5 +1,5 @@
 <?php include 'components/head_start.php'?>
- 
+ <link rel="stylesheet" href="assests/css/snackbar.min.css">
 </head>
 
 <body>
@@ -147,7 +147,7 @@
   </div>
   <?php include 'components/footer.php' ?>
   <?php include 'components/script_start.php'?>
-
+  <script src="assests/js/snackbar.min.js"></script>
   </body>
 
 </html>

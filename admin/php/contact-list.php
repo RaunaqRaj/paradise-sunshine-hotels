@@ -19,7 +19,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             case 'contact-list':
                 $query = "select id,name,email,subject,created_at from informations";
                 $query_execute = mysqli_query($conn, $query);
-
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();
                     while ($result = mysqli_fetch_assoc($query_execute)) {
@@ -29,7 +28,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 } else {
                     echo json_encode(array("success" => false, "data" => "No information found!"));
                 }
-
                 break;
             case 'contact-delete':
                 $id = sql_prevent($conn, xss_prevent($_POST['id']));

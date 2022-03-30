@@ -1,3 +1,4 @@
+$("#submit_loader").hide();
 $(document).ready(function () {
 
     $("#add_room_image").on("submit", function (e) {
@@ -16,6 +17,8 @@ $(document).ready(function () {
         if (error) {
              return false;
             }
+            $("#submit").hide();
+            $("#submit_loader").show();
       $.ajax({
 
         url: "php/add_room_image.php",
@@ -25,6 +28,8 @@ $(document).ready(function () {
         processData: false,
 
         success: function (response) {
+          $("#submit").show();
+          $("#submit_loader").hide();
           response = JSON.parse(response);
           if (response.success === true) {
             Toastify({
@@ -54,7 +59,21 @@ $(document).ready(function () {
           }
           
         },
-        
+        error: function (error) {
+          Toastify({
+              text: response.message,
+              className: "success",
+              style: {
+                  background: "#78f76d",
+                  },
+              close : true,
+              gravity : top,
+              duration : 3000,
+              oldestFirst : true
+            }).showToast();
+            $("#submit").show();
+            $("#submit_loader").hide();
+          },
       });
 
     });

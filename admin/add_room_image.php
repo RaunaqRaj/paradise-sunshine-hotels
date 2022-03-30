@@ -91,7 +91,11 @@ if (!user_check($conn)) {
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-lg-8 ml-auto">
-                                                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                                                        <button type="submit" id="submit" class="btn btn-primary" name="submit">Submit</button>
+                                                        <button class="btn btn-primary" id="submit_loader" type="button" disabled>
+                                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Loading...</span>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

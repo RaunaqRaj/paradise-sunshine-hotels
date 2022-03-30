@@ -1,7 +1,0 @@
-echo json_encode(array("success" => true, "message" => "Your details has been sent successfully!"));
-                die;
-response = JSON.parse(response);
-
-$_SERVER['SERVER_NAME']
-
-Array ( [success] => [message] => you request is denied [errors] => Array ( [name] => name should be valid [phone] => phone number should be an integer [email] => email should be in correct format ) )

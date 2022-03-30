@@ -1,7 +1,7 @@
 <header class="header">
     <nav class="navbar navbar-light fixed-top" style="background-color: white;">
       <div class="container-fluid header-item" style="background-color: white;" >
-        <img src="assests/images/P-removebg-preview.png" alt="" class="logo">
+        <img src="assests/images/P-removebg-preview.png" alt="" class="logo  m-auto">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -17,6 +17,9 @@
             </li>
             <li class="nav-item dropdown">
                 <li><a class="dropdown-item text-dark" href="enquiry.php">Enquiry</a></li>
+            </li>
+            <li class="nav-item dropdown">
+                <li><a class="dropdown-item text-dark" href="reservation.php">Reservation</a></li>
             </li>
           </ul>
         </div>

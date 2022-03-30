@@ -101,6 +101,8 @@ if (!user_check($conn)) {
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="heading" name="heading" placeholder="">
+                                                        <span class="text-danger" id="heading_error"></span>
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -109,6 +111,8 @@ if (!user_check($conn)) {
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="areacode" name="areacode" placeholder="1100..">
+                                                        <span class="text-danger" id="code_error"></span>
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -117,6 +121,8 @@ if (!user_check($conn)) {
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <textarea class="form-control" id="description" name="description" rows="5" placeholder=""></textarea>
+                                                        <span class="text-danger" id="description_error"></span>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,6 +133,8 @@ if (!user_check($conn)) {
                                                     </label>
                                                     <div class="col-lg-6">
                                                        <input type="text" id="location" name="location" class="form-control">
+                                                       <span class="text-danger" id="location_error"></span>
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -135,12 +143,17 @@ if (!user_check($conn)) {
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" value="₹" class="form-control" id="price" name="price" placeholder="">
+                                                        <span class="text-danger" id="price_error"></span>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="form-group row">
                                                     <div class="col-lg-8 ml-auto">
-                                                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                                                        <button type="submit" id="submit" class="btn btn-primary" name="submit">Submit</button>
+                                                        <button class="btn btn-primary" id="submit_loader" type="button" disabled>
+                                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Loading...</span>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -187,7 +200,8 @@ if (!user_check($conn)) {
     ***********************************-->
     <!-- Required vendors -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script> 
     $('#category').select2();
     $('#select').select2();

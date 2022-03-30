@@ -49,11 +49,7 @@ $("#myform").on("submit", function (e) {
             $("#contact_submit_loader").hide();
             response = JSON.parse(response);
             if (response.success === true) {
-                swal({
-                    icon: "success",
-                    title: "success",
-                    text: response.message
-                });
+                 Snackbar.show({text: response.message, pos: 'bottom-center'});
                 $('#myform')[0].reset();
             } else {
                 for (const error in response.data) {

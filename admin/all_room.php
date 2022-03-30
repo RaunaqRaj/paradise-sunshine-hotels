@@ -87,6 +87,9 @@ if (!user_check($conn)) {
             <label for="recipient-name" class="col-form-label text-dark">Category</label>
             <input type="text" class="form-control" name="status" id="category" id="recipient-name">
             <span class="text-danger" id="first_error">*</span>
+            <label for="recipient-name" class="col-form-label text-dark">Description</label>
+            <input type="text" class="form-control" name="description" id="category_description" id="recipient-name">
+            <span class="text-danger" id="category_description_error">*</span>
           </div>
         </form>
       </div>
@@ -111,6 +114,9 @@ if (!user_check($conn)) {
             <label for="recipient-name" class="col-form-label text-dark">Room Category</label>
             <input type="text" class="form-control" name="Room_category" id="Room_category">
             <span id="category_error" class="text-danger">*</span>
+            <label for="recipient-name" class="col-form-label text-dark">Category Description</label>
+            <input type="text" class="form-control" name="description" id="description">
+            <span id="description_error" class="text-danger">*</span>
           </div>
         </form>
       </div>
@@ -142,8 +148,9 @@ if (!user_check($conn)) {
   </div>
 </div>
 </div>
+<button class="btn btn-primary col-md-2 mb-4 mx-4" id="add_modal" data-bs-toggle='modal' ><i class="fa-solid fa-plus mx-2"></i>Add Category</button>
                             <div class="card-body" id="nodata"> 
-                                <button class="btn btn-primary mb-4" id="add_modal" data-bs-toggle='modal' ><i class="fa-solid fa-plus mx-2"></i>Add Category</button>
+                               
                             <div class="spinner-grow" style="align-items: center; justify-content: center;margin-left: 500px;" id="loader" role="status">
                               <span class="visually-hidden">Loading...</span>
                             </div>
@@ -153,6 +160,7 @@ if (!user_check($conn)) {
                                             <tr>
                                                 <th class="text-dark">S no</th>
                                                 <th class="text-dark">Name</th>
+                                                <th class="text-dark">Description</th>
                                                 <th class="text-dark">Created at</th>
                                                 <th class="text-dark">Actions</th>
                                             </tr>

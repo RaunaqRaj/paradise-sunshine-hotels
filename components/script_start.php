@@ -3,6 +3,7 @@
     crossorigin="anonymous"></script>
 <script src="assests/js/jquery.js"></script>
 <script src="assests/js/form.js"></script>
+<script src="assests/js/snackbar.min.js"></script>
 <script src="assests/js/select2.js"></script>
 <script src="assests/js/index.js"></script>
 <script src="assests/js/common.js"></script>

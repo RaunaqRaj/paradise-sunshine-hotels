@@ -12,7 +12,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
         switch ($submit) {
             case 'category-list':
-                $query = "select id,name,created_at from room_categories";
+                $query = "select id,name,description,created_at from room_categories";
                 $query_execute = mysqli_query($conn, $query);
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();

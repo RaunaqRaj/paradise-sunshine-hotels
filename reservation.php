@@ -116,19 +116,19 @@
 <fieldset class="wizard-fieldset">
 <h5>Payment Information</h5>
 <div class="form-group">
-<input type="text" class="form-control wizard-required" name = "transaction_id" id="first_name">
+<input type="text" class="form-control wizard-required" name = "transaction_id" id="transaction_number">
 <label for="fname" class="wizard-form-text-label">Transaction ID</label>
-<span class="wizard-form-error text-danger" id="first_error"></span>
+<span class="wizard-form-error text-danger" id="transaction_error"></span>
 </div>
 <div class="form-group">
-<input type="text" class="form-control wizard-required" name="payment_mode" id="last_name">
+<input type="text" class="form-control wizard-required" name="payment_mode" id="payment_mode">
 <label for="lname" class="wizard-form-text-label">Payment Mode</label>
-<div class="wizard-form-error" id="last_error"></div>
+<div class="wizard-form-error" id="mode_error"></div>
 </div>
 <div class="form-group">
-<input type="text" class="form-control wizard-required" name="bank" id="email">
+<input type="text" class="form-control wizard-required" name="bank" id="bank">
 <label for="lname" class="wizard-form-text-label">Bank</label>
-<span class="wizard-form-error text-danger" id="email_error"></span>
+<span class="wizard-form-error text-danger" id="bank_error"></span>
 </div>
 <div class="form-group clearfix">
 <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
@@ -151,9 +151,9 @@
                                                     </select>
 </div>
 <div class="form-group">
-<input type="number" class="form-control wizard-required" name="quantity" id="payment_auth">
+<input type="number" class="form-control wizard-required" name="quantity" id="quantity">
 <label for="username" class="wizard-form-text-label">Quantity</label>
-<span class="wizard-form-error text-danger" id="payauth_error"></span>
+<span class="wizard-form-error text-danger" id="quantity_error"></span>
 </div>
 <div class="form-group">
 <label for="pwd" class="">checkin</label>
@@ -165,7 +165,10 @@
 <input type="date" class="form-control wizard-required" name="checkout" id="phone">
 <label for="" class="wizard-form-text-label"></label>
 </div>
-<div class="form-group clearfix">
+<div class="spinner-grow text-success" id="loader" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="form-group clearfix" id="submit">
 <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
 <button type="submit" style="margin-left: 20px; border: none; background: #fc1c03; color: #fff;" name="save"><a class="form-wizard-submit float-right">Submit</a></button>
 </div>
@@ -177,11 +180,7 @@
 </section>
 
 <?php include 'components/footer.php' ?>
-
-
 <?php include 'components/script_start.php'?>
-
-
 </body>
 
 </html>

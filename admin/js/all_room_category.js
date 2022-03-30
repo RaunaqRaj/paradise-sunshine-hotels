@@ -100,12 +100,19 @@ $(document).ready(function () {
 $("#submit").click( function (e) {
     e.preventDefault();
     var category = $("#Room_category").val();
+    var description = $("#description").val();
     var error = false;
     if (isEmpty(category)) {
         error = true;
         $('#category_error').text("Room category should not be blank!");
     } else {
         $('#category_error').text("");
+    }
+    if (isEmpty(description)) {
+        error = true;
+        $('#description_error').text("Description should not be blank!");
+    } else {
+        $('#description_error').text("");
     }
     if (error) {
         return false;
@@ -116,7 +123,7 @@ $("#submit").click( function (e) {
     $.ajax({
         type: "POST",
         url: "php/all_room_category.php",
-        data: {submit : 'category-add', category:category},
+        data: {submit : 'category-add', category:category, description:description},
         cache: false,
         success: function (response) {
             // $("#btn").show();
@@ -163,12 +170,19 @@ $(document).on( 'click', '#add_modal', function () {
 //update modal
 $('#update').click(function (e) {
     var name = $("#category").val();
+    var description = $("#category_description").val();
     var error = false;
     if (isEmpty(name)) {
         error = true;
         $('#first_error').text("Category should not be blank!");
     } else {
         $('#first_error').text("");
+    }
+    if (isEmpty(description)) {
+        error = true;
+        $('#category_description_error').text("Description should not be blank!");
+    } else {
+        $('#category_description_error').text("");
     }
     if (error) {
         return false;
@@ -177,11 +191,13 @@ $('#update').click(function (e) {
     output = "";
     var id = $('#id').val();
     var name = $('#category').val();
+    var description = $("#category_description").val();
+
     $.ajax({
         url: "php/all_room_category.php",
         type: "POST",
         dataType: "json",
-        data: { submit: 'category-update', id: id, name: name },
+        data: { submit: 'category-update', id: id, name: name, description:description },
         success: function (response) {
             if (response.success === true) {
                 Toastify({
@@ -209,11 +225,13 @@ $('#update').click(function (e) {
 $(document).on('click', '.update', function () {
     var id = $(this).attr('data-id');
     var name = $(this).attr('data-name');
+    var description = $(this).attr('data-description');
 
     $('#id').val(id);
     $("#UpdateModal").modal('show');
     var id = $('#id').val(id);
     var name = $('#category').val(name);
+    var description = $('#category_description').val(description);
 });
 
    function get_contact_list_html(rooms){
@@ -223,9 +241,10 @@ $(document).on('click', '.update', function () {
         <tr>
         <td class="user_id">${index+1}</td>
         <td>${room.name}</td>
+        <td>${room.description}</td>
         <td>${room.created_at}</td>
         <td>
-        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${room.name}  data-id=${room.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${room.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
+        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${room.name} data-description=${room.description} data-id=${room.id} ><i class='fa-solid fa-edit'></i></button><button data-id=${room.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
         </td>
     </tr>
 `;

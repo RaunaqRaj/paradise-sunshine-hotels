@@ -1,5 +1,5 @@
 /** @format */
-$("#loader").hide();
+$("#submit_loader").hide();
 $("#add_room").on("submit", function (e) {
     e.preventDefault();
     var heading = $("#heading").val();
@@ -8,57 +8,50 @@ $("#add_room").on("submit", function (e) {
     var location = $("#location").val();
     var price = $("#price").val();
     var error = false;
-    // if (isEmpty(first_name)) {
-    //     error = true;
-    //     $('#first_error').text("First name should not be blank!");
-    // } else {
-    //     $('#first_error').text("");
-    // }
-    // if (isEmpty(pay_auth)) {
-    //     error = true;
-    //     $('#payauth_error').text("Payment Authority should not be blank!");
-    // } else {
-    //     $('#payauth_error').text("");
-    // }
-    // if (isEmpty(cvv)) {
-    //     error = true;
-    //     $('#cvv_error').text("CVV should not be blank!");
-    // } else {
-    //     $('#cvv_error').text("");
-    // }
-    // if (isEmpty(pay_card)) {
-    //     error = true;
-    //     $('#card_error').text("Card Number should not be blank!");
-    // } else {
-    //     $('#card_error').text("");
-    // }
-    // if (isEmpty(email)) {
-    //     error = true;
-    //     $('#email_error').text("Email should not be blank!");
-    // } else {
-    //     $('#email_error').text("");
-    // }
-    // if (isEmpty(primary_phone)) {
-    //     error = true;
-    //     $('#primary_error').text("Phone number should not be blank!");
-    // } else {
-    //     $('#primary_error').text("");
-    // }
+    if (isEmpty(heading)) {
+        error = true;
+        $('#heading_error').text("Heading should not be blank!");
+    } else {
+        $('#heading_error').text("");
+    }
+    if (isEmpty(areacode)) {
+        error = true;
+        $('#code_error').text("Area Code should not be blank!");
+    } else {
+        $('#code_error').text("");
+    }
+    if (isEmpty(description)) {
+        error = true;
+        $('#description_error').text("Description should not be blank!");
+    } else {
+        $('#description_error').text("");
+    }
+    if (isEmpty(location)) {
+        error = true;
+        $('#location_error').text("Location should not be blank!");
+    } else {
+        $('#location_error').text("");
+    }
+    if (isEmpty(price)) {
+        error = true;
+        $('#price_error').text("Price should not be blank!");
+    } else {
+        $('#price_error').text("");
+    }
+    if (error) {
+        return false;
+    }
 
-    // if (error) {
-    //     return false;
-    // }
-
-    // $("#add_customer").hide();
-    // $("#loader").show();
+    $("#submit").hide();
+    $("#submit_loader").show();
     $.ajax({
         type: "POST",
         url: "php/add_room.php",
         data: $(this).serialize() + "&submit=true",
         cache: false,
         success: function (response) {
-            // $("#btn").show();
-            // $("#contact_submit_loader").hide();
+            $("#submit").show();
+            $("#submit_loader").hide();
             response = JSON.parse(response);
             if (response.success === true) {
                 Toastify({
@@ -91,8 +84,8 @@ $("#add_room").on("submit", function (e) {
                 duration : 3000,
                 oldestFirst : true
               }).showToast();
-            $("#add_customer").show();
-            $("#loader").hide();
+            $("#submit").show();
+            $("#submit_loader").hide();
         },
     });
 });

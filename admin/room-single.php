@@ -346,18 +346,55 @@ echo $_SESSION['user']['user_name'];
                                         </ul>
                                         <div class="tab-content" style="height: 600px;" >
                                             <div id="my-posts" style="height: 600px;" class="tab-pane fade active show">
-                                                <div class="my-post-content pt-1" style="height: 600px">
-                                                    <div class="post-input" style="height: 600px">
-                                                    <br>
-                                                    <h4>Location : </h4>
-                                                    <i class="fa-solid fa-location-dot mx-2"><a href="<?php echo $message['location'] ?>" target="blank" style="font-size: 14px; color : black;"></i>Location</a>
-                                                    <br>
-                                                    <br>
-                                                    <h4>Area Code : </h4>
-                                                    <p class="mt-4 text-dark"><?php echo $message['area_code']?></p>
-                                                    
-                                                </div>
-                                                </div>
+                                            <div class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text"></div>
+                                    <div class="stat-digit">Location</div>
+                                    <a href="<?php echo $message['location'] ?>" target="blank"><i class="fa fa-location text-dark"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text"></div>
+                                    <div class="stat-digit"></div>
+                                    <h4>Area Code</h4>
+                                    <h4><i class="fa fa-location text-dark mx-2"></i><?php echo $message['area_code'] ?></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text"></div>
+                                    <div class="stat-digit"></div>
+                                    <h4>Price</h4>
+                                    <h4><?php echo $message['price'] ?></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text"></div>
+                                    <div class="stat-digit"></div>
+                                    <h4>Created At</h4>
+                                    <h4><i class="fa fa-calendar text-dark mx-2"></i><?php echo $message['created_at'] ?></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                                                 </div>
 
                                             <div id="about-me" class="tab-pane fade">

@@ -17,9 +17,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
         switch ($submit) {
             case 'category-list':
-                $query = "select id,name,created_at from room_categories";
+                $query = "select id,name,description,created_at from room_categories";
                 $query_execute = mysqli_query($conn, $query);
-
                 if (mysqli_num_rows($query_execute) > 0) {
                     $data = array();
                     while ($result = mysqli_fetch_assoc($query_execute)) {
@@ -34,7 +33,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
 
                 case 'category-add':
                     $categories = $_POST['category'];
-                   $query = "INSERT INTO room_categories(name)VALUES('$categories')";
+                    $description = $_POST['description'];
+                   $query = "INSERT INTO room_categories(name,description)VALUES('$categories','$description')";
                    if($conn->query($query)== TRUE){
                     echo json_encode(array("success" => true, "message" => "Room Category successfully added!"));
                 }else{
@@ -58,6 +58,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     $hash_id = password_hash($id,PASSWORD_DEFAULT);
                     $id_decrypt = password_verify($hash_id,$id);
                     $first = sql_prevent($conn, xss_prevent($_POST['name']));
+                    $description = sql_prevent($conn, xss_prevent($_POST['description']));
                     $check_id = "select id from room_categories where id = $id";
                     $error = array();
                     if (empty($first)) {
@@ -65,13 +66,18 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     } else if (preg_match("/^[0-9]+$/", $first)) {
                         $error['name'] = "Category should be valid";
                     }
+                    if (empty($description)) {
+                        $error['description'] = "Description should not be empty";
+                    } else if (preg_match("/^[0-9]+$/", $description)) {
+                        $error['description'] = "Description should be valid";
+                    }
         
                     if (sizeof($error) > 0) {
                         echo json_encode(array("success" => false, "data" => $error));
                         die;
                     }
                     if($check_id){
-                    $query = "UPDATE room_categories SET name = '$first' WHERE id ='$id' ";
+                    $query = "UPDATE room_categories SET name = '$first', description='$description' WHERE id ='$id' ";
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
                         echo json_encode(array("success" => true, "message" => "category  Updated successfully"));

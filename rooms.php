@@ -71,27 +71,6 @@
         </div>
       </div>
     </section>
-  <!-- <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark mt-2 m-md-3">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4">Experience an unrivaled five star fusion of elegance & style. Stay Paradise</h1>
-      <p class="lead my-3">Experience the best quality of services like comfortable bedrooms , good view balcony , Great
-        cuisines.</p>
-      <button class="btn btn-outline-secondary"><a href="#" class="text-white">Book A Room</a></button>
-    </div>
-  </div> -->
-
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light mine">
-    <div class="col-md-5 p-lg-5 mx-auto my-5 new">
-      <h1 class="display-4 fw-normal heading">Quality Stay</h1>
-      <strong>
-        <p class="lead fw-normal para">Experience the best quality stay with best cuisines and services like laundary.</p>
-      </strong>
-      <a class="btn btn-outline-secondary" href="enquiry.html">For enquiry click here</a>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div>
-
 <?php include 'components/footer.php' ?>
  <script src="assests/js/smooth-scrollbar.js"></script>
   <!-- Optional JavaScript; choose one of the two! -->

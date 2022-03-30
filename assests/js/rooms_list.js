@@ -49,7 +49,7 @@ $(document).ready(function(){
             previous += `
             <div class="col-md-4 text-center">
             <div class="profile">
-              <img src="admin/image/${room.image}" alt="image" class="user" style="width: 300px; height:200px">
+              <img src="admin/image/${room.image}" alt="image" class="user">
               <h5>${room.heading}<br><span>${room.description}</span><br><span>${room.price}</span></h5>
             </div>
           </div>
