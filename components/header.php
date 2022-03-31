@@ -1,7 +1,7 @@
 <header class="header">
     <nav class="navbar navbar-light fixed-top" style="background-color: white;">
       <div class="container-fluid header-item" style="background-color: white;" >
-        <img src="assests/images/P-removebg-preview.png" alt="" class="logo  m-auto">
+        <a href="index.php" class="m-auto"><img src="assests/images/P-removebg-preview.png" alt="" class="logo  m-auto"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

@@ -123,8 +123,12 @@ a:hover{
 }
 
 .nav-link{
-    font-family: 'Pacifico', serif;
+    font-family: 'Pacifico';
     font-weight: 700;
+}
+
+.nav-item:hover{
+    background: #fff;
 }
 
 .navbar a{
