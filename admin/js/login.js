@@ -1,3 +1,4 @@
+document.addEventListener('contextmenu', event => event.preventDefault());
 /** @format */
 // $("#contact_submit_loader").hide();
 $("#login_form").on("submit", function (e) {

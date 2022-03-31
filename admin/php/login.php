@@ -7,13 +7,11 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $email = $_POST['email'];
             $password = $_POST['password'];
             $error = array();
-
             if (empty($email)) {
                 $error['email'] = "email should not be empty";
             } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $error['email'] = "email should  be valid";
             }
-
             if (empty($password)) {
                 $error['password'] = "password should not be empty";
             }
