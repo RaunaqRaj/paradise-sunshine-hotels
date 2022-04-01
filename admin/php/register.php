@@ -4,6 +4,9 @@ require 'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["submit"])) {
+            if (isset($_POST["username"])) {
+                if (isset($_POST["email"])) {
+                    if (isset($_POST["password"])) { 
             $iv = openssl_random_pseudo_bytes(16);
             $username = $_POST["username"];
             $email = $_POST["email"];
@@ -63,7 +66,18 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             } else {
                 echo json_encode(array("success" => true, "message" => "Sorry! an error occured"));
             }
-
+        } else {
+            echo json_encode(array("success" => false, "data" => array("password" => "Password Is Required")));
+            die;
+        }
+    } else {
+            echo json_encode(array("success" => false, "data" => array("email" => "Email Is Required")));
+            die;
+        }
+    } else {
+            echo json_encode(array("success" => false, "data" => array("username" => "Username Is Required")));
+            die;
+        }
         } else {
             echo json_encode(array("success" => false, "message" => "Method not found"));
         }

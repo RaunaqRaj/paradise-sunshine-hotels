@@ -5,7 +5,8 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['submit'])) {
             $error = $_POST['error'];
-            if(isset($_POST['email'],$_POST['password'])){
+            if(isset($_POST['email'])){
+            if(isset($_POST['password'])){
             $email = $_POST['email'];
             $password = $_POST['password'];
             $error = array();
@@ -51,8 +52,12 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 die;
             }
         }else{
-            echo json_encode(array("success" => false, "data" => "all feilds are required"));
-                die;
+            echo json_encode(array("success" => false, "data" => array("password" => "Password Is required")));
+            die;
+              }
+        }else{
+            echo json_encode(array("success" => false, "data" => array("email" => "Email Is required")));
+            die;
               }
         }
     } else {
