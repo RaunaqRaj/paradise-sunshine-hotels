@@ -4,6 +4,7 @@ require  'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["contact_submit"])) {
+            if(isset($_POST['name'],$_POST['email'],$_POST['subject'],$_POST['message'])){
 
             $name = $_POST["name"];
             $email = $_POST["email"];
@@ -39,7 +40,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             }else{
                 echo json_encode(array("success" => true, "message" => "Sorry! some error occured"));
             }
-
+        }else{
+            echo json_encode(array("success" => true, "message" => "All feilds are required"));  
+        }
         } else {
             echo json_encode(array("success" => false, "message" => "Method not found"));
         }

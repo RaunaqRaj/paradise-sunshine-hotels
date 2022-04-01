@@ -4,6 +4,7 @@ require 'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["submit"])) {
+            if(isset($_POST['facility'], $_POST["category"], $_POST["heading"], $_POST["description"], $_POST["areacode"], $_POST["location"], $_POST["price"])){
            $facility = $_POST['facility'];
            $category = $_POST['category'];
            $heading = $_POST['heading'];
@@ -66,6 +67,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
      } else {
             echo json_encode(array("success" => true, "message" => "Sorry! an error occured"));
         }
+    }else{
+        echo json_encode(array("success" => false, "message" => "All Feilds are Required!!")); 
+     }
     }
             
     } else {

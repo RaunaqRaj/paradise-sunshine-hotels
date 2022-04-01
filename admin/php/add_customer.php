@@ -4,6 +4,7 @@ require 'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["save"])) {
+            if(isset($_POST['first_name'], $_POST["last_name"], $_POST["email"], $_POST["primary_phone"], $_POST["secondary_phone"], $_POST["card"], $_POST["payment_auth"], $_POST["expiry_date"], $_POST["cvv"])){
             $first_name = $_POST["first_name"];
             $email = $_POST['email'];
             $last_name = $_POST["last_name"];
@@ -84,7 +85,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             }
                 }
             }
-            
+        }else{
+            echo json_encode(array("success" => false, "message" => "All Feilds are Required!!")); 
+         }
 
         } else {
             echo json_encode(array("success" => false, "message" => "Method1 not found"));

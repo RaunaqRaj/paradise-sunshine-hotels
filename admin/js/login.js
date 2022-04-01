@@ -1,4 +1,3 @@
-document.addEventListener('contextmenu', event => event.preventDefault());
 /** @format */
 // $("#contact_submit_loader").hide();
 $("#login_form").on("submit", function (e) {
@@ -6,6 +5,7 @@ $("#login_form").on("submit", function (e) {
     var url = 'home.php';
     var email = $("#email").val();
     var password = $("#password").val();
+    var hidden = $("#error").val();
     var error = false;
     if (isEmpty(email)) {
         error = true;
@@ -13,6 +13,13 @@ $("#login_form").on("submit", function (e) {
     } else {
         $('#email_error').text("");
     }
+    if (isEmpty(email,password)) {
+        error = true;
+        $('#all_error').text("All Feilds are Required!");
+    } else {
+        $('#all_error').text("");
+    }
+    
     if (isEmpty(password)) {
         error = true;
         $('#password_error').text("password should not be blank!");

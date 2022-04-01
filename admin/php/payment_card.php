@@ -51,40 +51,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 die;
             }
                 break;
-
-                case 'card-update':
-                //     $id = sql_prevent($conn, xss_prevent($_POST['id']));
-                //     $hash_id = password_hash($id,PASSWORD_DEFAULT);
-                //     $id_decrypt = password_verify($hash_id,$id);
-                //     $first = sql_prevent($conn, xss_prevent($_POST['first']));
-                //     $check_id = "select id from payment_card where id = $id";
-                //     $error = array();
-                //     if (empty($first)) {
-                //         $error['first'] = "First name should not be empty";
-                //     } else if (preg_match("/^[0-9]+$/", $first)) {
-                //         $error['first'] = "First name should be valid";
-                //     }
-        
-                //     if (sizeof($error) > 0) {
-                //         echo json_encode(array("success" => false, "data" => $error));
-                //         die;
-                //     }
-                //     if($check_id){
-                //     $query = "UPDATE customers SET first_name = '$first' WHERE id ='$id' ";
-                //     $query_execute = mysqli_query($conn, $query);
-                //     if ($query_execute) {
-                //         echo json_encode(array("success" => true, "message" => "Customer details Updated successfully"));
-                //         die;
-                //     } else {
-                //         echo json_encode(array("success" => false, "message" => "Some error Occured"));
-                //         die;
-                //     }
-                // }else{
-                //     echo json_encode(array("success" => false, "message" => "Id doesn't exist"));
-                //     die;
-                // }
-            
-                    break;
            
             default:
                 echo json_encode(array("success" => false, "message" => "Method not found"));

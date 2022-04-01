@@ -17,6 +17,7 @@ if(user_check($conn)){
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/P-removebg-preview.png">
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/snackbar.min.css">
 
 </head>
 
@@ -33,6 +34,10 @@ if(user_check($conn)){
                                 <div class="auth-form">
                                     <h4 class="text-center mb-4">Sign in your account</h4>
                                     <form id="login_form">
+                                                                                <input type="hidden" id="error" name="error" class="form-control">
+
+                                    <span id="all_error" class="text-danger"></span>
+
                                         <div class="form-group">
                                             <label><strong>Email</strong></label>
                                             <input type="email" id="email" name="email" class="form-control">
@@ -69,6 +74,7 @@ if(user_check($conn)){
     <script src="./js/jquery.js"></script>
     <script src="./js/login.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/snackbar.min.js"></script>
     <script src="./js/sweetalert.min.js"></script>
     <script src="./vendor/global/global.min.js"></script>
     <script src="./js/quixnav-init.js"></script>

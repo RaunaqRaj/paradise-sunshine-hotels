@@ -4,6 +4,7 @@ require 'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["add"])) {
+            if(isset($_POST['designation'], $_POST["description"])){
             $designation = $_POST["designation"];
             $description = $_POST["description"];
             $error = array();
@@ -36,6 +37,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             } else {
                 echo json_encode(array("success" => true, "message" => "Sorry! an error occured"));
             }
+        }else{
+            echo json_encode(array("success" => false, "message" => "All Feilds are Required!!")); 
+         }
 
         } else {
             echo json_encode(array("success" => false, "message" => "Method not found"));

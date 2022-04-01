@@ -4,6 +4,7 @@ require 'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["save"])) {
+            if(isset($_POST['username'], $_POST["email"], $_POST["password"], $_POST["name"], $_POST["e-mail"], $_POST["phone"])){
             $iv = openssl_random_pseudo_bytes(16);
             $username = $_POST["username"];
             $email = $_POST["email"];
@@ -80,8 +81,9 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             }
                 }
             }
-            
-
+        }else{
+            echo json_encode(array("success" => false, "message" => "All Feilds are Required!!")); 
+         }
         } else {
             echo json_encode(array("success" => false, "message" => "Method not found"));
         }

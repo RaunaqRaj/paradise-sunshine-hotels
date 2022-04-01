@@ -77,9 +77,17 @@ $("#customer_form").on("submit", function (e) {
                   }).showToast();
                 $('#customer_form')[0].reset();
             } else {
-                for (const error in response.data) {
-                    $('#' + error + '_error').text(response.data[error]);
-                }
+                Toastify({
+                    text: response.message,
+                    className: "success",
+                    style: {
+                        background: "#ed100c",
+                        },
+                    close : true,
+                    gravity : top,
+                    duration : 3000,
+                    oldestFirst : true
+                  }).showToast();
             }
         },
         error: function (error) {

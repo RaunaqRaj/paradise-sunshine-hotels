@@ -4,6 +4,7 @@ require  'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST["save"])) {
+            if(isset($_POST['first_name'], $_POST["last_name"], $_POST["email"], $_POST["primary_phone"], $_POST["secondary_phone"], $_POST["transaction_id"], $_POST["payment_mode"], $_POST["bank"], $_POST["room"], $_POST["quantity"], $_POST["checkin"],$_POST['checkout'])){
             $first_name = $_POST["first_name"];
             $last_name = $_POST["last_name"];
             $email = $_POST["email"];
@@ -12,7 +13,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
             $transaction_id = $_POST["transaction_id"];
             $payment_mode = $_POST["payment_mode"];
             $bank = $_POST["bank"];
-            $room = $_POST["room"];
+            $room = $_POST["room"]; 
             $quantity = $_POST["quantity"];
             $checkin = $_POST["checkin"];
             $checkout = $_POST["checkout"];
@@ -94,11 +95,15 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     }
                 }
             }
-
+        }else{
+            echo json_encode(array("success" => true, "message" => "All Feilds are Required!!")); 
+         } 
         } else {
             echo json_encode(array("success" => false, "message" => "Method not found"));
         }
-    } else {
+    }
+
+ else {
         echo json_encode(array("success" => false, "message" => "Method not found"));
     }
 }

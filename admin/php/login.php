@@ -4,6 +4,8 @@ include 'function.php';
 if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['submit'])) {
+            $error = $_POST['error'];
+            if(isset($_POST['email'],$_POST['password'])){
             $email = $_POST['email'];
             $password = $_POST['password'];
             $error = array();
@@ -48,6 +50,10 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                 echo json_encode(array("success" => false, "data" => array("email" => "Invalid email")));
                 die;
             }
+        }else{
+            echo json_encode(array("success" => false, "data" => "all feilds are required"));
+                die;
+              }
         }
     } else {
         echo json_encode(array("success" => false, "message" => "Method not found"));
