@@ -125,7 +125,7 @@ if (!user_check($conn)) {
                               <span class="visually-hidden">Loading...</span>
                             </div>
                                 <div class="table-responsive">
-                                    <table id="example" class="display text-center" style="min-width: 845px; color:black;">
+                                    <table id="example" class="display text-center table-striped" style="min-width: 845px; color:black;">
                                         <thead class="table-primary">
                                             <tr>
                                                 <th class="text-dark">S no</th>

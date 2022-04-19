@@ -244,7 +244,7 @@ $(document).on('click', '.update', function () {
         <td>${facility.price}</td>
         <td>${facility.created_at}</td>
         <td>
-        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${facility.facility} data-price=${facility.price}  data-id=${facility.id} ><i class='fa-solid fa-pen'></i></button><button data-id=${facility.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
+        <button class='btn  mt-3 mx-1 mb-2 btn-outline-success update' style='color: #000;'data-bs-toggle='modal' data-name=${facility.facility} data-price=${facility.price}  data-id=${facility.id} ><i class='fa-solid fa-edit'></i></button><button data-id=${facility.id} class='btn  btn-outline-danger delete mt-2 mx-1' style=' color: #000;'><i class='fa-solid fa-trash'></i></button>
         </td>
     </tr>
 `;
@@ -296,6 +296,3 @@ $(document).on('click', '.update', function () {
     });
 }
 });
-
-
-

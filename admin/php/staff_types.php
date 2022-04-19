@@ -37,12 +37,7 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                     $hash_id = password_hash($id,PASSWORD_DEFAULT);
                     $id_decrypt = password_verify($hash_id,$id);
                     $check_id = "select id from staff_types where id = $id";
-                    $check_staff = "select staff_type_id from staffs where staff_type_id=$id";
-                    $res = mysqli_query($conn,$check_staff);
                     if($check_id){
-                        if(!$res){
-                            echo json_encode(array("success" => false, "message" => "staff exists cannot delete this staff type"));
-                        }else{
                     $query = "DELETE FROM staff_types where id='$id'";
                     $query_execute = mysqli_query($conn, $query);
                     if ($query_execute) {
@@ -52,7 +47,6 @@ if ($_SERVER['SERVER_NAME'] == constant("SERVER_NAME")) {
                         echo json_encode(array("success" => false, "message" => "Some error Occured"));
                               die;
                     }
-                        }
                 }else{
                     echo json_encode(array("success" => false, "message" => "Id doesn't exist"));
                     die;
